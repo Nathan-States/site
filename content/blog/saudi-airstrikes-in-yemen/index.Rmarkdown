@@ -1,0 +1,45 @@
+---
+title: "25,000 Saudi Airstrikes in Yemen"
+excerpt: 
+author: ''
+date: '2022-09-23'
+slug: []
+categories: []
+tags: []
+---
+
+```{r, echo=FALSE, message=FALSE}
+here::set_here() 
+```
+
+```{r}
+airstrikes <- read_csv("airstrikes.csv")
+```
+
+## What is Happening in Yemen? 
+
+Given the scant reporting on the war, you'd be forgiven for not knowing the background details on the conflict. Even major corporate media outlets such as *The Guardian* - who themselves rarely discuss the war - have [raised concerns](https://www.theguardian.com/commentisfree/2016/oct/15/us-bombed-yemen-middle-east-conflict) about the lack of attention, denoting it as a "[forgotten war](https://www.theguardian.com/commentisfree/2021/dec/30/the-guardian-view-on-yemen-the-forgotten-war)." 
+
+Yemen is located around the Horn of Africa, sharing a northern border with Saudi Arabia. Nearly 75% of the population belongs to tribes, which for practical purposes, can be considered quasi-governmental entities that the Yemen state has varying relations with depending on their political influence and material wealth. The Houthis - formally known as **Ansar Allah** - are one of these tribes, located in the northern mountains of Saada, and were the predominant force behind overtaking the capital *Sana'a* in September 2014. 
+
+In 1962, a civil war broke the country in two. South Yemen became the first and only Marxist-Leninist country in the history of the Middle East, receiving significant funds from the Soviet Union. While constantly unstable, socialist Yemen brought increased living standards for its citizenry substantially, including making significant strides for women rights. 
+
+In North Yemen, a charismatic and cunning military officer named Ali Abdullah Saleh would slowly begin to consolidate control over the region. Saleh is infamous for comparing ruling Yemen to "dancing on the heads of snakes." It gets across the idea that maintaining control over the region requires maneuvering complex tribal relations, political opposition, international relations, and bourgeoisie business men. Navigating through this labyrinth required the creation of a strong security state apparatus that would eventually be used to assist the Houthis in their takeover of the country in late 2014. 
+
+With the fall of communism, South Yemen was compelled to sign a truce with North Yemen, formally unifying the country in 1990. That same year, Iraq, then lead by Saddam Hussein, invaded Kuwait as a response to Kuwait's unwillingness to follow OPEC guidelines regarding oil production quotas and for slant-drilling into Iraqi oil lines. Saleh supported Hussein, a position that caused Saudi Arabia to expel over a million Yemeni from their country, including the cutting off of international aid that cost Yemen over \$1 billion. Rising levels of unemployment and poverty would eventually give way to growing levels of political dissidence, including a secessionist attempt by former Yemeni Socialist Party leaders in 1994 that was eventually crushed by Saleh. However, this dissidence would only continue to grow throughout the late 1990s. 
+
+Not wanting to suffer the same repercussions as before, Saleh positioned himself as an ally of the United States following the September 11 attacks and the subsequent War on Terror. Yemen had been the home to several terrorist attacks, which the United States wanted to combat. Based on leaked *Wikileaks* documents, the United States provided millions of dollars of military aid to Saleh in exchange for combating Al-Qaeda in the Arabian Peninsula (AQAP). As part of their agreement, Saleh agreed to claim responsibility for US airstrikes, likely agreed upon to project strength upon his opposition.  
+
+With Saleh providing vocal support to the United States invasion of Iraq in 2003, his popularity began to dwindle even further. In 2004, relationships between the Yemen state and the Houthi tribe under the leadership of Hussein Badreddin al-Houthi reached a breaking point. Following accusations of massive financial corruption and being backed by the US & Saudi Arabia, Hussein al-Houthi was assassinated by the Yemen state, sparking Houthi and government clashes that would last until 2010, slaughtering thousands of Yemeni and displacing many more. Saleh would become increasingly desperate over this time - including repurposing special US forces designed to combat AQAP to instead fight the Houthi insurgency - and he began to lose control of the state security apparatus that he had spent decades constructing.
+
+All these factors came to a head in January 2011. Following the Jasmine Revolution in Tunisian, protests spearheaded by students at Sana'a university eventually culminated in tens of thousands demanding an end to Saleh's rule, a movement generally dubbed the Yemen Spring. The killing of hundreds of innocent protesters caused even his closest allies to side against him. Saleh eventually agreed to step down in April 2011, agreeing to transition power to his Vice President Abdrabbuh Mansur Hadi. Even though Saleh had lost significant support, though, many elements of the Yemen military remained loyal to him, and he would remain in the background for the following years. 
+
+Several different parties emerged from the Yemen Spring, and disputes on how best to resolve the conflict began straining the prospects of a peaceful transfer of power. Overseeing this transition was the Gulf Cooperation Council, headed by several Arab countries including Saudi Arabia, Qatar, and the United Arab Emirates. While originally considered a success, talks between all sides slowly but surely deteriorated for a plethora of reasons, primarily due to incompetence, stalling, and unfair representation between groups. 
+
+During the transition, as unemployment reached staggering amounts, a rapidly failing economy made Yemen desperate for any sort of economic assistance. Among the few options available included the International Monetary Fund (IMF) - but the IMF would only agree to provide loans if fuel subsidies were cut. Similar austerity cuts had led to deadly protests in the past, but when Hadi announced that fuel prices would double on July 30th, 2014, Ansar Allah and their supporters would begin their takeover of Yemen. 
+
+There are varying 
+
+## Data Wrangling 
+
+

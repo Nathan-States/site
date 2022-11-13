@@ -1,0 +1,447 @@
+---
+title: 'Explaining the COVID-19 Airline Bailout Controversy (In Ascending Order)'
+excerpt: 'An Excerpt'
+author: 'Nathan States'
+date: '2022-09-05'
+draft: true
+editor_options:
+  chunk_output_type: console
+---
+
+::: lead
+Was giving the airlines $54 billion the right play?
+:::
+
+```{r, echo=FALSE, out.width="100%", out.height="500px"}
+knitr::include_graphics("images/preview.jpg")
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+sysfonts::font_add_google("Playfair Display")
+showtext::showtext_auto()
+
+echarts4r::e_common(
+  theme = "echarts-theme.json",
+  font_family = "Playfair Display"
+)
+```
+
+## Background ✈️ ️
+
+When the COVID-19 
+
+
+
+### CEO Pay Disparity 
+
+
+
+### Unequal Compensation 
+
+
+
+### Legal Trouble 
+
+
+
+### Previous Subsidies 
+
+
+
+### Stock Buybacks 
+
+
+
+### Federal Tax Rate 
+
+
+
+### Final Thoughts 
+
+### Lack of Employment 
+
+
+
+## Grants to Airlines ✈️ ️ 
+
+According to the [Department of the Treasury](https://home.treasury.gov/policy-issues/coronavirus/assisting-american-industry/payroll-support-program-payments): 
+
+> Funds received by [PSP] must exclusively be used for the continuation of payment of employee wages, salaries, and benefits. 
+
+There were three separate PSP programs, with the government handing out payments over the course of year from 2020/20/04 - 2021/22/04 (not including a single payment for \$300,000 that was given in 2022 for some reason). According to the Treasury, "PSP1 provided assistance to over **600** companies, supporting *hundreds of thousands* of aviation jobs." As CEO of American Airlines Doug Parker stated in [December 2021](https://www.reuters.com/business/aerospace-defense/us-airlines-defend-54-billion-covid-19-government-lifeline-2021-12-15/), "It's not an exaggeration to say the program saved the airline industry." 
+
+However, the extent to which the Payroll Support Program accomplished this remains debatable, including whether airlines were deserving of such generous funds in the first place. 
+
+#### Quick Sidenotes 
+
+While not all data was available in the previous section, it *is* for this section. Therefore, these are **conclusive** amounts.
+
+As part of PSP, airlines had to pay back 26.2% of the total amount rewarded to them. These are considered loans, and are therefore not included in the data, but it should be noted that the total amount airlines received in sum is \$54 billion+. 
+
+### Biggest Beneficiaries  
+
+The treasury says they've assisted over 600 different airlines, but how were those funds distributed among them? 
+
+```{r}
+df %>%
+  dplyr::filter(`Parent Sector` == "airlines") %>%
+  dplyr::filter(`Grant Amount` > 100000000) %>%
+  dplyr::group_by(`Parent Company`) %>%
+  dplyr::summarise(Total = sum(`Grant Amount`),) %>%
+  dplyr::arrange(Total) %>%
+  e_chart(`Parent Company`) %>%
+  e_bar(Total, bind = `Parent Company`) %>%
+  e_flip_coords() %>%
+  e_legend(show = FALSE) %>%
+  e_title(
+    "Four Airlines Received Nearly 80% of Total Awards",
+    "COVID grant awards to airline industries (minimum $100 million)"
+  ) %>%
+  e_color("#0d5a74", background = "rgba(0, 0, 0, 0)") %>%
+  e_tooltip(
+    backgroundColor = "rgba(40, 40, 40, 0.75)",
+    borderColor = "rgba(0, 0, 0, 0)",
+    formatter = e_tooltip_item_formatter(style = "currency", currency = "USD"),
+    textStyle = list(
+      color = "#ffffff"
+    )
+  )
+```
+
+Nearly 79.5% of total funds went to just four companies; Southwest, United, Delta, and American airlines. Note that this amount includes a combined \$111 million in awards that was given to Wisconsin airlines, a company owned by United Airlines. 
+
+ExpressJet, who received over \$100 million in awards, announced on [August 24th of 2022](https://www.flyingmag.com/expressjet-files-chapter-11-bankruptcy-furloughs-1300-pilots/) that they were filing for Chapter 11 Bankruptcy with intent to liquidate. 
+
+### Billion Dollar Grants 
+
+Despite comprising 17.2% of the \$244.6 billion in funds, only 786 individual grants have been handed out, or about 0.48% of the 163,592 that have been awarded in sum. 
+
+Twelve awards have been for over \$1 billion - which also represents the 12 largest individual grants awarded across all companies. 
+
+```{r}
+df %>%
+  filter(`Parent Sector` == "airlines") %>%
+  filter(`Grant Amount` > 1000000000) %>%
+  select(`Award Date`, `Parent Company`, `Grant Amount`, `Award Details`) %>%
+  arrange(desc(`Grant Amount`)) %>%
+  group_by(`Parent Company`) %>%
+  gt() %>%
+  fmt_currency(
+    columns = `Grant Amount`,
+    currency = "USD"
+  ) %>%
+  tab_header(
+    title = md("Bailing Out the Airlines"),
+    subtitle = md("The twelve largest COVID stimulus grants awarded via the CARES and ARPA legislation went to the four largest airlines in the United States, who received 79.5% of total awards given to airlines. ")
+  ) %>%
+  gt_theme_538() %>%
+  tab_style(
+    style = "padding-top:10px;padding-right:10px;padding-left:10px;",
+    locations = cells_body(columns = everything()) 
+  ) %>%
+  opt_table_font(
+    font = list(
+      google_font(name = "Playfair Display"),
+      "Serif"
+    )
+  )
+```
+
+### Big Four Equity  
+
+You may be wondering how awards are being specified down to the exact dollar. According to Department of the [Treasury](https://home.treasury.gov/policy-issues/coronavirus/assisting-american-industry/payroll-support-program-payments):
+
+> As specified in section 4113 of the CARES Act, the amount to be received by each air carrier or contractor is *based on its payroll expenses from April 2019 through September 2019*, **subject to proration**. Funds received by these air carriers and contractors **must** exclusively be used for the continuation of apyment of employee wages, salaries, and benefits. 
+
+Unfortunately, data regarding payroll expenses aren't publicly available during that time period, so whether these amounts were distributed fairly is difficult to know.  
+
+There is, however, data for the total number of workers airlines had employed at the end of 2019, including the salary of an average worker - though this doesn't exist for every airline company, sadly. While not the exact formula, we would generally expect that each airline would receive funds proportional to the amount they pay they paid their employees in 2019, especially considering salary makes up the majority of payroll expenses. 
+
+Because only 2019 workforce data is available, only PSP1 is included.  
+
+```{r}
+df %>%
+  filter(`Award Details` == "1st Round Payment (PSP I)") %>%
+  filter(`Parent Sector` == "airlines") %>%
+  filter(`Median Worker Pay` > 0) %>%
+  filter(`Parent Total Workforce at end of 2019` > 0) %>%
+  group_by(`Parent Company`) %>%
+  summarise(
+    Awards = sum(`Grant Amount`),
+    Workers = mean(`Parent Total Workforce at end of 2019`), 
+    Salary = mean(`Median Worker Pay`)
+  ) %>%
+  mutate(
+    Award_Per_Worker = Awards / Workers,
+    Percent = Award_Per_Worker / Salary
+  ) %>%
+  arrange(desc(Percent)) %>%
+  gt() %>%
+  fmt_currency(
+    columns = c(Awards, Salary, Award_Per_Worker),
+    currency = "USD"
+  ) %>%
+  fmt_percent(
+    columns = Percent,
+    decimals = 1
+  ) %>%
+  tab_header(
+    title = md("Delta Airlines leads all companies in amount per worker")
+  ) %>%
+  gt_theme_nytimes()
+```
+
+This prediction clearly doesn't hold true, and there are several notable disparities in award amounts between airlines.  
+
++ Delta received more funds per employee than Southwest did despite paying their workers nearly \$20,000 *less* on average. 
++ Both Hawaiian Holdings and Sprite Airlines had roughly the same number of employees, as well as similar award totals, even though Hawaiian pays their employees close to **45% more**. 
++ Similarly, Alaska Air received about \$4,500 less per employee than Allegiant Air, even though Alaska pays their workers \$15,000 *more* on average. 
+
+It should be said again that this isn't the formula the Treasury used when deciding award amounts, and we'd expect some differences naturally. Some of these differences may also be explained by the size of the airline, as smaller companies seemed to have received more on average, though this does not hold true for Hawaiian Holdings. 
+
+### Lobbying 
+
+I was also curious if these imbalances were the result of lobbying efforts that occurred during the months leading up to the pandemic. The millions of dollars that flowed into Congress from late 2019 and early 2020 certainly would play a part in the amount allocated per company.  
+
+Here, we chart the total number lobbying expenditure from 2019 Q3 to 2020 Q2 among the four largest airlines. 
+
+```{r, echo=FALSE, message=FALSE}
+lobbying <- read_csv(here("data", "big-four-lobbying.csv"))
+```
+
+```{r}
+lobbying %>%
+  group_by(`Parent Company`) %>%
+  e_charts(`Quarter`) %>%
+  e_line(`Lobbying Expenditure`) %>%
+  e_y_axis(
+    formatter = e_axis_formatter(style = "currency", currency = "USD")
+  ) %>%
+  e_legend(
+    orient = "vertical", 
+    left = 0, 
+    top = 0.5
+  ) %>%
+  e_color(
+    c("#0d5a74", "#6b4766", "#99aebb", "#9f7899")
+  ) %>%
+  e_title(
+    "Lobbying expenditure among the four largest U.S. airlines"
+  ) %>%
+  e_tooltip(
+    formatter = e_tooltip_item_formatter(style = "currency", currency = "USD"),
+    trigger = "axis",
+    backgroundColor = "rgba(38, 38, 38, 0.5)",
+    borderColor = "rgba(0, 0, 0, 0)",
+    textStyle = list(
+      color = "#ffffff"
+    )
+  )
+```
+
+Of the total \$14,490,000 spent on lobbying between Q3 2019 to Q2 2020 - including the hiring of over 100 lobbyists - Southwest Airlines accounted for only **9.25%** of total spending, the lowest among the top four by a noticeable margin. Q1 2020 saw significant increases in lobbying expenditure among all airlines, though this dropped significantly in Q2. 
+
+### Integrity Issues 
+
+The decision for the government to bail out the airline industry remains controversial for a variety of reasons, and this dataset offers some insights into what some of those might be. 
+
+#### Pay Disparity 
+
+For starters; large disparities in pay between CEO and workers. Why should the government subsidize someone ease's company when his own salary can pay that of nearly 195 workers (at least in the case of American Airlines)? 
+
+```{r}
+df %>%
+  filter(`Grant Amount` > 100000000) %>%
+  filter(`Parent Sector` == "airlines") %>%
+  group_by(`Parent Company`) %>%
+  filter(`Median Worker Pay` != 0) %>%
+  summarise(
+    Median_Worker_Salary = mean(`Median Worker Pay`),
+    CEO_Salary = mean(`CEO Pay`)
+  ) %>%
+  mutate(
+    Percentage_of_CEO = Median_Worker_Salary / CEO_Salary
+  ) %>%
+  arrange(desc(Percentage_of_CEO)) %>%
+  gt() %>%
+  fmt_currency(
+    columns = c(Median_Worker_Salary, CEO_Salary),
+    currency = "USD"
+  ) %>%
+  fmt_percent(
+    columns = Percentage_of_CEO,
+    decimals = 2
+  ) %>%
+  data_color(
+    columns = Percentage_of_CEO,
+    colors = scales::col_numeric(
+      palette = c("#105f9c", "#648cc1", "#a2bde7"),
+      domain = c(0.5, 2.2)
+    )
+  ) %>%
+  tab_header(
+    title = md("Delta Airlines leads all companies in amount per worker")
+  ) %>%
+  gt_theme_nytimes() %>%
+  cols_align(
+    align = "right",
+    columns = Percentage_of_CEO
+  )
+```
+
+It's worth noting that disparities between CEO pay and that of their employees was not always so drastic. A [report](https://www.epi.org/publication/ceo-pay-in-2020/) by the *Economic Policy Institute* concluded CEO compensation has grown 1,322% while the pay of average workers has only grown 18% in comparison. It also seems this disproportionality is more pronounced in larger airlines compared to smaller ones. 
+
+### Subsidies 
+
+Should previous government subsidies be a factor when deciding award amounts? 
+
+```{r}
+df %>%
+  filter(`Grant Amount` > 100000000) %>%
+  filter(`Parent Sector` == "airlines") %>%
+  group_by(`Parent Company`) %>%
+  summarise(
+    Grants = sum(`Grant Amount`),
+    Subsidies = mean(`Parent Total Federal, State, and Local Subsidies Since 2010`),
+    across()
+  ) %>%
+  mutate(
+    Total = Grants + Subsidies
+  ) %>%
+  arrange(desc(Total)) %>%
+  gt() %>%
+  fmt_currency(
+    columns = c(Grants, Subsidies, Total),
+    currency = "USD"
+  ) %>%
+  tab_header(
+    title = md("Delta Airlines leads all companies in amount per worker")
+  ) %>%
+  tab_style(
+    style = list(
+      cell_fill(color = "#105f9c")
+    ),
+    locations = cells_body(rows = 5) 
+  ) %>%
+  gt_theme_nytimes()
+```
+
+Generally speaking, airline companies didn't receive nearly as much in subsidies since 2010 compared to that of COVID grants. Those funds have been distributed very unevenly, though. Among the top four, both American and United have received over \$100 million since 2010. Delta has received slightly less than \$5 million; for Southwest, just \$500,000. 
+
+SkyWest appears as a massive outlier, having received over \$1.144 billion in total subsidies since 2010, more than double all companies listed in the table combined. The vast majority of these are part of the Essential Air Service, a program that began in the 1970s to help small communities maintain a minimum flight service. The plurality of airports receiving subsidies from the program are in Alaska, a state not profitable for commercial airlines.
+
+#### Negative Tax Rates
+
+Another question; should companies who contribute nothing in taxes be given billions in taxpayer funds? As a result of the 2017 Trump-GOP tax cuts, which lowered the corporate tax rate from 35% to 21% and expanded depreciation-related tax breaks to corporations, airlines began utilizing tax deductions to defer nearly all of their income taxes in 2018 and 2019 over to future years. What this essentially meant is that airline companies were able to pay extremely little in income tax - in some cases, recording **[negative](https://itep.org/covid-19-is-no-excuse-for-airline-industry-or-any-other-corporate-tax-cut/)** amounts. 
+
+In terms of funds, over \$12.795 billion went to companies who recorded negative corporate income tax rates for 2018-2019, nearly 25% of all money given to airlines. 
+
+```{r}
+df %>%
+  filter(`Parent Sector` == "airlines") %>%
+  group_by(`Parent Company`) %>%
+  summarise(
+    Tax_Rate = mean(`Parent Federal Corporate Income Tax Rate`) / 100,
+    Total_Awards = sum(`Grant Amount`) 
+  ) %>%
+  drop_na() %>%
+  gt() %>%
+  fmt_currency(
+    columns = Total_Awards,
+    currency = "USD"
+  ) %>%
+  fmt_percent(
+    columns = Tax_Rate,
+    decimals = 1
+  ) %>%
+  tab_header(
+    title = md("Delta Airlines leads all companies in amount per worker")
+  ) %>%
+  gt_theme_nytimes()
+```
+
+It should also be noted that airlines are [far from the only industry](https://publicintegrity.org/inequality-poverty-opportunity/taxes/trumps-tax-cuts/you-paid-taxes-these-corporations-didnt/) to take advantage of these tax cuts. 
+
+### Stock Buybacks 
+
+Prior to 1982, stock buybacks - the process of a company buying shares of their own stock - was generally considered "market manipulation" and subjected to harsh regulations. Companies would usually instead opt to increase dividend size, reinvest in areas such as R&D, or increase their labor size. When Rule 10b-18 was passed by the SEC, it reduced liability for companies when purchasing stock buybacks, which made it easier for large scale repurchases.
+
+Stock buybacks shrink the total number of shares on the market, which in turn, increases the individual share price of that stock, enriching current investors and company owners. If a company believes that there stock is undervalued, stock buybacks offer a simple and low-risk investment - though [empirical evidence](https://hbr.org/2020/01/why-stock-buybacks-are-dangerous-for-the-economy) shows that companies rarely do this.  
+
+Regardless of one's opinions about stock buybacks, condensing revenue into the hands of an [increasingly smaller number of people](https://www.cnbc.com/2022/04/01/richest-one-percent-gained-trillions-in-wealth-2021.html) did nothing to prepare airlines from the economic damages of COVID-19. [From 2010 - 2019](https://www.bloomberg.com/news/articles/2020-03-16/u-s-airlines-spent-96-of-free-cash-flow-on-buybacks-chart), the four largest airlines spent 96% of their total cash flow on stock buybacks, a combined total of over \$45 billion. 
+
+```{r}
+buybacks <- read_csv(here("data", "buybacks.csv"))
+buybacks$date <- mdy(buybacks$date)
+
+asdf <- buybacks %>%
+  group_by(company) %>%
+  arrange(date) %>%
+  mutate(total = cumsum(replace_na(amount, 0))) %>%
+  mutate(total = (total * 1000000)) %>%
+  e_chart(date) %>%
+  e_area(total, stack = "grp") %>%
+  e_y_axis(
+    formatter = e_axis_formatter(style = "currency", currency = "USD")
+  ) %>%
+  e_color(
+    c("#0d5a74", "#6b4766", "#99aebb", "#9f7899")
+  ) %>%
+  e_title(
+    "Lobbying expenditure among the four largest U.S. airlines"
+  ) %>%
+  e_legend() %>%
+  e_tooltip(
+    trigger = "axis",
+    backgroundColor = "rgba(38, 38, 38, 0.5)",
+    borderColor = "rgba(0, 0, 0, 0)",
+    textStyle = list(
+      color = "#ffffff"
+    )
+  )
+
+asdf
+```
+
+Once again - regardless of how one feels on stock buybacks - these airlines could have used these funds to better improve operational costs and improve the lives of their employees, the overwhelming majority of whom do not own stocks in the company's they work for. As a result, stock buybacks was banned for PSP recipients, though this regulation ends at the end of September 2022. Airline union leaders have [recently](https://www.reuters.com/business/aerospace-defense/airline-unions-launch-campaign-against-stock-buybacks-2022-08-18/) supported extending this provision amid fears that future company profits will not go towards improving operational costs and solving the recent [staffing shortage](https://www.businessinsider.com/airlines-labor-shortage-cancelling-flights-aviation-jobs-market-2022-6).
+
+#### Legal Issues 
+
+Since 2000, there has been 2,299 lawsuits or government-imposed fines totaling over \$518 million against the four largest airlines *alone*. 
+
+While most of these lawsuits have been for small, safety-related offenses, usually settled with a small fine, airlines have endured costly penalties from violating employee rights, breaking consumer protection laws, breaking environmental regulations, or breaching terms of contract. 
+
+The biggest fine imposed over the last 22 years was against United Airlines, who agreed to pay \$49 million for defrauding the United States government after it had falsified international mail delivery data from the USPS, which allowed them to "accept millions of dollars of payments to which the company was not entitled," [according to the DOJ](https://www.justice.gov/opa/pr/united-airlines-pay-49-million-resolve-criminal-fraud-charges-and-civil-claims). 
+
+*Good Jobs First* has a separate database called **Violation Tracker**, which you can find [here](https://violationtracker.goodjobsfirst.org/). They compile data on all regulatory violations committed by corporations in the United States, both federal and private cases. 
+
+While there were provisions to prevent stock buybacks, there were no considerations to whether companies who frequently commit crimes should have funds reduced. 
+
+```{r}
+df %>%
+  filter(`Parent Sector` == "airlines") %>%
+  group_by(`Parent Company`) %>%
+  summarise(
+    employee = mean(`Parent Employment-related Penalties Since 2010`),
+    contracting = mean(`Parent Government-contracting-related Penalties Since 2010`),
+    environment_and_safety = mean(`Parent Environmental / Healthcare / Safety Penalties Since 2010`),
+    protection_and_competition = mean(`Parent Consumer Protection / Financial / Competition-related Penaties Since 2010`)
+  ) %>%
+  mutate(
+    total = employee + contracting + environment_and_safety + protection_and_competition
+  ) %>%
+  filter(total > 5000000) %>%
+  arrange(total) %>%
+  gt() %>%
+  fmt_currency(
+    columns = c(employee, contracting, environment_and_safety, protection_and_competition, total),
+    currency = "USD"
+  ) %>%
+  tab_header(
+    title = md("Delta Airlines leads all companies in amount per worker")
+  ) %>%
+  gt_theme_nytimes()
+```
+
+#### Other Considerations 
+
