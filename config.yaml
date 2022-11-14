@@ -1,7 +1,7 @@
-baseURL: nathanstates.com
+baseURL:
 theme: hugo-apero
 languageCode: en
-title: NS
+title: NS 
 author: Nathan States
 copyright: ''
 googleAnalytics: ''
@@ -64,7 +64,7 @@ params:
   utterances:
     issue_term: pathname
     label: 'comments :crystal_ball:'
-    repo_name: Nathan-States/nathan-states.com
+    repo_name: Nathan-States/site
     theme: boxy-light
     use_utterances: yes
 taxonomies:
