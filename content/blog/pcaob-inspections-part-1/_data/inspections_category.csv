@@ -1,0 +1,301 @@
+year,firm,category,audits_inspected,audits_deficient
+2014,Deloitte,Communication Services,1,0
+2014,Deloitte,Consumer Discretionary,8,1
+2014,Deloitte,Consumer Staples,3,1
+2014,Deloitte,Energy,4,0
+2014,Deloitte,Financials,11,7
+2014,Deloitte,Health Care,6,0
+2014,Deloitte,Industrials,10,1
+2014,Deloitte,Information Technology,7,1
+2014,Deloitte,Materials,2,1
+2014,Deloitte,Utilities ,1,0
+2015,Deloitte,Communication Services,1,0
+2015,Deloitte,Consumer Discretionary,7,2
+2015,Deloitte,Consumer Staples,1,0
+2015,Deloitte,Energy,3,2
+2015,Deloitte,Financials,11,1
+2015,Deloitte,Health Care,5,0
+2015,Deloitte,Industrials,7,3
+2015,Deloitte,Information Technology,11,5
+2015,Deloitte,Materials,7,0
+2015,Deloitte,Utilities ,2,0
+2016,Deloitte,Communication Services,0,0
+2016,Deloitte,Consumer Discretionary,9,0
+2016,Deloitte,Consumer Staples,6,1
+2016,Deloitte,Energy,5,0
+2016,Deloitte,Financials,4,5
+2016,Deloitte,Health Care,1,1
+2016,Deloitte,Industrials,6,2
+2016,Deloitte,Information Technology,7,2
+2016,Deloitte,Materials,1,2
+2016,Deloitte,Utilities ,3,0
+2017,Deloitte,Communication Services,0,0
+2017,Deloitte,Consumer Discretionary,8,0
+2017,Deloitte,Consumer Staples,3,0
+2017,Deloitte,Energy,5,1
+2017,Deloitte,Financials,5,1
+2017,Deloitte,Health Care,4,4
+2017,Deloitte,Industrials,6,3
+2017,Deloitte,Information Technology,6,2
+2017,Deloitte,Materials,2,0
+2017,Deloitte,Real Estate,3,0
+2017,Deloitte,Utilities ,2,0
+2018,Deloitte,Consumer Discretionary,8,1
+2018,Deloitte,Consumer Staples,2,0
+2018,Deloitte,Energy,3,0
+2018,Deloitte,Financials,6,2
+2018,Deloitte,Health Care,4,2
+2018,Deloitte,Industrials,6,1
+2018,Deloitte,Information Technology,7,0
+2018,Deloitte,Materials,6,0
+2018,Deloitte,Real Estate,3,0
+2018,Deloitte,Utilities ,1,0
+2019,Deloitte,Benefit Plans,1,0
+2019,Deloitte,Communication Services,1,0
+2019,Deloitte,Consumer Discretionary,8,0
+2019,Deloitte,Consumer Staples,3,0
+2019,Deloitte,Energy,1,1
+2019,Deloitte,Financials,5,1
+2019,Deloitte,Health Care,8,1
+2019,Deloitte,Industrials,7,1
+2019,Deloitte,Information Technology,12,1
+2019,Deloitte,Materials,0,1
+2019,Deloitte,Real Estate,4,0
+2019,Deloitte,Utilities ,2,0
+2020,Deloitte,Benefit Plans,0,0
+2020,Deloitte,Communication Services,2,0
+2020,Deloitte,Consumer Discretionary,8,0
+2020,Deloitte,Consumer Staples,4,1
+2020,Deloitte,Energy,5,0
+2020,Deloitte,Financials,6,0
+2020,Deloitte,Health Care,7,0
+2020,Deloitte,Industrials,9,1
+2020,Deloitte,Information Technology,7,0
+2020,Deloitte,Materials,1,0
+2020,Deloitte,Real Estate,1,0
+2020,Deloitte,Utilities ,1,0
+2014,KPMG,Communication Services,1,1
+2014,KPMG,Consumer Discretionary,7,3
+2014,KPMG,Consumer Staples,3,2
+2014,KPMG,Energy,6,2
+2014,KPMG,Financials,13,9
+2014,KPMG,Health Care,4,3
+2014,KPMG,Industrials,8,4
+2014,KPMG,Information Technology,8,3
+2014,KPMG,Materials,2,0
+2015,KPMG,Consumer Discretionary,7,3
+2015,KPMG,Consumer Staples,2,0
+2015,KPMG,Energy,1,0
+2015,KPMG,Financials,20,9
+2015,KPMG,Health Care,6,3
+2015,KPMG,Industrials,7,2
+2015,KPMG,Information Technology,5,2
+2015,KPMG,Materials,3,1
+2015,KPMG,Utilities ,1,0
+2016,KPMG,Communication Services,0,0
+2016,KPMG,Consumer Discretionary,5,3
+2016,KPMG,Consumer Staples,1,1
+2016,KPMG,Energy,5,2
+2016,KPMG,Financials,3,9
+2016,KPMG,Health Care,2,1
+2016,KPMG,Industrials,1,1
+2016,KPMG,Information Technology,8,4
+2016,KPMG,Materials,3,1
+2016,KPMG,Real Estate,1,0
+2016,KPMG,Utilities ,0,0
+2017,KPMG,Communication Services,1,0
+2017,KPMG,Consumer Discretionary,1,1
+2017,KPMG,Consumer Staples,0,2
+2017,KPMG,Energy,4,2
+2017,KPMG,Financials,4,10
+2017,KPMG,Health Care,6,1
+2017,KPMG,Industrials,5,3
+2017,KPMG,Information Technology,4,2
+2017,KPMG,Materials,1,3
+2017,KPMG,Real Estate,0,1
+2017,KPMG,Utilities ,0,1
+2018,KPMG,Communication Services,1,3
+2018,KPMG,Consumer Discretionary,3,1
+2018,KPMG,Consumer Staples,2,0
+2018,KPMG,Energy,3,1
+2018,KPMG,Financials,9,4
+2018,KPMG,Health Care,2,2
+2018,KPMG,Industrials,2,4
+2018,KPMG,Information Technology,9,2
+2018,KPMG,Materials,2,0
+2018,KPMG,Real Estate,0,1
+2018,KPMG,Utilities ,0,1
+2019,KPMG,Benefit Plans,0,1
+2019,KPMG,Communication Services,2,1
+2019,KPMG,Consumer Discretionary,5,0
+2019,KPMG,Consumer Staples,3,0
+2019,KPMG,Energy,0,0
+2019,KPMG,Financials,9,4
+2019,KPMG,Health Care,7,2
+2019,KPMG,Industrials,4,3
+2019,KPMG,Information Technology,5,3
+2019,KPMG,Materials,3,2
+2019,KPMG,Real Estate,2,1
+2019,KPMG,Utilities ,0,1
+2020,KPMG,Communication Services,2,1
+2020,KPMG,Consumer Discretionary,7,2
+2020,KPMG,Consumer Staples,3,0
+2020,KPMG,Energy,4,0
+2020,KPMG,Financials,9,4
+2020,KPMG,Health Care,6,6
+2020,KPMG,Industrials,0,1
+2020,KPMG,Information Technology,3,1
+2020,KPMG,Materials,2,0
+2020,KPMG,Real Estate,2,0
+2020,KPMG,Utilities ,0,0
+2014,PricewaterhouseCoopers,Consumer Discretionary,12,2
+2014,PricewaterhouseCoopers,Consumer Staples,5,2
+2014,PricewaterhouseCoopers,Energy,4,1
+2014,PricewaterhouseCoopers,Financials,11,2
+2014,PricewaterhouseCoopers,Health Care,5,2
+2014,PricewaterhouseCoopers,Industrials,8,1
+2014,PricewaterhouseCoopers,Information Technology,7,1
+2014,PricewaterhouseCoopers,Materials,5,3
+2014,PricewaterhouseCoopers,Utilities ,1,0
+2015,PricewaterhouseCoopers,Consumer Discretionary,5,1
+2015,PricewaterhouseCoopers,Consumer Staples,3,0
+2015,PricewaterhouseCoopers,Energy,4,0
+2015,PricewaterhouseCoopers,Financials,9,3
+2015,PricewaterhouseCoopers,Health Care,13,1
+2015,PricewaterhouseCoopers,Industrials,7,2
+2015,PricewaterhouseCoopers,Information Technology,8,2
+2015,PricewaterhouseCoopers,Materials,5,2
+2015,PricewaterhouseCoopers,Utilities ,1,1
+2016,PricewaterhouseCoopers,Communication Services,0,0
+2016,PricewaterhouseCoopers,Consumer Discretionary,5,1
+2016,PricewaterhouseCoopers,Consumer Staples,2,0
+2016,PricewaterhouseCoopers,Energy,7,2
+2016,PricewaterhouseCoopers,Financials,8,0
+2016,PricewaterhouseCoopers,Health Care,4,1
+2016,PricewaterhouseCoopers,Industrials,10,3
+2016,PricewaterhouseCoopers,Information Technology,7,2
+2016,PricewaterhouseCoopers,Materials,2,1
+2016,PricewaterhouseCoopers,Real Estate,0,0
+2016,PricewaterhouseCoopers,Utilities ,0,1
+2017,PricewaterhouseCoopers,Communication Services,0,1
+2017,PricewaterhouseCoopers,Consumer Discretionary,3,2
+2017,PricewaterhouseCoopers,Consumer Staples,2,0
+2017,PricewaterhouseCoopers,Energy,4,1
+2017,PricewaterhouseCoopers,Financials,5,2
+2017,PricewaterhouseCoopers,Health Care,5,2
+2017,PricewaterhouseCoopers,Industrials,5,4
+2017,PricewaterhouseCoopers,Information Technology,11,0
+2017,PricewaterhouseCoopers,Materials,2,1
+2017,PricewaterhouseCoopers,Real Estate,3,0
+2017,PricewaterhouseCoopers,Utilities ,2,0
+2018,PricewaterhouseCoopers,Communication Services,3,0
+2018,PricewaterhouseCoopers,Consumer Discretionary,5,1
+2018,PricewaterhouseCoopers,Consumer Staples,1,0
+2018,PricewaterhouseCoopers,Energy,4,0
+2018,PricewaterhouseCoopers,Financials,4,3
+2018,PricewaterhouseCoopers,Health Care,5,1
+2018,PricewaterhouseCoopers,Industrials,4,4
+2018,PricewaterhouseCoopers,Information Technology,7,2
+2018,PricewaterhouseCoopers,Materials,4,2
+2018,PricewaterhouseCoopers,Real Estate,0,0
+2018,PricewaterhouseCoopers,Utilities ,4,1
+2019,PricewaterhouseCoopers,Benefit Plans,1,0
+2019,PricewaterhouseCoopers,Communication Services,4,0
+2019,PricewaterhouseCoopers,Consumer Discretionary,2,0
+2019,PricewaterhouseCoopers,Consumer Staples,2,0
+2019,PricewaterhouseCoopers,Energy,2,2
+2019,PricewaterhouseCoopers,Financials,4,4
+2019,PricewaterhouseCoopers,Health Care,8,3
+2019,PricewaterhouseCoopers,Industrials,4,4
+2019,PricewaterhouseCoopers,Information Technology,9,5
+2019,PricewaterhouseCoopers,Materials,3,0
+2019,PricewaterhouseCoopers,Real Estate,1,0
+2019,PricewaterhouseCoopers,Utilities ,2,0
+2020,PricewaterhouseCoopers,Benefit Plans,0,0
+2020,PricewaterhouseCoopers,Communication Services,3,0
+2020,PricewaterhouseCoopers,Consumer Discretionary,7,0
+2020,PricewaterhouseCoopers,Consumer Staples,3,0
+2020,PricewaterhouseCoopers,Energy,4,0
+2020,PricewaterhouseCoopers,Financials,6,0
+2020,PricewaterhouseCoopers,Health Care,7,0
+2020,PricewaterhouseCoopers,Industrials,8,1
+2020,PricewaterhouseCoopers,Information Technology,7,0
+2020,PricewaterhouseCoopers,Materials,3,0
+2020,PricewaterhouseCoopers,Real Estate,2,0
+2020,PricewaterhouseCoopers,Utilities ,1,0
+2014,Ernst & Young,Consumer Discretionary,7,1
+2014,Ernst & Young,Consumer Staples,3,1
+2014,Ernst & Young,Energy,3,1
+2014,Ernst & Young,Financials,10,5
+2014,Ernst & Young,Health Care,9,4
+2014,Ernst & Young,Industrials,8,3
+2014,Ernst & Young,Information Technology,12,2
+2014,Ernst & Young,Materials,4,2
+2015,Ernst & Young,Consumer Discretionary,8,2
+2015,Ernst & Young,Consumer Staples,1,0
+2015,Ernst & Young,Energy,5,2
+2015,Ernst & Young,Financials,13,4
+2015,Ernst & Young,Health Care,7,4
+2015,Ernst & Young,Industrials,9,0
+2015,Ernst & Young,Information Technology,10,3
+2015,Ernst & Young,Materials,2,1
+2016,Ernst & Young,Communication Services,0,0
+2016,Ernst & Young,Consumer Discretionary,4,2
+2016,Ernst & Young,Consumer Staples,0,1
+2016,Ernst & Young,Energy,3,0
+2016,Ernst & Young,Financials,9,1
+2016,Ernst & Young,Health Care,5,2
+2016,Ernst & Young,Industrials,4,7
+2016,Ernst & Young,Information Technology,8,1
+2016,Ernst & Young,Materials,6,1
+2016,Ernst & Young,Real Estate,0,0
+2016,Ernst & Young,Utilities ,1,0
+2016,Ernst & Young,Other,0,0
+2017,Ernst & Young,Communication Services,0,0
+2017,Ernst & Young,Consumer Discretionary,4,3
+2017,Ernst & Young,Consumer Staples,0,0
+2017,Ernst & Young,Energy,4,2
+2017,Ernst & Young,Financials,6,3
+2017,Ernst & Young,Health Care,4,2
+2017,Ernst & Young,Industrials,6,3
+2017,Ernst & Young,Information Technology,8,2
+2017,Ernst & Young,Materials,5,1
+2017,Ernst & Young,Real Estate,1,0
+2017,Ernst & Young,Utilities ,0,0
+2017,Ernst & Young,Other,0,1
+2018,Ernst & Young,Communication Services,3,0
+2018,Ernst & Young,Consumer Discretionary,7,2
+2018,Ernst & Young,Consumer Staples,2,0
+2018,Ernst & Young,Energy,4,1
+2018,Ernst & Young,Financials,4,3
+2018,Ernst & Young,Health Care,7,2
+2018,Ernst & Young,Industrials,4,4
+2018,Ernst & Young,Information Technology,6,1
+2018,Ernst & Young,Materials,2,1
+2018,Ernst & Young,Real Estate,1,0
+2018,Ernst & Young,Utilities ,0,0
+2018,Ernst & Young,Other,0,0
+2019,Ernst & Young,Benefit Plans,1,0
+2019,Ernst & Young,Communication Services,1,1
+2019,Ernst & Young,Consumer Discretionary,4,1
+2019,Ernst & Young,Consumer Staples,1,2
+2019,Ernst & Young,Energy,1,0
+2019,Ernst & Young,Financials,11,1
+2019,Ernst & Young,Health Care,11,0
+2019,Ernst & Young,Industrials,8,3
+2019,Ernst & Young,Information Technology,6,2
+2019,Ernst & Young,Materials,3,1
+2019,Ernst & Young,Real Estate,1,0
+2019,Ernst & Young,Utilities ,1,0
+2020,Ernst & Young,Benefit Plans,0,0
+2020,Ernst & Young,Communication Services,5,0
+2020,Ernst & Young,Consumer Discretionary,5,3
+2020,Ernst & Young,Consumer Staples,4,0
+2020,Ernst & Young,Energy,3,1
+2020,Ernst & Young,Financials,7,0
+2020,Ernst & Young,Health Care,6,2
+2020,Ernst & Young,Industrials,4,2
+2020,Ernst & Young,Information Technology,7,0
+2020,Ernst & Young,Materials,0,0
+2020,Ernst & Young,Real Estate,3,0
+2020,Ernst & Young,Utilities ,0,0

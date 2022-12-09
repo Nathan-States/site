@@ -1,11 +1,11 @@
 ---
 action_label: About &rarr;
 action_link: /about
-action_type: text
-description: I’m a **data scientist** & **programmer** who specializes in data visualizations, interactive web applications, and UX design. This blog is dedicated to discussing *socioeconomic* and *political topics* that I'm passionate about using these tools.
+action_type: text 
+description: I'm a *data scientist* & *programmer* interested in economic and international relations topics. This website hosts all my **data visualizations**, **web applications**, and **posts** on subjects of personal interest.
 image_left: false
 number_categories: 5
-number_featured: 3
+number_featured: 3 
 show_action_link: true
 show_featured: true
 show_social_links: false

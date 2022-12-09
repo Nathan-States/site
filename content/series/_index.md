@@ -1,11 +1,11 @@
 ---
 title: Series
 description: |
-  🚧 WORK IN PROGRESS 🚧
+  Collection of content.
 layout: list
-show_author_byline: false
-show_button_links: true
-show_post_date: true
+show_author_byline: false 
+show_button_links: true 
+show_post_date: true 
 show_post_thumbnail: true
 
 cascade:

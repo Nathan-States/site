@@ -1,19 +1,22 @@
 ---
-title: "Bengaluru Complaints Supervised Classification Model"
-excerpt: "Categorizing over 100,000 complaints from the *Silicon Valley* of India "
-author: Nathan States
+title: 'Bengaluru Complaints Supervised Classification Model'
+excerpt: 'Categorizing over 100,000 complaints from the *Silicon Valley* of India.'
+author: 'Nathan States'
 date: '2022-08-22'
 slug: []
 categories: []
-editor_options:
-  chunk_output_type: console
+tags: []
 ---
 
-```{r, include = FALSE, message=FALSE, warning=FALSE}
-here::set_here()
-```
-
 ```{css, echo=FALSE}
+.figcaption {
+  font-size: 0.8em;
+}
+
+.body {
+  background-color: #fcfcfc;
+}
+
 .img {
   height: auto;
   max-width: 100%;
@@ -56,15 +59,18 @@ here::set_here()
 }
 ```
 
-:::{.box-width}
-```{r, echo=FALSE}
-knitr::include_graphics("preview.jpg")
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+# Set Directory
+here::set_here()
 ```
+
+:::{.most-width}
+![](preview.jpg)
 :::
 
 ## Results 
 
-* Over 80% of complaints filed were related to street lights not working, road maintenance issues, or garbage collection issues. 
+* **Over 80%** of complaints filed were related to street lights not working, road maintenance, or garbage collection issues. 
 * Of the four classification models, the linear support vector classifier performed the best, recording **88.773%** accuracy. The top three models all performed similarly as well, though, with all falling within roughly three percentage points.
 * Improvements were made by increasing the number of stop words, as well as combining smaller categories into larger ones. Using the LinearSVC, these changes led to a *3.214%* increase, ultimately recording an accuracy of **91.987%**. 
 * Further improvements could be had by adding to the stop word list, changing the contents of the "Others" category, and adjusting the downsampling of the model. 
@@ -92,11 +98,11 @@ knitr::include_graphics("preview.jpg")
 
 ## Background <a id="background"></a>
 
-Text data can be one of the more difficult data types to use in analytics, but raw text is invaluable in many different ways. Using simple Python libraries, modern machine learning models can parse thousands of rows in seconds, quickly understanding blocks of text in numerous, useful ways. One of the most common tasks when dealing with text data is to group rows into different categories, which can provide a quick summary of a data. 
+Text data can be one of the more difficult data types to use in analytics, but raw text is invaluable in many different ways. Using simple Python libraries, modern machine learning models can parse thousands of rows in seconds, which can be used for various functions. One of the most common tasks is *classification*.  
 
-The *Bruhat Bengaluru Mahangara Palike* (BBMP) - the administrative body that oversees city development in Bengaluru, commonly referred to as the *Silicon Valley* of India - created a web application that allows citizens to file grievances with the city. From February 8th, 2020 to February 21st, 2021, a total of **105,956** complaints were filed with the city, translating to roughly 280 grievances a day. Exploring this data not only provides insight into the most common problems facing the city of Bengaluru (or at least the complaints most likely to filed), but also presents an opportunity to quantify and categorize them. 
+The *Bruhat Bengaluru Mahangara Palike* (BBMP) - an administrative body that oversees city development in Bengaluru, a large tech city in India - created a web application that allows citizens to file grievances with the city. From February 8th, 2020 to February 21st, 2021, a total of **105,956** complaints were filed with the city, translating to roughly 280 grievances a day. Exploring this data not only provides insight into the most common problems facing the city of Bengaluru (or at least the complaints most likely to be filed), but also presents an opportunity to quantify and categorize them. 
 
-In this data, grievances have been manually categorized by the administrators who oversee the app at BBMP, but this is extremely inefficient. Usefully, though, the developers have already created categories that they felt best sorted the data, which means (assuming complaints don't change substantially in the future) we can train a machine learning model that performs this task automatically. Because the categories are already defined, this will be a **supervised** classification model. 
+In the dataset, complaints have been manually categorized by the administrators who oversee the app at BBMP, but this is extremely inefficient. Usefully, though, the developers have already created categories that they felt best sorted the data, which means (assuming complaints don't change substantially in the future) we can train a machine learning model that performs this task automatically. Because the categories are already defined, this will be a **supervised** classification model. 
 
 ## Data Wrangling <a id="data-wrangling"></a>
 
@@ -124,9 +130,9 @@ grievances <- readr::read_csv("bengaluru-grievances.csv")
 
 The admins at BBMP keep their data neat and tidy, so there's not many problems to fix. There are a couple things to consider, however. 
 
-The first issue is that some descriptions are extremely short, making classifying them accurately near impossible. We can fix this by limiting the number of characters in a description, though the appropriate number of rows to remove is debatable. Ideally, we don't want to exclude too much of the data while still removing descriptions too short to be properly categorized. 
+The first issue is that some descriptions are extremely short, making classifying them accurately near impossible. We can limit the number of characters that a complaint must have, though the appropriate number of rows to remove is debatable. Ideally, we don't want to exclude too much of the data while still removing descriptions too short to be properly categorized. 
 
-Using `str_length` from the `stringr` package, we see that 5,392 complaints contained fewer than 12 characters, meaning removing them would still preserve 95% of the original data. Using `filter` from `dplyr`, we keep all complaints containing more than 12 characters. 
+Using `str_length` from the `stringr` package, we see 5,392 complaints contained fewer than 12 characters, meaning removing them would still preserve 95% of the original data. Using `filter` from `dplyr`, we can keep all complaints containing more than 12 characters. 
 
 ```{r, echo=TRUE, message=FALSE, warning=FALSE}
 # Counting number of rows 
@@ -141,22 +147,22 @@ grievances <- grievances %>%
   filter(str_length(description) > 12)
 ```
 
-The other consideration is whether the existing categories accurately reflect the data or not. It's possible certain similarities between different categories would better be condensed into one, and likewise, single columns into multiple ones. These changes may not only better describe the data, but improve overall accuracy in the long run. 
+The other consideration is whether the existing categories accurately reflect the data or not. It's possible certain similarities between different categories would better be combined into one, and likewise, single categories that should be multiple ones. These changes might not only provide a better description of the data, but improve accuracy in the long run. 
 
-Doing so would require a major overhaul to the data, requiring reclassifying all the complaints into new categories. For now, we will leave the original categories intact and proceed, but future models may benefit from reclassification.  
+For now, we will leave the original categories intact and proceed, but future models may benefit from this step.  
 
 ## Exploratory Data Analysis <a id="eda"></a> 
 
-Interactive charts created using `echarts4r`. 
+Interactive charts were created using `echarts4r`. 
 
 ### Number of Grievances By Day <a id="number-per-day"></a> 
 
 :::{.most-width}
-```{r echo=TRUE, fig.height=9, fig.width=9, message=FALSE, warning=FALSE}
+```{r, echo=TRUE, message=FALSE, warning=FALSE}
 # Set Theme 
 e_common(
   theme = "echarts-theme-states.json",
-  font_family = "Playfair Display"
+  font_family = "Georgia"
 )
 
 # Chart 
@@ -165,13 +171,13 @@ grievances %>%
   summarise(Total = n()) %>%
   e_charts(created_at) %>%
   e_line(Total, symbol = "none") %>%
-  e_x_axis(axisLabel = list(interval = 0, rotate = 45)) %>%
+  e_x_axis(axisLabel = list(interval = 0)) %>%
   e_title(
     text = "Total number of grievances by day",
     subtext = "Data: BBMP | nathanstates.com"
   ) %>%
   e_color(
-    "#3414b9", 
+    "#b54914", 
     background = "rgb(0,0,0,0)"
   ) %>%
   e_legend(show = FALSE) %>%
@@ -190,8 +196,7 @@ On most days, grievances would vary between 200 to 400 a day, with some spikes i
 
 ### Grievances by Category <a id="number-category"></a>
 
-:::{.most-width}
-```{r}
+```{r, echo=TRUE}
 grievances %>%
   group_by(category) %>%
   summarise(Total = n()) %>%
@@ -200,15 +205,25 @@ grievances %>%
   slice(1:10) %>%
   e_charts(category) %>%
   e_bar(Total) %>%
-  e_x_axis(axisLabel = list(interval = 0, rotate = 45)) %>%
+  e_x_axis(
+    axisLabel = list(
+      interval = 0, 
+      rotate = 45,
+      fontSize = 9.25
+    )
+  ) %>%
   e_title(
     text = "Most common grievances by category", 
     subtext = "Only categories above 1,000 visible"
   ) %>%
   e_legend(show = FALSE) %>%
   e_labels(show = FALSE) %>%
-  e_color("#0fa68c", background = "rgb(0,0,0,0)") %>%
+  e_color(
+    "#2a724a", 
+    background = "rgb(0,0,0,0)"
+  ) %>%
   e_tooltip(
+    trigger = "axis",
     backgroundColor = "rgba(20, 20, 20, 0.5)",
     borderColor = "rgba(0, 0, 0, 0)",
     textStyle = list(
@@ -216,7 +231,6 @@ grievances %>%
     )
   )
 ```
-:::
 
 81.89% of total grievances were categorized as "Electrical," "Solid Waste (Garbage) Related," or "Road Maintenance (Engg)." The next three largest categories make up an additional 11.09%, meaning the remaining categories have less than 1,350 occurrences combined. 
 
@@ -257,9 +271,10 @@ grievances %>%
     text = "Most common grievances by subcategory", 
     subtext = "Only categories above 1,000 visible"
     ) %>%
-  e_color("#0fa68c", background = "rgb(0,0,0,0)") %>%
+  e_color("#2a724a", background = "rgb(0,0,0,0)") %>%
   e_flip_coords() %>%
   e_tooltip(
+    trigger = "axis",
     backgroundColor = "rgba(20, 20, 20, 0.5)",
     borderColor = "rgba(0, 0, 0, 0)",
     textStyle = list(
@@ -271,7 +286,7 @@ grievances %>%
 
 While the model being built is only to predict main categories, by viewing subcategories, we see over 35% of total complaints were related specifically to street lights not working, comprising almost all of the "Electrical" category. 
 
-"Solid Waste (Garbage) Related" has been divided into two subcategories; "Garbage vehicle not arrived" and "Garbage dump," while Road Maintenance is divided into three subcategories, being "potholes", "road side drains", and "debris removal". 
+"Solid Waste (Garbage) Related" has been divided into two subcategories; "Garbage vehicle not arrived" and "Garbage dump," while Road Maintenance is divided into three subcategories, those being "potholes", "road side drains", and "debris removal". 
 
 ### Most Common Complaint Words <a id="number-words"></a>
 
@@ -657,11 +672,6 @@ The "Others" categories once again performed dreadfully, only recording an addit
 
 Minor categories saw little or no improvement. The "Health Dept" was the only category that performed worse, dropping from 69.7% to 54.6% accuracy. The model incorrectly chose "Solid Waste" and "Road Maintenance" more often for "Health Dept" complaints than the previous model did, though it's unclear as to why this is. 
 
-Increasing the stop word list seems to have improved accuracy across the board. 
+Increasing the stop word list seems to have improved accuracy among all categories.  
 
-### Further Improvements <a id="further-improvements"></a>
-
-+ The "Others" category needs to be transformed completely. Considering most complaints seem to be issues related to voting, creating a separate category for those specific complaints will likely improve accuracy. 
-+ Smaller categories continued to struggle; condensing categories even further may be appropriate. 
-+ This model performed much worse classifying "Health Dept" than the previous models did. Whether this is due to unintended consequences or simply bad luck isn't clear, but more analysis is needed for this category. 
-+ Additional phrases can still be added to the stop word list. 
+You can check out the Python source code for the MLE model [here](https://github.com/Nathan-States/Bengaluru-Text-Mining). 
