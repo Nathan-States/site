@@ -4,18 +4,18 @@ slug: about
 hide_details: true
 ---
 
-## Hello! I'm Nathan 
+## Hello! I'm Nathan
 
-I'm a data scientist & programmer interested in economic and international relations topics. This website hosts all my data visualizations, web applications, and posts on subjects of personal interest.
-
-### Some more about me...
-
-I'm a math undergrad, currently living in Florida. In the future, I hope to pursue a graduate degree in statistics, hopefully with a focus in economics and/or politics, as those are my two biggest passions (along with history). 
-
-My ultimate goal is to create a news site that examines less discussed topics in the media, dividing issues into comprehensive series of articles, focusing on quality over quantity, attacking subjects from a data driven perspective, and developing worthwhile applications that would assist these goals. All of these are very lofty goals, but I'd like to think this blog is loosely related to achieving them.
-
-Other hobbies I'm interested in are music, where I've been playing drums on and off for about 10 years. I also love reading, unsurprisingly about history, politics, philosophy, etc. 
+I'm a data scientist & programmer interested in economic and international relations topics. This website hosts all my data visualizations, web applications, and articles on subjects of personal interest.
 
 ### Get in touch
 
 If you'd like to collaborate or contact me about business inquiries, drop an e-mail at [nathanstates@outlook.com](mailto:nathanstates@outlook.com). 
+
+### Some more about me...
+
+I'm a math undergrad, currently living in Florida. In the future, I hope to pursue a graduate degree in statistics, which is my favorite subject, hopefully with a focus in economics and/or politics if possible. Within stats, the topics I'm most interested in are probability, machine learning, and research oriented subjects.  
+
+There's a few specific topics that I'd like to dedicate special attention to on this site, but some of the posts are random and spur of the moment. The former are grouped together in [*series*](https://www.nathanstates.com/series/), which in the future, I hope to expand beyond this site.
+
+Other hobbies I have are drumming, where I've been playing on and off for a little over a decade. I also play a few other instruments, though not as well. Reading is my other main hobby. 

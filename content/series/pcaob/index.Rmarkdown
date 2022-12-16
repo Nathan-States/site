@@ -1,6 +1,6 @@
 ---
 title: 'PCAOB Series'
-excerpt: 'All my posts and visualizations about the Board'
+excerpt: 'All my posts and visualizations about the audit regulator.'
 author: 'Nathan States'
 date: '2022-11-16'
 hide_details: true
@@ -13,14 +13,9 @@ categories:
   font-size: 0.8em;
 }
 
-.body {
-  background-color: #fcfcfc;
-}
-
 .img {
   height: auto;
   max-width: 100%;
-  background-color: #fcfcfc;
 }
 
 .html {
@@ -57,62 +52,96 @@ categories:
   right: 50%;
   width: 70vw;
 }
+
+.small-width {
+  left: 50%;
+  margin-left: -5vw;
+  margin-right: -5vw;
+  max-width: 10vw;
+  position: relative;
+  right: 50%;
+  width: 10vw;
+}
 ```
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE}
+```{r, include=FALSE}
+library(dplyr)
+
 # Set Directory
 here::set_here()
 ```
 
-This is a collection of all posts and data visualizations I've made on the PCAOB, including information on inspection reports, enforcement actions, and the board's overall history. You can view those posts below, including a more in-depth description of the PCAOB. 
+::: lead
+This is a collection of all posts and data visualizations I've made on the PCAOB, including information on inspection reports, enforcement actions, and the board's history. You can view those posts from the links below. 
+:::
 
 <h3>
 <center>
-PCAOB Inspections (Part 1)
+<a href="https://www.nathanstates.com/blog/pcaob-inspections-part-1/">PCAOB Inspections (Part 1)</a>
 <br><br>
-PCAOB Enforcement Actions (Part 2)
+<a href="https://www.nathanstates.com/blog/pcaob-sanctions-part-2/">PCAOB Enforcement Actions (Part 2)</a>
 </h3>
 </center>
 
 <br>
 
-Other links on this page;
+Other links on this page...
 
 + [Data Visualizations](#data-visualizations)
-  + [Inspections](#visual-inspections) 
-  + [Enforcement Actions](#visual-enforcement) 
 + [Data Gathering](#data-gathering)
   + [Inspections](#data-inspections)
   + [Enforcement Actions](#data-enforcement)
-+ [What is the PCAOB?](#pcaob-description) 
++ [**What is the PCAOB?**](#pcaob-description) 
 
 ## Data Visualizations <a id="data-visualizations"></a>
 
-### Inspections <a id="visual-inspections"></a>
+<br>
 
-:::{.box-width}
+::: {.box-width}
 ![](_images/table_overview.png)
 :::
 
 ---
 
+::: {.box-width}
 ![](_images/chart_category.png)
+:::
 
 ---
 
+::: {.box-width}
 ![](_images/chart_float.png)
+:::
 
-### Enforcement Actions <a id="visual-enforcement"></a>
- 
-:::{.most-width}
+:::{.box-width}
+![](_images/table_enforcement_firm.png)
+:::
+
+---
+
+:::{.box-width}
+![](_images/table_enforcement_auditors.png)
+:::
+
+---
+
+:::{.box-width}
 ![](_images/chart_amount.png)
 :::
 
 ---
 
-:::{.most-width}
+:::{.box-width}
 ![](_images/chart_country.png)
 :::
+
+---
+
+:::{.box-width}
+![](_images/chart_proprietors.png)
+:::
+
+---
 
 ## Data Gathering <a id="data-gathering"></a>
 
@@ -126,9 +155,11 @@ Additional data regarding industry and revenue range has been collected from the
 
 ### Enforcement Actions <a id="data-enforcement"></a>
 
-According to the enforcement database, the PCAOB has given out a total of 351 *enforcement actions* as of November 22, 2022, all of which are included in the dataset. It should be noted that the way sanctions have been given has changed over time. Generally, each sanction is provided with its own individual report, but other times, one report will contain multiple sanctions (an example can be found [here](https://pcaob-assets.azureedge.net/pcaob-dev/docs/default-source/enforcement/decisions/documents/105-2020-019-gt.pdf?sfvrsn=67d2d9e4_2)). This means that the number of PCAOB enforcement actions listed on their site doesn't correspond with the total number of sanctions they've given, which is why this spreadsheet contains **512** rows instead of *351*. 
+According to the enforcement database, the PCAOB has given out a total of 358 *enforcement actions* as of December 6, 2022, all of which are included in the dataset. It should be noted that the way sanctions have been given has changed over time. Generally, each sanction is provided with its own individual report, but other times, one report will contain multiple sanctions (an example can be found [here](https://pcaob-assets.azureedge.net/pcaob-dev/docs/default-source/enforcement/decisions/documents/105-2020-019-gt.pdf?sfvrsn=67d2d9e4_2)). This means that the number of PCAOB enforcement actions listed on their site doesn't correspond with the total number of sanctions they've given, which is why the spreadsheet doesn't match their number. 
 
 ## What is the PCAOB? <a id="pcaob-description"></a>
+
+Currently working on a longer article to explain the PCAOB's founding, but for a quick rundown: 
 
 At the end of 2000, the energy corporation *Enron* would finish the year as the seventh largest company in the United States. Less than a year later, though, the company would file for bankruptcy, [causing](https://pcaobus.org/news-events/speeches/speech-detail/background-on-the-pcaob_465) tens of thousands to lose employment, and wiping out over \$2.1 billion in 401(k) contributions. A later investigation by the [Department of Justice](https://www.justice.gov/osg/brief/arthur-anderson-llp-v-united-states-opposition) (**DOJ**) found that Enron had been engaged in massive accounting fraud and were consistently lying about how profitable the company was. Then CEO Jeffrey Skilling would earn a 24 year prison sentence for his role in the scandal. 
 
@@ -145,3 +176,14 @@ While Enron was the catalyst that showed self-regulation was problematic, the ov
 This Act also created the Public Company Accounting Oversight Board (**PCAOB**), which every audit firm is required to register with. The PCAOB is responsible for monitoring audit firms, conducting investigations, and disciplining misconduct when it occurs. Essentially, their job is to ensure that auditors are doing their jobs properly, and to make sure nothing like Enron happens again.
 
 However, if the audit industry could be undermined, could the PCAOB as well? Many government agencies - most recently the [EPA](https://www.brookings.edu/blog/up-front/2020/12/15/the-trump-administrations-major-environmental-deregulations/) - have been thoroughly weakened to serve certain interests. **Is the PCAOB protecting ordinary investors, or are they serving special interests?** This series attempts to answer these question by looking at PCAOB inspection reports and enforcement actions over the last twenty years. 
+
+<br><br><br><br><br><br><br><br><br><br><br>
+
+```{r, echo=FALSE}
+mtcars %>%
+  echarts4r::e_chart(mpg) %>%
+  echarts4r::e_line(hp) %>%
+  echarts4r::e_tooltip(trigger = "axis")
+```
+
+(This page doesn't render properly if I don't include an interactive HTML element. No idea why, but just ignore this graph)

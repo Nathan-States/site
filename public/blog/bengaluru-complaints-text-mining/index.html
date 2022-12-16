@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head>
+  
+                           
+     
+
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.90.0" />
+<title>Bengaluru Complaints Supervised Classification Model | NS</title>
+
+
+<meta property="twitter:site" content="@twitter">
+<meta property="twitter:creator" content="@twitter">
+
+
+
+
+
+
+
+  
+    
+  
+
+<meta name="description" content="Categorizing over 100,000 complaints from the Silicon Valley of India.">
+
+
+<meta property="og:site_name" content="NS">
+<meta property="og:title" content="Bengaluru Complaints Supervised Classification Model | NS">
+<meta property="og:description" content="Categorizing over 100,000 complaints from the Silicon Valley of India." />
+<meta property="og:type" content="page" />
+<meta property="og:url" content="https://www.nathanstates.com/blog/bengaluru-complaints-text-mining/" />
+<meta property="og:locale" content="en">
+
+
+
+
+    
+        <meta property="og:image" content="%!s()" >
+        <meta property="twitter:card" content="summary">
+        <meta name="twitter:image" content="%!s()" >
+     
+<meta itemprop="name" content="Bengaluru Complaints Supervised Classification Model">
+<meta itemprop="description" content=".figcaption {font-size: 0.8em;}.body { background-color: #fcfcfc; }
+.img { height: auto; max-width: 100%; background-color: #fcfcfc; }
+.html { height: auto; max-width: 100%; }
+.full-width { left: 50%; margin-left: auto; margin-right: auto; max-width: 70vw; position: relative; right: 50%; width: 70vw; }
+.most-width { left: 50%; margin-left: -40vw; margin-right: -40vw; max-width: 80vw; position: relative; right: 50%; width: 80vw; }"><meta itemprop="datePublished" content="2022-08-22T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-08-22T00:00:00+00:00" />
+<meta itemprop="wordCount" content="4441">
+<meta itemprop="keywords" content="" />  
+  <!--[if IE
+    ]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script
+  ><![endif]-->
+    
+  <link
+    rel="shortcut icon"
+    href=""
+    type="image/x-icon"
+  />
+  <link rel="icon" href="" type="image/x-icon" />
+   
+  <link
+    rel="stylesheet"
+    href="/style.main.min.f5733b1d78c48280968b28620078dd9671787baaa618adf3ae2c87fc082e1008.css"
+    integrity="sha256-9XM7HXjEgoCWiyhiAHjdlnF4e6qmGK3zriyH/AguEAg="
+    media="screen"
+  />
+  
+  
+  <script src="/panelset.min.bb35894ce36495308e1c56f1a34e86c076204d6974d300ae59bde763265edaa7.js" type="text/javascript"></script>
+  
+  
+  <script src="/main.min.616f2aa98c752871addf1c8276967eba5e322b832f031e5acc042490b6b85283.js" type="text/javascript"></script>
+  
+  
+</head>
+<body>
+      <div class="grid-container">
+<header class="site-header pt4 pb2 mb4 bb b--transparent ph6-ns ph3 headroom z-max" role="banner">
+  <nav class="site-nav db dt-l w-100" role="navigation">
+    <a class="site-brand db dtc-l v-mid link no-underline w-100 w-10-l tc tl-l" href="https://www.nathanstates.com/" title="Home">
+      <span class="f4 fw7">NS</span>
+      
+    </a>
+    <div class="site-links db dtc-l v-mid w-100 w-47-l tc tr-l mt3 mt0-l ">
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 active" href="/blog/" title="">Blog</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/dashboards/" title="">Dashboards</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/series/" title="">Series</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/about/" title="">About</a>
+      
+    </div>
+  </nav>
+  
+  <div class="flex justify-center justify-end-l mt3 mt2-l">
+    <div class="social-icon-links" aria-hidden="true">
+  
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://github.com/Nathan-States" title="github" target="_blank" rel="noopener">
+      <i class="fab fa-github fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://twitter.com/nathanstates_" title="twitter" target="_blank" rel="noopener">
+      <i class="fab fa-twitter fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="/blog/index.xml" title="rss" >
+      <i class="fas fa-rss fa-lg fa-fw"></i>
+    </a>
+  
+</div>
+
+  </div>
+  
+</header>
+
+<main class="page-main ph4-ns ph3 pb4" role="main">
+  <section class="page-content mw7 center">
+    <article class="post-content pa0 ph4-l">
+      <header class="post-header">
+        <h1 class="f1 lh-solid measure-narrow mb3 fw4">Bengaluru Complaints Supervised Classification Model</h1>
+        
+        <p class="f6 measure lh-copy mv1">By Nathan States</p>
+        <p class="f7 db mv1">August 22, 2022</p>
+        
+        
+        <details closed class="f6 fw7 input-reset mt2">
+  <dl class="f6 lh-copy">
+    <dt class="fw7">Posted on:</dt>
+    <dd class="fw5 ml0">August 22, 2022</dd>
+  </dl>
+  <dl class="f6 lh-copy">
+    <dt class="fw7">Length:</dt>
+    <dd class="fw5 ml0">21 minute read, 4441 words</dd>
+  </dl>
+  
+  
+  
+  
+  <dl class="f6 lh-copy">
+    <dt class="fw7">See Also:</dt>
+    
+  </dl>
+</details>
+
+        
+
+      
+
+      </header>
+      <section class="post-body mt4 pb4">
+        <script src="https://www.nathanstates.com/blog/bengaluru-complaints-text-mining/index_files/htmlwidgets/htmlwidgets.js"></script>
+<script src="https://www.nathanstates.com/blog/bengaluru-complaints-text-mining/index_files/echarts4r/echarts-en.min.js"></script>
+<script src="https://www.nathanstates.com/blog/bengaluru-complaints-text-mining/index_files/echarts4r/ecStat.min.js"></script>
+<script src="https://www.nathanstates.com/blog/bengaluru-complaints-text-mining/index_files/echarts4r/dataTool.min.js"></script>
+<script src="https://www.nathanstates.com/blog/bengaluru-complaints-text-mining/index_files/echarts4r-binding/echarts4r.js"></script>
+<script src="https://www.nathanstates.com/blog/bengaluru-complaints-text-mining/index_files/echarts-theme-states.json/echarts-theme-states.json.js"></script>
+<script src="https://www.nathanstates.com/blog/bengaluru-complaints-text-mining/index_files/htmlwidgets/htmlwidgets.js"></script>
+<script src="https://www.nathanstates.com/blog/bengaluru-complaints-text-mining/index_files/echarts4r/echarts-en.min.js"></script>
+<script src="https://www.nathanstates.com/blog/bengaluru-complaints-text-mining/index_files/echarts4r/ecStat.min.js"></script>
+<script src="https://www.nathanstates.com/blog/bengaluru-complaints-text-mining/index_files/echarts4r/dataTool.min.js"></script>
+<script src="https://www.nathanstates.com/blog/bengaluru-complaints-text-mining/index_files/echarts4r-binding/echarts4r.js"></script>
+<script src="https://www.nathanstates.com/blog/bengaluru-complaints-text-mining/index_files/echarts-theme-states.json/echarts-theme-states.json.js"></script>
+<script src="https://www.nathanstates.com/blog/bengaluru-complaints-text-mining/index_files/htmlwidgets/htmlwidgets.js"></script>
+<script src="https://www.nathanstates.com/blog/bengaluru-complaints-text-mining/index_files/echarts4r/echarts-en.min.js"></script>
+<script src="https://www.nathanstates.com/blog/bengaluru-complaints-text-mining/index_files/echarts4r/ecStat.min.js"></script>
+<script src="https://www.nathanstates.com/blog/bengaluru-complaints-text-mining/index_files/echarts4r/dataTool.min.js"></script>
+<script src="https://www.nathanstates.com/blog/bengaluru-complaints-text-mining/index_files/echarts4r-binding/echarts4r.js"></script>
+<script src="https://www.nathanstates.com/blog/bengaluru-complaints-text-mining/index_files/echarts-theme-states.json/echarts-theme-states.json.js"></script>
+<script src="https://www.nathanstates.com/blog/bengaluru-complaints-text-mining/index_files/htmlwidgets/htmlwidgets.js"></script>
+<link href="https://www.nathanstates.com/blog/bengaluru-complaints-text-mining/index_files/wordcloud2/wordcloud.css" rel="stylesheet" />
+<script src="https://www.nathanstates.com/blog/bengaluru-complaints-text-mining/index_files/wordcloud2/wordcloud2-all.js"></script>
+<script src="https://www.nathanstates.com/blog/bengaluru-complaints-text-mining/index_files/wordcloud2/hover.js"></script>
+<script src="https://www.nathanstates.com/blog/bengaluru-complaints-text-mining/index_files/wordcloud2-binding/wordcloud2.js"></script>
+<style type="text/css">
+.figcaption {
+  font-size: 0.8em;
+}
+<p>.body {
+background-color: #fcfcfc;
+}</p>
+<p>.img {
+height: auto;
+max-width: 100%;
+background-color: #fcfcfc;
+}</p>
+<p>.html {
+height: auto;
+max-width: 100%;
+}</p>
+<p>.full-width {
+left: 50%;
+margin-left: auto;
+margin-right: auto;
+max-width: 70vw;
+position: relative;
+right: 50%;
+width: 70vw;
+}</p>
+<p>.most-width {
+left: 50%;
+margin-left: -40vw;
+margin-right: -40vw;
+max-width: 80vw;
+position: relative;
+right: 50%;
+width: 80vw;
+}</p>
+<p>.box-width{
+left: 50%;
+margin-left: -35vw;
+margin-right: -35vw;
+max-width: 70vw;
+position: relative;
+right: 50%;
+width: 70vw;
+}
+</style></p>
+<div class="most-width">
+<p><img src="preview.jpg" alt=""></p>
+</div>
+
+
+
+
+<h2 id="results">Results
+  <a class="anchor-link" href="#results">#</a>
+</h2>
+<ul>
+<li><strong>Over 80%</strong> of complaints filed were related to street lights not working, road maintenance, or garbage collection issues.</li>
+<li>Of the four classification models, the linear support vector classifier performed the best, recording <strong>88.773%</strong> accuracy. The top three models all performed similarly as well, though, with all falling within roughly three percentage points.</li>
+<li>Improvements were made by increasing the number of stop words, as well as combining smaller categories into larger ones. Using the LinearSVC, these changes led to a <em>3.214%</em> increase, ultimately recording an accuracy of <strong>91.987%</strong>.</li>
+<li>Further improvements could be had by adding to the stop word list, changing the contents of the “Others” category, and adjusting the downsampling of the model.</li>
+</ul>
+
+
+
+
+<h1 id="table-of-contents">Table of Contents
+  <a class="anchor-link" href="#table-of-contents"></a>
+</h1>
+<ul>
+<li>
+<a href="#background">Background</a></li>
+<li>
+<a href="#data-wrangling">Data Wrangling</a></li>
+<li>
+<a href="#eda">Exploratory Data Analysis</a>
+<ul>
+<li>
+<a href="#number-per-day">Number of Grievances by Day</a></li>
+<li>
+<a href="#number-category">Grievances by Category</a></li>
+<li>
+<a href="#number-subcategory">Grievances by Subcategory</a></li>
+<li>
+<a href="#number-words">Most Common Complaint Words</a></li>
+</ul>
+</li>
+<li>
+<a href="#mle-models">MLE Models</a>
+<ul>
+<li>
+<a href="#preparing-data">Preparing the Data</a></li>
+<li>
+<a href="#text-preprocessing">Text Preprocessing</a></li>
+<li>
+<a href="#building-models">Building the Models</a></li>
+<li>
+<a href="#results">Results</a></li>
+</ul>
+</li>
+<li>
+<a href="#improvements">Improvements</a>
+<ul>
+<li>
+<a href="#modifications">Modifications</a></li>
+<li>
+<a href="#redo-text-preprocessing">Redo Text Preprocessing</a></li>
+<li>
+<a href="#new-results">New Results</a></li>
+</ul>
+</li>
+<li>
+<a href="#conclusions">Conclusions</a>
+<ul>
+<li>
+<a href="#further-improvements">Further Improvements</a></li>
+</ul>
+</li>
+</ul>
+
+
+
+
+<h2 id="background-a-idbackgrounda">Background <a id="background"></a>
+  <a class="anchor-link" href="#background-a-idbackgrounda">#</a>
+</h2>
+<p>Text data can be one of the more difficult data types to use in analytics, but raw text is invaluable in many different ways. Using simple Python libraries, modern machine learning models can parse thousands of rows in seconds, which can be used for various functions. One of the most common tasks is <em>classification</em>.</p>
+<p>The <em>Bruhat Bengaluru Mahangara Palike</em> (BBMP) - an administrative body that oversees city development in Bengaluru, a large tech city in India - created a web application that allows citizens to file grievances with the city. From February 8th, 2020 to February 21st, 2021, a total of <strong>105,956</strong> complaints were filed with the city, translating to roughly 280 grievances a day. Exploring this data not only provides insight into the most common problems facing the city of Bengaluru (or at least the complaints most likely to be filed), but also presents an opportunity to quantify and categorize them.</p>
+<p>In the dataset, complaints have been manually categorized by the administrators who oversee the app at BBMP, but this is extremely inefficient. Usefully, though, the developers have already created categories that they felt best sorted the data, which means (assuming complaints don’t change substantially in the future) we can train a machine learning model that performs this task automatically. Because the categories are already defined, this will be a <strong>supervised</strong> classification model.</p>
+
+
+
+
+<h2 id="data-wrangling-a-iddata-wranglinga">Data Wrangling <a id="data-wrangling"></a>
+  <a class="anchor-link" href="#data-wrangling-a-iddata-wranglinga">#</a>
+</h2>
+<p>Data wrangling and the EDA will be done using <code>R</code>.</p>
+<p>First, we import in the data and the necessary libraries.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="c1"># Load Libraries</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span> 
+<span class="nf">library</span><span class="p">(</span><span class="n">tidymodels</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">tidytext</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">echarts4r</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">here</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">lubridate</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">wordcloud2</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">reticulate</span><span class="p">)</span>
+
+<span class="c1"># Set Directory </span>
+<span class="n">here</span><span class="o">::</span><span class="nf">set_here</span><span class="p">()</span>
+
+<span class="c1"># Import Data</span>
+<span class="n">grievances</span> <span class="o">&lt;-</span> <span class="n">readr</span><span class="o">::</span><span class="nf">read_csv</span><span class="p">(</span><span class="s">&#34;bengaluru-grievances.csv&#34;</span><span class="p">)</span>
+</code></pre></div><p>The admins at BBMP keep their data neat and tidy, so there’s not many problems to fix. There are a couple things to consider, however.</p>
+<p>The first issue is that some descriptions are extremely short, making classifying them accurately near impossible. We can limit the number of characters that a complaint must have, though the appropriate number of rows to remove is debatable. Ideally, we don’t want to exclude too much of the data while still removing descriptions too short to be properly categorized.</p>
+<p>Using <code>str_length</code> from the <code>stringr</code> package, we see 5,392 complaints contained fewer than 12 characters, meaning removing them would still preserve 95% of the original data. Using <code>filter</code> from <code>dplyr</code>, we can keep all complaints containing more than 12 characters.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="c1"># Counting number of rows </span>
+<span class="n">grievances</span> <span class="o">%&gt;%</span>
+  <span class="nf">filter</span><span class="p">(</span><span class="nf">str_length</span><span class="p">(</span><span class="n">description</span><span class="p">)</span> <span class="o">&lt;</span> <span class="m">12</span><span class="p">)</span> <span class="o">%&gt;%</span>
+  <span class="nf">count</span><span class="p">()</span> 
+</code></pre></div><pre><code>## # A tibble: 1 x 1
+##       n
+##   &lt;int&gt;
+## 1  5392
+</code></pre>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="c1"># Removing those rows </span>
+<span class="n">grievances</span> <span class="o">&lt;-</span> <span class="n">grievances</span> <span class="o">%&gt;%</span>
+  <span class="nf">filter</span><span class="p">(</span><span class="nf">str_length</span><span class="p">(</span><span class="n">description</span><span class="p">)</span> <span class="o">&gt;</span> <span class="m">12</span><span class="p">)</span>
+</code></pre></div><p>The other consideration is whether the existing categories accurately reflect the data or not. It’s possible certain similarities between different categories would better be combined into one, and likewise, single categories that should be multiple ones. These changes might not only provide a better description of the data, but improve accuracy in the long run.</p>
+<p>For now, we will leave the original categories intact and proceed, but future models may benefit from this step.</p>
+
+
+
+
+<h2 id="exploratory-data-analysis-a-idedaa">Exploratory Data Analysis <a id="eda"></a>
+  <a class="anchor-link" href="#exploratory-data-analysis-a-idedaa">#</a>
+</h2>
+<p>Interactive charts were created using <code>echarts4r</code>.</p>
+
+
+
+
+<h3 id="number-of-grievances-by-day-a-idnumber-per-daya">Number of Grievances By Day <a id="number-per-day"></a>
+  <a class="anchor-link" href="#number-of-grievances-by-day-a-idnumber-per-daya">#</a>
+</h3>
+<div class="most-width">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="c1"># Set Theme </span>
+<span class="nf">e_common</span><span class="p">(</span>
+  <span class="n">theme</span> <span class="o">=</span> <span class="s">&#34;echarts-theme-states.json&#34;</span><span class="p">,</span>
+  <span class="n">font_family</span> <span class="o">=</span> <span class="s">&#34;Georgia&#34;</span>
+<span class="p">)</span>
+
+<span class="c1"># Chart </span>
+<span class="n">grievances</span> <span class="o">%&gt;%</span>
+  <span class="nf">group_by</span><span class="p">(</span><span class="n">created_at</span> <span class="o">=</span> <span class="nf">as.Date</span><span class="p">(</span><span class="n">created_at</span><span class="p">))</span> <span class="o">%&gt;%</span>
+  <span class="nf">summarise</span><span class="p">(</span><span class="n">Total</span> <span class="o">=</span> <span class="nf">n</span><span class="p">())</span> <span class="o">%&gt;%</span>
+  <span class="nf">e_charts</span><span class="p">(</span><span class="n">created_at</span><span class="p">)</span> <span class="o">%&gt;%</span>
+  <span class="nf">e_line</span><span class="p">(</span><span class="n">Total</span><span class="p">,</span> <span class="n">symbol</span> <span class="o">=</span> <span class="s">&#34;none&#34;</span><span class="p">)</span> <span class="o">%&gt;%</span>
+  <span class="nf">e_x_axis</span><span class="p">(</span><span class="n">axisLabel</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">interval</span> <span class="o">=</span> <span class="m">0</span><span class="p">))</span> <span class="o">%&gt;%</span>
+  <span class="nf">e_title</span><span class="p">(</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="s">&#34;Total number of grievances by day&#34;</span><span class="p">,</span>
+    <span class="n">subtext</span> <span class="o">=</span> <span class="s">&#34;Data: BBMP | nathanstates.com&#34;</span>
+  <span class="p">)</span> <span class="o">%&gt;%</span>
+  <span class="nf">e_color</span><span class="p">(</span>
+    <span class="s">&#34;#b54914&#34;</span><span class="p">,</span> 
+    <span class="n">background</span> <span class="o">=</span> <span class="s">&#34;rgb(0,0,0,0)&#34;</span>
+  <span class="p">)</span> <span class="o">%&gt;%</span>
+  <span class="nf">e_legend</span><span class="p">(</span><span class="n">show</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span> <span class="o">%&gt;%</span>
+  <span class="nf">e_tooltip</span><span class="p">(</span>
+    <span class="n">backgroundColor</span> <span class="o">=</span> <span class="s">&#34;rgba(20, 20, 20, 0.5)&#34;</span><span class="p">,</span>
+    <span class="n">borderColor</span> <span class="o">=</span> <span class="s">&#34;rgba(0, 0, 0, 0)&#34;</span><span class="p">,</span>
+    <span class="n">textStyle</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span>
+      <span class="n">color</span> <span class="o">=</span> <span class="s">&#34;#ffffff&#34;</span>
+    <span class="p">),</span>
+    <span class="n">trigger</span> <span class="o">=</span> <span class="s">&#34;axis&#34;</span>
+  <span class="p">)</span>
+</code></pre></div><div id="htmlwidget-1" style="width:100%;height:500px;" class="echarts4r html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"theme":"echarts-theme-states.json","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true}],"xAxis":[{"data":["2020-02-08","2020-02-09","2020-02-10","2020-02-11","2020-02-12","2020-02-13","2020-02-14","2020-02-15","2020-02-16","2020-02-17","2020-02-18","2020-02-19","2020-02-20","2020-02-21","2020-02-22","2020-02-23","2020-02-24","2020-02-25","2020-02-26","2020-02-27","2020-02-28","2020-02-29","2020-03-01","2020-03-02","2020-03-03","2020-03-04","2020-03-05","2020-03-06","2020-03-07","2020-03-08","2020-03-09","2020-03-10","2020-03-11","2020-03-12","2020-03-13","2020-03-14","2020-03-15","2020-03-16","2020-03-17","2020-03-18","2020-03-19","2020-03-20","2020-03-21","2020-03-22","2020-03-23","2020-03-24","2020-03-25","2020-03-26","2020-03-27","2020-03-28","2020-03-29","2020-03-30","2020-03-31","2020-04-01","2020-04-02","2020-04-03","2020-04-04","2020-04-05","2020-04-06","2020-04-07","2020-04-08","2020-04-09","2020-04-10","2020-04-11","2020-04-12","2020-04-13","2020-04-14","2020-04-15","2020-04-16","2020-04-17","2020-04-18","2020-04-19","2020-04-20","2020-04-21","2020-04-22","2020-04-23","2020-04-24","2020-04-25","2020-04-26","2020-04-27","2020-04-28","2020-04-29","2020-04-30","2020-05-01","2020-05-02","2020-05-03","2020-05-04","2020-05-05","2020-05-06","2020-05-07","2020-05-08","2020-05-09","2020-05-10","2020-05-11","2020-05-12","2020-05-13","2020-05-14","2020-05-15","2020-05-16","2020-05-17","2020-05-18","2020-05-19","2020-05-20","2020-05-21","2020-05-22","2020-05-23","2020-05-24","2020-05-25","2020-05-26","2020-05-27","2020-05-28","2020-05-29","2020-05-30","2020-05-31","2020-06-01","2020-06-02","2020-06-03","2020-06-04","2020-06-05","2020-06-06","2020-06-07","2020-06-08","2020-06-09","2020-06-10","2020-06-11","2020-06-12","2020-06-13","2020-06-14","2020-06-15","2020-06-16","2020-06-17","2020-06-18","2020-06-19","2020-06-20","2020-06-21","2020-06-22","2020-06-23","2020-06-24","2020-06-25","2020-06-26","2020-06-27","2020-06-28","2020-06-29","2020-06-30","2020-07-01","2020-07-02","2020-07-03","2020-07-04","2020-07-05","2020-07-06","2020-07-07","2020-07-08","2020-07-09","2020-07-10","2020-07-11","2020-07-12","2020-07-13","2020-07-14","2020-07-15","2020-07-16","2020-07-17","2020-07-18","2020-07-19","2020-07-20","2020-07-21","2020-07-22","2020-07-23","2020-07-24","2020-07-25","2020-07-26","2020-07-27","2020-07-28","2020-07-29","2020-07-30","2020-07-31","2020-08-01","2020-08-02","2020-08-03","2020-08-04","2020-08-05","2020-08-06","2020-08-07","2020-08-08","2020-08-09","2020-08-10","2020-08-11","2020-08-12","2020-08-13","2020-08-14","2020-08-15","2020-08-16","2020-08-17","2020-08-18","2020-08-19","2020-08-20","2020-08-21","2020-08-22","2020-08-23","2020-08-24","2020-08-25","2020-08-26","2020-08-27","2020-08-28","2020-08-29","2020-08-30","2020-08-31","2020-09-01","2020-09-02","2020-09-03","2020-09-04","2020-09-05","2020-09-06","2020-09-07","2020-09-08","2020-09-09","2020-09-10","2020-09-11","2020-09-12","2020-09-13","2020-09-14","2020-09-15","2020-09-16","2020-09-17","2020-09-18","2020-09-19","2020-09-20","2020-09-21","2020-09-22","2020-09-23","2020-09-24","2020-09-25","2020-09-26","2020-09-27","2020-09-28","2020-09-29","2020-09-30","2020-10-01","2020-10-02","2020-10-03","2020-10-04","2020-10-05","2020-10-06","2020-10-07","2020-10-08","2020-10-09","2020-10-10","2020-10-11","2020-10-12","2020-10-13","2020-10-14","2020-10-15","2020-10-16","2020-10-17","2020-10-18","2020-10-19","2020-10-20","2020-10-21","2020-10-22","2020-10-23","2020-10-24","2020-10-25","2020-10-26","2020-10-27","2020-10-28","2020-10-29","2020-10-30","2020-10-31","2020-11-01","2020-11-02","2020-11-03","2020-11-04","2020-11-05","2020-11-06","2020-11-07","2020-11-08","2020-11-09","2020-11-10","2020-11-11","2020-11-12","2020-11-13","2020-11-14","2020-11-15","2020-11-16","2020-11-17","2020-11-18","2020-11-19","2020-11-20","2020-11-21","2020-11-22","2020-11-23","2020-11-24","2020-11-25","2020-11-26","2020-11-27","2020-11-28","2020-11-29","2020-11-30","2020-12-01","2020-12-02","2020-12-03","2020-12-04","2020-12-05","2020-12-06","2020-12-07","2020-12-08","2020-12-09","2020-12-10","2020-12-11","2020-12-12","2020-12-13","2020-12-14","2020-12-15","2020-12-16","2020-12-17","2020-12-18","2020-12-19","2020-12-20","2020-12-21","2020-12-22","2020-12-23","2020-12-24","2020-12-25","2020-12-26","2020-12-27","2020-12-28","2020-12-29","2020-12-30","2020-12-31","2021-01-01","2021-01-02","2021-01-03","2021-01-04","2021-01-05","2021-01-06","2021-01-07","2021-01-08","2021-01-09","2021-01-10","2021-01-11","2021-01-12","2021-01-13","2021-01-14","2021-01-15","2021-01-16","2021-01-17","2021-01-18","2021-01-19","2021-01-20","2021-01-21","2021-01-22","2021-01-23","2021-01-24","2021-01-25","2021-01-26","2021-01-27","2021-01-28","2021-01-29","2021-01-30","2021-01-31","2021-02-01","2021-02-02","2021-02-03","2021-02-04","2021-02-05","2021-02-06","2021-02-07","2021-02-08","2021-02-09","2021-02-10","2021-02-11","2021-02-12","2021-02-13","2021-02-14","2021-02-15","2021-02-16","2021-02-17","2021-02-18","2021-02-19","2021-02-20","2021-02-21"],"type":"time","boundaryGap":true,"axisLabel":{"interval":0}}],"legend":{"data":["Total"],"show":false,"type":"plain"},"series":[{"data":[{"value":["2020-02-08","228"]},{"value":["2020-02-09","339"]},{"value":["2020-02-10","244"]},{"value":["2020-02-11","325"]},{"value":["2020-02-12","280"]},{"value":["2020-02-13","222"]},{"value":["2020-02-14","307"]},{"value":["2020-02-15","319"]},{"value":["2020-02-16","209"]},{"value":["2020-02-17","234"]},{"value":["2020-02-18","239"]},{"value":["2020-02-19","320"]},{"value":["2020-02-20","235"]},{"value":["2020-02-21","139"]},{"value":["2020-02-22","225"]},{"value":["2020-02-23","190"]},{"value":["2020-02-24","268"]},{"value":["2020-02-25","340"]},{"value":["2020-02-26","294"]},{"value":["2020-02-27","295"]},{"value":["2020-02-28","312"]},{"value":["2020-02-29","742"]},{"value":["2020-03-01","357"]},{"value":["2020-03-02","371"]},{"value":["2020-03-03","378"]},{"value":["2020-03-04","366"]},{"value":["2020-03-05","350"]},{"value":["2020-03-06","358"]},{"value":["2020-03-07","388"]},{"value":["2020-03-08","306"]},{"value":["2020-03-09","363"]},{"value":["2020-03-10","389"]},{"value":["2020-03-11","354"]},{"value":["2020-03-12","332"]},{"value":["2020-03-13","313"]},{"value":["2020-03-14","294"]},{"value":["2020-03-15","230"]},{"value":["2020-03-16","390"]},{"value":["2020-03-17","348"]},{"value":["2020-03-18","396"]},{"value":["2020-03-19","302"]},{"value":["2020-03-20","311"]},{"value":["2020-03-21","362"]},{"value":["2020-03-22","148"]},{"value":["2020-03-23","343"]},{"value":["2020-03-24","151"]},{"value":["2020-03-25","176"]},{"value":["2020-03-26","179"]},{"value":["2020-03-27","125"]},{"value":["2020-03-28","136"]},{"value":["2020-03-29","176"]},{"value":["2020-03-30","251"]},{"value":["2020-03-31","199"]},{"value":["2020-04-01","164"]},{"value":["2020-04-02","152"]},{"value":["2020-04-03","125"]},{"value":["2020-04-04","164"]},{"value":["2020-04-05","110"]},{"value":["2020-04-06","137"]},{"value":["2020-04-07","188"]},{"value":["2020-04-08","149"]},{"value":["2020-04-09","177"]},{"value":["2020-04-10","183"]},{"value":["2020-04-11","178"]},{"value":["2020-04-12","126"]},{"value":["2020-04-13","132"]},{"value":["2020-04-14","154"]},{"value":["2020-04-15","165"]},{"value":["2020-04-16","134"]},{"value":["2020-04-17","128"]},{"value":["2020-04-18","139"]},{"value":["2020-04-19","117"]},{"value":["2020-04-20","160"]},{"value":["2020-04-21","137"]},{"value":["2020-04-22","136"]},{"value":["2020-04-23","161"]},{"value":["2020-04-24","180"]},{"value":["2020-04-25","151"]},{"value":["2020-04-26","126"]},{"value":["2020-04-27","176"]},{"value":["2020-04-28","148"]},{"value":["2020-04-29","256"]},{"value":["2020-04-30","193"]},{"value":["2020-05-01","144"]},{"value":["2020-05-02","167"]},{"value":["2020-05-03","144"]},{"value":["2020-05-04","229"]},{"value":["2020-05-05","188"]},{"value":["2020-05-06","182"]},{"value":["2020-05-07","225"]},{"value":["2020-05-08","154"]},{"value":["2020-05-09","225"]},{"value":["2020-05-10","162"]},{"value":["2020-05-11","180"]},{"value":["2020-05-12","212"]},{"value":["2020-05-13","234"]},{"value":["2020-05-14","180"]},{"value":["2020-05-15","215"]},{"value":["2020-05-16","215"]},{"value":["2020-05-17","184"]},{"value":["2020-05-18","162"]},{"value":["2020-05-19","188"]},{"value":["2020-05-20","199"]},{"value":["2020-05-21","227"]},{"value":["2020-05-22","174"]},{"value":["2020-05-23","224"]},{"value":["2020-05-24","206"]},{"value":["2020-05-25","338"]},{"value":["2020-05-26","312"]},{"value":["2020-05-27","342"]},{"value":["2020-05-28","280"]},{"value":["2020-05-29","245"]},{"value":["2020-05-30","331"]},{"value":["2020-05-31","305"]},{"value":["2020-06-01","329"]},{"value":["2020-06-02","390"]},{"value":["2020-06-03","320"]},{"value":["2020-06-04","302"]},{"value":["2020-06-05","311"]},{"value":["2020-06-06","297"]},{"value":["2020-06-07","221"]},{"value":["2020-06-08","349"]},{"value":["2020-06-09","381"]},{"value":["2020-06-10","315"]},{"value":["2020-06-11","278"]},{"value":["2020-06-12","279"]},{"value":["2020-06-13","258"]},{"value":["2020-06-14","210"]},{"value":["2020-06-15","281"]},{"value":["2020-06-16","297"]},{"value":["2020-06-17","288"]},{"value":["2020-06-18","306"]},{"value":["2020-06-19","260"]},{"value":["2020-06-20","293"]},{"value":["2020-06-21","163"]},{"value":["2020-06-22","287"]},{"value":["2020-06-23","265"]},{"value":["2020-06-24","222"]},{"value":["2020-06-25","316"]},{"value":["2020-06-26","250"]},{"value":["2020-06-27","237"]},{"value":["2020-06-28","192"]},{"value":["2020-06-29","294"]},{"value":["2020-06-30","268"]},{"value":["2020-07-01","263"]},{"value":["2020-07-02","249"]},{"value":["2020-07-03","249"]},{"value":["2020-07-04","205"]},{"value":["2020-07-05","192"]},{"value":["2020-07-06","278"]},{"value":["2020-07-07","306"]},{"value":["2020-07-08","340"]},{"value":["2020-07-09","277"]},{"value":["2020-07-10","301"]},{"value":["2020-07-11","269"]},{"value":["2020-07-12","271"]},{"value":["2020-07-13","266"]},{"value":["2020-07-14","126"]},{"value":["2020-07-15","134"]},{"value":["2020-07-16","157"]},{"value":["2020-07-17","194"]},{"value":["2020-07-18","189"]},{"value":["2020-07-19","156"]},{"value":["2020-07-20","252"]},{"value":["2020-07-21","248"]},{"value":["2020-07-22","260"]},{"value":["2020-07-23","251"]},{"value":["2020-07-24","268"]},{"value":["2020-07-25","268"]},{"value":["2020-07-26","184"]},{"value":["2020-07-27","279"]},{"value":["2020-07-28","185"]},{"value":["2020-07-29","284"]},{"value":["2020-07-30","252"]},{"value":["2020-07-31","154"]},{"value":["2020-08-01","225"]},{"value":["2020-08-02","151"]},{"value":["2020-08-03","276"]},{"value":["2020-08-04","237"]},{"value":["2020-08-05","237"]},{"value":["2020-08-06","249"]},{"value":["2020-08-07","232"]},{"value":["2020-08-08","208"]},{"value":["2020-08-09","144"]},{"value":["2020-08-10","278"]},{"value":["2020-08-11","263"]},{"value":["2020-08-12","278"]},{"value":["2020-08-13","293"]},{"value":["2020-08-14","254"]},{"value":["2020-08-15","165"]},{"value":["2020-08-16","194"]},{"value":["2020-08-17","256"]},{"value":["2020-08-18","298"]},{"value":["2020-08-19","275"]},{"value":["2020-08-20","289"]},{"value":["2020-08-21","216"]},{"value":["2020-08-22","142"]},{"value":["2020-08-23","209"]},{"value":["2020-08-24","258"]},{"value":["2020-08-25","279"]},{"value":["2020-08-26","221"]},{"value":["2020-08-27","219"]},{"value":["2020-08-28","255"]},{"value":["2020-08-29","247"]},{"value":["2020-08-30","183"]},{"value":["2020-08-31","302"]},{"value":["2020-09-01","280"]},{"value":["2020-09-02","265"]},{"value":["2020-09-03","314"]},{"value":["2020-09-04","281"]},{"value":["2020-09-05","289"]},{"value":["2020-09-06","211"]},{"value":["2020-09-07","387"]},{"value":["2020-09-08","407"]},{"value":["2020-09-09","409"]},{"value":["2020-09-10","359"]},{"value":["2020-09-11","340"]},{"value":["2020-09-12","311"]},{"value":["2020-09-13","238"]},{"value":["2020-09-14","308"]},{"value":["2020-09-15","283"]},{"value":["2020-09-16","306"]},{"value":["2020-09-17","275"]},{"value":["2020-09-18","269"]},{"value":["2020-09-19","289"]},{"value":["2020-09-20","182"]},{"value":["2020-09-21","268"]},{"value":["2020-09-22","283"]},{"value":["2020-09-23","327"]},{"value":["2020-09-24","338"]},{"value":["2020-09-25","265"]},{"value":["2020-09-26","234"]},{"value":["2020-09-27","211"]},{"value":["2020-09-28","357"]},{"value":["2020-09-29","351"]},{"value":["2020-09-30","369"]},{"value":["2020-10-01","345"]},{"value":["2020-10-02","329"]},{"value":["2020-10-03","391"]},{"value":["2020-10-04","244"]},{"value":["2020-10-05","325"]},{"value":["2020-10-06","368"]},{"value":["2020-10-07","286"]},{"value":["2020-10-08","313"]},{"value":["2020-10-09","315"]},{"value":["2020-10-10","275"]},{"value":["2020-10-11","322"]},{"value":["2020-10-12","405"]},{"value":["2020-10-13","325"]},{"value":["2020-10-14","339"]},{"value":["2020-10-15","275"]},{"value":["2020-10-16","282"]},{"value":["2020-10-17","262"]},{"value":["2020-10-18","256"]},{"value":["2020-10-19","375"]},{"value":["2020-10-20","400"]},{"value":["2020-10-21","459"]},{"value":["2020-10-22","388"]},{"value":["2020-10-23","426"]},{"value":["2020-10-24","363"]},{"value":["2020-10-25","221"]},{"value":["2020-10-26","349"]},{"value":["2020-10-27","446"]},{"value":["2020-10-28","466"]},{"value":["2020-10-29","374"]},{"value":["2020-10-30","311"]},{"value":["2020-10-31","320"]},{"value":["2020-11-01","214"]},{"value":["2020-11-02","283"]},{"value":["2020-11-03","311"]},{"value":["2020-11-04","349"]},{"value":["2020-11-05","341"]},{"value":["2020-11-06","331"]},{"value":["2020-11-07","313"]},{"value":["2020-11-08","254"]},{"value":["2020-11-09","465"]},{"value":["2020-11-10","300"]},{"value":["2020-11-11","290"]},{"value":["2020-11-12","294"]},{"value":["2020-11-13","242"]},{"value":["2020-11-14","206"]},{"value":["2020-11-15","180"]},{"value":["2020-11-16","239"]},{"value":["2020-11-17","289"]},{"value":["2020-11-18","277"]},{"value":["2020-11-19","281"]},{"value":["2020-11-20","251"]},{"value":["2020-11-21","245"]},{"value":["2020-11-22","243"]},{"value":["2020-11-23","252"]},{"value":["2020-11-24","288"]},{"value":["2020-11-25","316"]},{"value":["2020-11-26","172"]},{"value":["2020-11-27","319"]},{"value":["2020-11-28","361"]},{"value":["2020-11-29","219"]},{"value":["2020-11-30","340"]},{"value":["2020-12-01","289"]},{"value":["2020-12-02","297"]},{"value":["2020-12-03","248"]},{"value":["2020-12-04","212"]},{"value":["2020-12-05","274"]},{"value":["2020-12-06","208"]},{"value":["2020-12-07","285"]},{"value":["2020-12-08","248"]},{"value":["2020-12-09","276"]},{"value":["2020-12-10","251"]},{"value":["2020-12-11","200"]},{"value":["2020-12-12","281"]},{"value":["2020-12-13","168"]},{"value":["2020-12-14","303"]},{"value":["2020-12-15","246"]},{"value":["2020-12-16","270"]},{"value":["2020-12-17","265"]},{"value":["2020-12-18","272"]},{"value":["2020-12-19","205"]},{"value":["2020-12-20","207"]},{"value":["2020-12-21","283"]},{"value":["2020-12-22","292"]},{"value":["2020-12-23","261"]},{"value":["2020-12-24","236"]},{"value":["2020-12-25","227"]},{"value":["2020-12-26","243"]},{"value":["2020-12-27","181"]},{"value":["2020-12-28","256"]},{"value":["2020-12-29","226"]},{"value":["2020-12-30","262"]},{"value":["2020-12-31","218"]},{"value":["2021-01-01","158"]},{"value":["2021-01-02","192"]},{"value":["2021-01-03","148"]},{"value":["2021-01-04","277"]},{"value":["2021-01-05","263"]},{"value":["2021-01-06","204"]},{"value":["2021-01-07","218"]},{"value":["2021-01-08","225"]},{"value":["2021-01-09","285"]},{"value":["2021-01-10","232"]},{"value":["2021-01-11","300"]},{"value":["2021-01-12","373"]},{"value":["2021-01-13","261"]},{"value":["2021-01-14","215"]},{"value":["2021-01-15","226"]},{"value":["2021-01-16","289"]},{"value":["2021-01-17","210"]},{"value":["2021-01-18","268"]},{"value":["2021-01-19","273"]},{"value":["2021-01-20","224"]},{"value":["2021-01-21","269"]},{"value":["2021-01-22","294"]},{"value":["2021-01-23","206"]},{"value":["2021-01-24","171"]},{"value":["2021-01-25","261"]},{"value":["2021-01-26","257"]},{"value":["2021-01-27","308"]},{"value":["2021-01-28","272"]},{"value":["2021-01-29","285"]},{"value":["2021-01-30","264"]},{"value":["2021-01-31","246"]},{"value":["2021-02-01","339"]},{"value":["2021-02-02","236"]},{"value":["2021-02-03","302"]},{"value":["2021-02-04","259"]},{"value":["2021-02-05","237"]},{"value":["2021-02-06","238"]},{"value":["2021-02-07","251"]},{"value":["2021-02-08","328"]},{"value":["2021-02-09","278"]},{"value":["2021-02-10","268"]},{"value":["2021-02-11","268"]},{"value":["2021-02-12","242"]},{"value":["2021-02-13","242"]},{"value":["2021-02-14","171"]},{"value":["2021-02-15","297"]},{"value":["2021-02-16","305"]},{"value":["2021-02-17","287"]},{"value":["2021-02-18","274"]},{"value":["2021-02-19","293"]},{"value":["2021-02-20","258"]},{"value":["2021-02-21","213"]}],"yAxisIndex":0,"xAxisIndex":0,"name":"Total","type":"line","coordinateSystem":"cartesian2d","symbol":"none"}],"title":[{"text":"Total number of grievances by day","subtext":"Data: BBMP | nathanstates.com"}],"color":["#b54914"],"backgroundColor":"rgb(0,0,0,0)","tooltip":{"trigger":"axis","backgroundColor":"rgba(20, 20, 20, 0.5)","borderColor":"rgba(0, 0, 0, 0)","textStyle":{"color":"#ffffff"}},"textStyle":{"fontFamily":"Georgia"}},"dispose":true},"evals":[],"jsHooks":[]}</script>
+</div>
+<p>On most days, grievances would vary between 200 to 400 a day, with some spikes in September onwards, including a massive single-day one in March of 742. On average, 280 complaints were filed each day.</p>
+
+
+
+
+<h3 id="grievances-by-category-a-idnumber-categorya">Grievances by Category <a id="number-category"></a>
+  <a class="anchor-link" href="#grievances-by-category-a-idnumber-categorya">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="n">grievances</span> <span class="o">%&gt;%</span>
+  <span class="nf">group_by</span><span class="p">(</span><span class="n">category</span><span class="p">)</span> <span class="o">%&gt;%</span>
+  <span class="nf">summarise</span><span class="p">(</span><span class="n">Total</span> <span class="o">=</span> <span class="nf">n</span><span class="p">())</span> <span class="o">%&gt;%</span>
+  <span class="nf">arrange</span><span class="p">(</span><span class="nf">desc</span><span class="p">(</span><span class="n">Total</span><span class="p">))</span> <span class="o">%&gt;%</span>
+  <span class="nf">filter</span><span class="p">(</span><span class="n">Total</span> <span class="o">&gt;</span> <span class="m">1000</span><span class="p">)</span> <span class="o">%&gt;%</span>
+  <span class="nf">slice</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">)</span> <span class="o">%&gt;%</span>
+  <span class="nf">e_charts</span><span class="p">(</span><span class="n">category</span><span class="p">)</span> <span class="o">%&gt;%</span>
+  <span class="nf">e_bar</span><span class="p">(</span><span class="n">Total</span><span class="p">)</span> <span class="o">%&gt;%</span>
+  <span class="nf">e_x_axis</span><span class="p">(</span>
+    <span class="n">axisLabel</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span>
+      <span class="n">interval</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span> 
+      <span class="n">rotate</span> <span class="o">=</span> <span class="m">45</span><span class="p">,</span>
+      <span class="n">fontSize</span> <span class="o">=</span> <span class="m">9.25</span>
+    <span class="p">)</span>
+  <span class="p">)</span> <span class="o">%&gt;%</span>
+  <span class="nf">e_title</span><span class="p">(</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="s">&#34;Most common grievances by category&#34;</span><span class="p">,</span> 
+    <span class="n">subtext</span> <span class="o">=</span> <span class="s">&#34;Only categories above 1,000 visible&#34;</span>
+  <span class="p">)</span> <span class="o">%&gt;%</span>
+  <span class="nf">e_legend</span><span class="p">(</span><span class="n">show</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span> <span class="o">%&gt;%</span>
+  <span class="nf">e_labels</span><span class="p">(</span><span class="n">show</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span> <span class="o">%&gt;%</span>
+  <span class="nf">e_color</span><span class="p">(</span>
+    <span class="s">&#34;#2a724a&#34;</span><span class="p">,</span> 
+    <span class="n">background</span> <span class="o">=</span> <span class="s">&#34;rgb(0,0,0,0)&#34;</span>
+  <span class="p">)</span> <span class="o">%&gt;%</span>
+  <span class="nf">e_tooltip</span><span class="p">(</span>
+    <span class="n">trigger</span> <span class="o">=</span> <span class="s">&#34;axis&#34;</span><span class="p">,</span>
+    <span class="n">backgroundColor</span> <span class="o">=</span> <span class="s">&#34;rgba(20, 20, 20, 0.5)&#34;</span><span class="p">,</span>
+    <span class="n">borderColor</span> <span class="o">=</span> <span class="s">&#34;rgba(0, 0, 0, 0)&#34;</span><span class="p">,</span>
+    <span class="n">textStyle</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span>
+      <span class="n">color</span> <span class="o">=</span> <span class="s">&#34;#ffffff&#34;</span>
+    <span class="p">)</span>
+  <span class="p">)</span>
+</code></pre></div><div id="htmlwidget-2" style="width:100%;height:500px;" class="echarts4r html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2">{"x":{"theme":"echarts-theme-states.json","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true}],"xAxis":[{"data":["Electrical","Solid Waste (Garbage) Related","Road Maintenance(Engg)","Forest","Animal control","Health Dept","Revenue Department","CORONA COVID19","Others"],"type":"category","boundaryGap":true,"axisLabel":{"interval":0,"rotate":45,"fontSize":9.25}}],"legend":{"data":["Total"],"show":false,"type":"plain"},"series":[{"data":[{"value":["Electrical","38619"]},{"value":["Solid Waste (Garbage) Related","25177"]},{"value":["Road Maintenance(Engg)","17259"]},{"value":["Forest"," 4397"]},{"value":["Animal control"," 4103"]},{"value":["Health Dept"," 3247"]},{"value":["Revenue Department"," 1323"]},{"value":["CORONA COVID19"," 1115"]},{"value":["Others"," 1069"]}],"name":"Total","type":"bar","yAxisIndex":0,"xAxisIndex":0,"coordinateSystem":"cartesian2d","label":{"show":false,"position":"top"}}],"title":[{"text":"Most common grievances by category","subtext":"Only categories above 1,000 visible"}],"color":["#2a724a"],"backgroundColor":"rgb(0,0,0,0)","tooltip":{"trigger":"axis","backgroundColor":"rgba(20, 20, 20, 0.5)","borderColor":"rgba(0, 0, 0, 0)","textStyle":{"color":"#ffffff"}},"textStyle":{"fontFamily":"Georgia"}},"dispose":true},"evals":[],"jsHooks":[]}</script>
+<p>81.89% of total grievances were categorized as “Electrical,” “Solid Waste (Garbage) Related,” or “Road Maintenance (Engg).” The next three largest categories make up an additional 11.09%, meaning the remaining categories have less than 1,350 occurrences combined.</p>
+<p>Note that this is <em>not</em> due to a lack of categories; in fact, there are a total of 20 categories in the data.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="nf">length</span><span class="p">(</span><span class="nf">unique</span><span class="p">(</span><span class="n">grievances</span><span class="o">$</span><span class="n">category</span><span class="p">))</span>
+</code></pre></div><pre><code>## [1] 20
+</code></pre>
+<p>Large imbalances like this are important to consider when building machine learning models in general. Algorithms are specifically programmed to achieve the highest accuracy regardless of original purposes, and they tend to overestimate the presence of larger categories. If a model discovers it can restrict itself to three options while still recording 80%+ accuracy, it will almost always do so.</p>
+<p>This means, though, machine learning models will tend to ignore minor categories, because - using our current data as an example - predicting a category outside the top three has an inherent 81.89% <em>fail</em> rate, so this will need to be addressed when creating models.</p>
+<p>There is question to whether certain smaller categories should exist at <strong>all</strong>, though.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="n">grievances</span> <span class="o">%&gt;%</span>
+  <span class="nf">group_by</span><span class="p">(</span><span class="n">category</span><span class="p">)</span> <span class="o">%&gt;%</span>
+  <span class="nf">summarise</span><span class="p">(</span><span class="n">total</span> <span class="o">=</span> <span class="nf">n</span><span class="p">())</span> <span class="o">%&gt;%</span>
+  <span class="nf">filter</span><span class="p">(</span><span class="n">total</span> <span class="o">&lt;</span> <span class="m">100</span><span class="p">)</span>
+</code></pre></div><pre><code>## # A tibble: 5 x 2
+##   category                   total
+##   &lt;chr&gt;                      &lt;int&gt;
+## 1 Education                     20
+## 2 Estate                        75
+## 3 Markets                       38
+## 4 Optical Fiber Cables (OFC)    62
+## 5 Welfare Schemes               28
+</code></pre>
+<p>Five categories have less than 100 complaints total, including two which have less than thirty. This is far too few complaints to reliably build a model with.</p>
+
+
+
+
+<h3 id="grievances-by-subcategory-a-idnumber-subcategorya">Grievances by Subcategory <a id="number-subcategory"></a>
+  <a class="anchor-link" href="#grievances-by-subcategory-a-idnumber-subcategorya">#</a>
+</h3>
+<div class="most-width">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="n">grievances</span> <span class="o">%&gt;%</span>
+  <span class="nf">group_by</span><span class="p">(</span><span class="n">subcategory</span><span class="p">)</span> <span class="o">%&gt;%</span>
+  <span class="nf">summarise</span><span class="p">(</span><span class="n">Total</span> <span class="o">=</span> <span class="nf">n</span><span class="p">())</span> <span class="o">%&gt;%</span>
+  <span class="nf">arrange</span><span class="p">(</span><span class="n">Total</span><span class="p">)</span> <span class="o">%&gt;%</span>
+  <span class="nf">filter</span><span class="p">(</span><span class="n">Total</span> <span class="o">&gt;</span> <span class="m">1000</span><span class="p">)</span> <span class="o">%&gt;%</span>
+  <span class="nf">e_charts</span><span class="p">(</span><span class="n">subcategory</span><span class="p">)</span> <span class="o">%&gt;%</span>
+  <span class="nf">e_bar</span><span class="p">(</span><span class="n">Total</span><span class="p">)</span> <span class="o">%&gt;%</span>
+  <span class="nf">e_legend</span><span class="p">(</span><span class="n">show</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span> <span class="o">%&gt;%</span>
+  <span class="nf">e_title</span><span class="p">(</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="s">&#34;Most common grievances by subcategory&#34;</span><span class="p">,</span> 
+    <span class="n">subtext</span> <span class="o">=</span> <span class="s">&#34;Only categories above 1,000 visible&#34;</span>
+    <span class="p">)</span> <span class="o">%&gt;%</span>
+  <span class="nf">e_color</span><span class="p">(</span><span class="s">&#34;#2a724a&#34;</span><span class="p">,</span> <span class="n">background</span> <span class="o">=</span> <span class="s">&#34;rgb(0,0,0,0)&#34;</span><span class="p">)</span> <span class="o">%&gt;%</span>
+  <span class="nf">e_flip_coords</span><span class="p">()</span> <span class="o">%&gt;%</span>
+  <span class="nf">e_tooltip</span><span class="p">(</span>
+    <span class="n">trigger</span> <span class="o">=</span> <span class="s">&#34;axis&#34;</span><span class="p">,</span>
+    <span class="n">backgroundColor</span> <span class="o">=</span> <span class="s">&#34;rgba(20, 20, 20, 0.5)&#34;</span><span class="p">,</span>
+    <span class="n">borderColor</span> <span class="o">=</span> <span class="s">&#34;rgba(0, 0, 0, 0)&#34;</span><span class="p">,</span>
+    <span class="n">textStyle</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span>
+      <span class="n">color</span> <span class="o">=</span> <span class="s">&#34;#ffffff&#34;</span>
+    <span class="p">)</span>
+  <span class="p">)</span>
+</code></pre></div><div id="htmlwidget-3" style="width:100%;height:500px;" class="echarts4r html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3">{"x":{"theme":"echarts-theme-states.json","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"xAxis":[{"show":true}],"yAxis":[{"data":["water stagnation","Footpath","Requirement For New Street Lights","Burning of Garbage in Open Space","Dead animal(s)","Road cutting","Garbage dumping in vacant sites","footpath encroachment","Others","obstructions Branches / Trees.","Removal of dead/fallen trees","Debris Removal / Construction Material","Sweeping not done","Animal birth control/neutering of stray dogs","Road side drains","Potholes","Garbage dump","Garbage vehicle not arrived","Street Light Not Working"],"type":"category","boundaryGap":true}],"legend":{"data":["Total"],"show":false,"type":"plain"},"series":[{"data":[{"value":[" 1053","water stagnation"]},{"value":[" 1085","Footpath"]},{"value":[" 1101","Requirement For New Street Lights"]},{"value":[" 1159","Burning of Garbage in Open Space"]},{"value":[" 1271","Dead animal(s)"]},{"value":[" 1439","Road cutting"]},{"value":[" 1466","Garbage dumping in vacant sites"]},{"value":[" 1581","footpath encroachment"]},{"value":[" 1658","Others"]},{"value":[" 1968","obstructions Branches / Trees."]},{"value":[" 2208","Removal of dead/fallen trees"]},{"value":[" 2263","Debris Removal / Construction Material"]},{"value":[" 2715","Sweeping not done"]},{"value":[" 2983","Animal birth control/neutering of stray dogs"]},{"value":[" 3778","Road side drains"]},{"value":[" 5642","Potholes"]},{"value":[" 6719","Garbage dump"]},{"value":[" 9857","Garbage vehicle not arrived"]},{"value":["36397","Street Light Not Working"]}],"name":"Total","type":"bar","yAxisIndex":0,"xAxisIndex":0,"coordinateSystem":"cartesian2d"}],"title":[{"text":"Most common grievances by subcategory","subtext":"Only categories above 1,000 visible"}],"color":["#2a724a"],"backgroundColor":"rgb(0,0,0,0)","tooltip":{"trigger":"axis","backgroundColor":"rgba(20, 20, 20, 0.5)","borderColor":"rgba(0, 0, 0, 0)","textStyle":{"color":"#ffffff"}},"textStyle":{"fontFamily":"Georgia"}},"dispose":true},"evals":[],"jsHooks":[]}</script>
+</div>
+<p>While the model being built is only to predict main categories, by viewing subcategories, we see over 35% of total complaints were related specifically to street lights not working, comprising almost all of the “Electrical” category.</p>
+<p>“Solid Waste (Garbage) Related” has been divided into two subcategories; “Garbage vehicle not arrived” and “Garbage dump,” while Road Maintenance is divided into three subcategories, those being “potholes”, “road side drains”, and “debris removal”.</p>
+
+
+
+
+<h3 id="most-common-complaint-words-a-idnumber-wordsa">Most Common Complaint Words <a id="number-words"></a>
+  <a class="anchor-link" href="#most-common-complaint-words-a-idnumber-wordsa">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="n">tidy</span> <span class="o">&lt;-</span> <span class="n">grievances</span> <span class="o">%&gt;%</span>
+  <span class="nf">unnest_tokens</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">description</span><span class="p">)</span> <span class="o">%&gt;%</span>
+  <span class="nf">anti_join</span><span class="p">(</span><span class="nf">get_stopwords</span><span class="p">())</span> <span class="o">%&gt;%</span>
+  <span class="nf">count</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="o">%&gt;%</span>
+  <span class="nf">arrange</span><span class="p">(</span><span class="nf">desc</span><span class="p">(</span><span class="n">n</span><span class="p">))</span> <span class="o">%&gt;%</span>
+  <span class="nf">slice</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">50</span><span class="p">)</span>
+</code></pre></div><pre><code>## Joining, by = &quot;word&quot;
+</code></pre>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="nf">wordcloud2</span><span class="p">(</span>
+  <span class="n">tidy</span><span class="p">,</span>
+  <span class="n">color</span> <span class="o">=</span> <span class="nf">rep_len</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;#8c5ac8&#34;</span><span class="p">,</span> <span class="s">&#34;#0b0d21&#34;</span><span class="p">,</span> <span class="s">&#34;#0a32d2&#34;</span><span class="p">),</span> <span class="nf">nrow</span><span class="p">(</span><span class="n">tidy</span><span class="p">)),</span>
+  <span class="n">backgroundColor</span> <span class="o">=</span> <span class="s">&#34;#fcfcfc&#34;</span>
+<span class="p">)</span>
+</code></pre></div><div id="htmlwidget-4" style="width:8.5in;height:576px;" class="wordcloud2 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4">{"x":{"word":["street","light","working","road","garbage","please","days","main","vehicle","cross","water","kindly","house","bbmp","layout","near","lights","also","since","2","action","area","people","request","tree","past","waste","1","side","take","sir","complaint","last","3","one","issue","due","done","dogs","week","arrived","lot","collection","many","coming","problem","front","time","dumped","help"],"freq":[41325,34848,34697,27237,24211,11857,9258,7383,7201,6750,5914,5788,5696,5451,5344,5042,5039,4865,4818,4792,4759,4712,4683,4391,4388,4339,4238,4206,4202,4201,3952,3853,3834,3801,3769,3746,3560,3551,3530,3518,3301,3296,3115,3067,3030,2940,2850,2844,2835,2832],"fontFamily":"Segoe UI","fontWeight":"bold","color":["#8c5ac8","#0b0d21","#0a32d2","#8c5ac8","#0b0d21","#0a32d2","#8c5ac8","#0b0d21","#0a32d2","#8c5ac8","#0b0d21","#0a32d2","#8c5ac8","#0b0d21","#0a32d2","#8c5ac8","#0b0d21","#0a32d2","#8c5ac8","#0b0d21","#0a32d2","#8c5ac8","#0b0d21","#0a32d2","#8c5ac8","#0b0d21","#0a32d2","#8c5ac8","#0b0d21","#0a32d2","#8c5ac8","#0b0d21","#0a32d2","#8c5ac8","#0b0d21","#0a32d2","#8c5ac8","#0b0d21","#0a32d2","#8c5ac8","#0b0d21","#0a32d2","#8c5ac8","#0b0d21","#0a32d2","#8c5ac8","#0b0d21","#0a32d2","#8c5ac8","#0b0d21"],"minSize":0,"weightFactor":0.0043557168784029,"backgroundColor":"#fcfcfc","gridSize":0,"minRotation":-0.785398163397448,"maxRotation":0.785398163397448,"shuffle":true,"rotateRatio":0.4,"shape":"circle","ellipticity":0.65,"figBase64":null,"hover":null},"evals":[],"jsHooks":{"render":[{"code":"function(el,x){\n                        console.log(123);\n                        if(!iii){\n                          window.location.reload();\n                          iii = False;\n\n                        }\n  }","data":null}]}}</script>
+<p>Seeing as over 35% of the data was subcategorized as “Street Lights Not Working,” we see that they are the most common words across all the complaitns.</p>
+<p>Missing from that is the word “<em>not</em>,” but this is because we removed all <strong>stop words</strong> from the data. Put simply, stop words are words that don’t add anything to the process of categorizing text. They usually include words such as “he,” “she,” “there,” “they,” “I,” and so on, which is why they don’t appear in the word cloud.</p>
+<p>The stop words included in the <code>tidytext</code> package (and the ones used in the function above) are meant to apply universally, but if you look closely at the word cloud, there are several words that almost certainly would not factor when classifying complaints. These include terms like “please,” “kindly”, “last request,” “sir,” and individual numbers like “1,” “2,” and “3.” While there might exist some incidental correlations between some of these words and their respective categories (perhaps citizens filing animal control complaints are nicer on average, so the term “please” could be used to identify those complaints more accurately, for example), it’s likely this will just throw off our model’s accuracy in the long run.</p>
+<hr>
+<p>From the EDA, the primary factors that should be considered when building the models are:</p>
+<ol>
+<li>Account for imbalances in number of occurrences per category.</li>
+<li>Reduce the number of categories by combining them into existing ones.</li>
+<li>Add additional stop words to the existing list.</li>
+</ol>
+
+
+
+
+<h2 id="mle-models-a-idmle-modelsa">MLE Models <a id="mle-models"></a>
+  <a class="anchor-link" href="#mle-models-a-idmle-modelsa">#</a>
+</h2>
+
+
+
+
+<h3 id="preparing-the-data-a-idpreparing-dataa">Preparing the Data <a id="preparing-data"></a>
+  <a class="anchor-link" href="#preparing-the-data-a-idpreparing-dataa">#</a>
+</h3>
+<p>We’ll opt to use Python for creating the MLE models, as Python libraries are generally more efficient and developed than their R counterparts. Because creating models is computer intensive, the code here has been evaluated locally and presented here for demonstration.</p>
+<p>To start, we’ll load import the necessary libraries and load the data using <code>pandas</code>. The models will be built using the <code>sklearn</code> package.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>  
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_selection</span> <span class="kn">import</span> <span class="n">chi2</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">MultinomialNB</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">LinearSVC</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_val_score</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">metrics</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&#34;bengaluru-grievances.csv&#34;</span><span class="p">)</span>
+</code></pre></div><p>One of the packages imported here is <code>TfidfVectorizer</code>, which will be the algorithm used to create the models. I’ll explain why I specifically chose this package later on.</p>
+<p>Here, I quickly apply the earlier data wrangling techniques by removing complaints less than 12 characters, this time using Python syntax.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Reduce Character Limit  </span>
+<span class="n">character_limit</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&#34;description&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">len</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">12</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">character_limit</span><span class="p">]</span>
+</code></pre></div><p>A model based on over 100,000 observations is <strong>extremely</strong> hardware intensive, and it causes my laptop to overheat a lot. For practical purposes, we’ll cut down on our data by choosing 15,000 rows at random.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">15000</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</code></pre></div><p>If we wanted to get another random 15,000 rows, we could change the <code>random_state = 1</code> argument to any other number, like 42, 671, or 7.</p>
+<p>With no other additional changes to be made, we can begin creating the models.</p>
+
+
+
+
+<h3 id="text-preprocessing-a-idtext-preprocessinga">Text Preprocessing <a id="text-preprocessing"></a>
+  <a class="anchor-link" href="#text-preprocessing-a-idtext-preprocessinga">#</a>
+</h3>
+<p>There are several methods to building models, but the simplest method is to create a new column in our data - we’ll call it “category_id” - that is a factor variable of all existing categories in our data. This essentially amounts to assigning each category a number (Electrical = 0, Road Engineering = 1, etc), which is necessary for getting our model to run properly, as <code>sklearn</code> will not understand strings as factors.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="p">[</span><span class="s1">&#39;category_id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&#34;category&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">factorize</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">category_id_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s2">&#34;category&#34;</span><span class="p">,</span> <span class="s2">&#34;category_id&#34;</span><span class="p">]]</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
+</code></pre></div><p>Next, the description column (which stores the text for grievances) needs to be converted to vectors using a chosen algorithm. The algorithm chosen here is <strong>Term Frequency - Inverse Document Frequency</strong> (TF-IDF), which is the product of <code>\(TF\)</code> and <code>\(IDF\)</code> scores. This is the <code>TfidfVectorizer</code> function that we imported earlier.</p>
+<p>It’s useful to present these terms mathematically.</p>
+<br>
+<p><strong>Term Frequency</strong>: $$ TF = \frac{Number \hspace{0.15cm} of \hspace{0.15cm} times \hspace{0.15cm} a \hspace{0.15cm} term \hspace{0.15cm} appears \hspace{0.15cm} in \hspace{0.15cm} the \hspace{0.15cm} description}{Total \hspace{0.15cm} number \hspace{0.15cm} of \hspace{0.15cm} words \hspace{0.15cm} in \hspace{0.15cm} the \hspace{0.15cm} description} $$</p>
+<p><strong>Inverse Document Frequency</strong>: $$ IDF = log(\frac{Number \hspace{0.15cm} of \hspace{0.15cm} rows \hspace{0.15cm} in \hspace{0.15cm} a \hspace{0.15cm} data}{Number \hspace{0.15cm} of \hspace{0.15cm} rows \hspace{0.15cm} a \hspace{0.15cm} term \hspace{0.15cm} appears \hspace{0.15cm} in \hspace{0.15cm} a \hspace{0.15cm} data}) $$</p>
+<p><strong>TF-IDF</strong>: $$ TF-IDF = TF * IDF $$</p>
+<br>
+<p>The reason for choosing this algorithm was for the <code>\(IDF\)</code> component, which <strong>downsamples</strong> words that appear frequently across all complaints, while adding extra weight to terms that appear less often.</p>
+<p>Analyzing it mathematically: as the denominator of the <code>\(IDF\)</code> variable increases, the closer it rapidly (more precisely, <em>exponentially</em>) approaches zero. Let <code>\(N\)</code> represent the total number of rows in the data, and let <code>\(t\)</code> represent a chosen term. If a certain word were to appear in <strong>every</strong> single complaint, then we would have <code>\(IDF(N, t) = log(\frac{N}{t}) = log(\frac{N}{N}) = log(1) = 0\)</code>, which would mean that when calculating <code>\(TF-IDF\)</code>, that specific word would have absolutely no weight attached to it when classifying complaints.</p>
+<p>Now; why do this? As discussed previously during the EDA section, almost 82% of all grievances fall into exactly three categories. Classification models will tend to stick to only a few categories, struggling to identify minor categories. While this may record higher accuracy scores on average, doing so means minor categories will rarely be classified at all, and in some instances, could lower overall accuracy if skew is significant enough. By ranking terms on an exponentially decreasing scale, we hope to reduce this issue.</p>
+<p>We first setup our <code>TfidfVectorizer</code> and assign it to a variable, <code>tfidf</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">tfidf</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">(</span>
+  <span class="n">sublinear_tf</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="c1"># Set term frequency to logarithmic scale</span>
+  <span class="n">min_df</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="c1"># Remove terms that appear less than &#39;min_df&#39; times</span>
+  <span class="n">ngram_range</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="c1"># Unigrams and bigrams are considered </span>
+  <span class="n">stop_words</span> <span class="o">=</span> <span class="s1">&#39;english&#39;</span> <span class="c1"># Use common English stop words</span>
+<span class="p">)</span>
+</code></pre></div><p>From here, we can begin building our models, but before doing so, let’s see what the most common terms were for each category.</p>
+<p>To do so, we use <code>tfidf.get_feature_names_out()</code> on each category and assign that to a variable that we’ll call “feature_names.” This contains all of the most common words associated with each category, which we then split into two separate lists for unigrams and bigrams (fancy words for “one word” and “two words”). From there, we print to console the <code>\(N = 3\)</code> most common terms from each list. We wrap all this in a <code>for</code> loop, automatically progressing through each category.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Defaults </span>
+<span class="n">features</span> <span class="o">=</span> <span class="n">tfidf</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">description</span><span class="p">)</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">category_id</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="c1"># For Loop</span>
+<span class="k">for</span> <span class="n">category</span><span class="p">,</span> <span class="n">category_id</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">category_to_id</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+  <span class="n">features_chi2</span> <span class="o">=</span> <span class="n">chi2</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">labels</span> <span class="o">==</span> <span class="n">category_id</span><span class="p">)</span>
+  <span class="n">indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">features_chi2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+  <span class="n">feature_names</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">tfidf</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">())[</span><span class="n">indices</span><span class="p">]</span>
+  <span class="n">unigrams</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">feature_names</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">))</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>
+  <span class="n">bigrams</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">feature_names</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">))</span> <span class="o">==</span> <span class="mi">2</span><span class="p">]</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">==&gt; </span><span class="si">%s</span><span class="s2">:&#34;</span> <span class="o">%</span><span class="p">(</span><span class="n">Product</span><span class="p">))</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;  * Most Correlated Unigrams are: </span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">unigrams</span><span class="p">[</span><span class="o">-</span><span class="n">N</span><span class="p">:])))</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;  * Most Correlated Bigrams are: </span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">bigrams</span><span class="p">[</span><span class="o">-</span><span class="n">N</span><span class="p">:])))</span>
+</code></pre></div><p>As this part was performed offline, here is the output in screenshots.</p>
+<p><img src="term-correlation-1.png" alt="Image one"></p>
+<p><img src="term-correlation-2.png" alt="Image two"></p>
+<p><img src="term-correlation-3.png" alt="Image three"></p>
+<p>The results are largely what we would expect / hope for, though there are some things to note.</p>
+<p>Some common phrases that appear for certain categories seemingly have nothing to do with them, such as the terms “77”, “kindly”, and “plz look”, which is one of the most common bigrams for both “Education” and “Welfare Schemes.” Remember, these were the categories that had less than 100 observations <strong>total</strong>. When we split the data to grab 15,000 random rows, these categories were split further, reducing those categories even further, which is why these nonsense phrases appear.</p>
+
+
+
+
+<h3 id="building-the-models-a-idbuilding-modelsa">Building the Models <a id="building-models"></a>
+  <a class="anchor-link" href="#building-the-models-a-idbuilding-modelsa">#</a>
+</h3>
+<p>To begin, we first split the data into a 75:25 training and test split. The model will “learn” how to classify grievances based on the training data, and then it will “test” its accuracy on the remaining 25% (or about 3,750 rows).</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># We define them here as independent variables </span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&#34;description&#34;</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&#34;category&#34;</span><span class="p">]</span>
+
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+</code></pre></div><p>There are several different models to choose from, but it’s difficult to determine which will perform best before actually building them. Therefore, we’ll test several out simultaneously by storing them in a list and looping through each model.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">models</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">max_depth</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">0</span><span class="p">),</span>
+    <span class="n">LinearSVC</span><span class="p">(),</span>
+    <span class="n">MultinomialNB</span><span class="p">(),</span>
+    <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">random_state</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>    
+<span class="p">]</span>
+</code></pre></div><p>Here, we stored in a list the following:</p>
+<ul>
+<li>Random Forest Model</li>
+<li>Linear Support Vector Classifier Model</li>
+<li>Multinomial Naive Bayes Model</li>
+<li>Logistic Regression Model</li>
+</ul>
+<p>After, we apply each model to the training data and record the results. The accuracy of each model is inherently random, as model performance is somewhat due to chance, so we’ll use a five-fold cross-validation and take the mean average of each iteration to get a more balanced result. We store the results in a <code>pandas</code> dataframe for analysis.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Copy and pasted from before </span>
+<span class="n">features</span> <span class="o">=</span> <span class="n">tfidf</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">description</span><span class="p">)</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">category_id</span>
+
+<span class="n">CV</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1"># Number of cross-validations</span>
+<span class="n">cv_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">index</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">CV</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">models</span><span class="p">)))</span> <span class="c1"># CV dataframe</span>
+<span class="n">entries</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># Array for storing model results </span>
+
+<span class="k">for</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">models</span><span class="p">:</span>
+  <span class="n">model_name</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span>
+  <span class="n">accuracies</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;accuracy&#39;</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">CV</span><span class="p">)</span>
+  <span class="k">for</span> <span class="n">fold_idx</span><span class="p">,</span> <span class="n">accuracy</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">accuracies</span><span class="p">):</span>
+    <span class="n">entries</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">model_name</span><span class="p">,</span> <span class="n">fold_idx</span><span class="p">,</span> <span class="n">accuracy</span><span class="p">))</span>
+    
+<span class="n">cv_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">entries</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;model_name&#39;</span><span class="p">,</span> <span class="s1">&#39;fold_idx&#39;</span><span class="p">,</span> <span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
+</code></pre></div>
+
+
+
+<h3 id="results-a-idresultsa">Results <a id="results"></a>
+  <a class="anchor-link" href="#results-a-idresultsa">#</a>
+</h3>
+<p>Because we used a five-fold cross-validation, we have a total of 20 accuracy results - five for each model. We grab the mean accuracy and standard deviation for each model, storing them into a list.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">mean_accuracy</span> <span class="o">=</span> <span class="n">cv_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;model_name&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">accuracy</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">std_accuracy</span> <span class="o">=</span> <span class="n">cv_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;model_name&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">accuracy</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+
+<span class="n">accuracy</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">mean_accuracy</span><span class="p">,</span> <span class="n">std_accuracy</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">accuracy</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Mean Accuracy&#39;</span><span class="p">,</span> <span class="s1">&#39;Standard Deviation&#39;</span><span class="p">]</span>
+
+<span class="n">accuracy</span>
+</code></pre></div><table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Mean Accuracy</th>
+<th>Standard Deviation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Linear SVC</td>
+<td>88.773%</td>
+<td>0.368%</td>
+</tr>
+<tr>
+<td>Logistic Regression</td>
+<td>87.767%</td>
+<td>0.433%</td>
+</tr>
+<tr>
+<td>Multinomial NB</td>
+<td>85.720%</td>
+<td>0.117%</td>
+</tr>
+<tr>
+<td>Random Forest</td>
+<td>66.213%</td>
+<td>1.411%</td>
+</tr>
+</tbody>
+</table>
+<p>The top three models all performed similarly as well, all falling within 3.1% percentage points. The Linear Support Vector Classifier performed the best among the three, while the Random Forest performed atrociously.+ Standard deviation among the top three remained fairly low.</p>
+
+
+
+
+<h2 id="improvements-a-idimprovementsa">Improvements <a id="improvements"></a>
+  <a class="anchor-link" href="#improvements-a-idimprovementsa">#</a>
+</h2>
+<p>We will focus model improvement on the Linear SVC because it performed the best of the four.</p>
+<p>As a reminder, these were the three main considerations before going in.</p>
+<ol>
+<li>Account for imbalances in number of occurrences per category.</li>
+<li>Consider reducing number of categories.</li>
+<li>Consider adding additional stopwords.</li>
+</ol>
+<p>To get a better idea of how our model performed, we will plot a <strong>confusion matrix</strong>, which displays the total number of attempts our classification model made, including accuracy.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Recreating LinearSVC Model </span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span><span class="n">indices_train</span><span class="p">,</span><span class="n">indices_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> 
+                                                               <span class="n">labels</span><span class="p">,</span> 
+                                                               <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> 
+                                                               <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">LinearSVC</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="c1"># Confusion Matrix Plot</span>
+<span class="n">conf_mat</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">conf_mat</span><span class="p">,</span> <span class="n">annot</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s2">&#34;Greens&#34;</span><span class="p">,</span> <span class="n">fmt</span> <span class="o">=</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span>
+            <span class="n">xticklabels</span> <span class="o">=</span> <span class="n">category_id_df</span><span class="o">.</span><span class="n">category</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> 
+            <span class="n">yticklabels</span> <span class="o">=</span> <span class="n">category_id_df</span><span class="o">.</span><span class="n">category</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&#34;Predicted&#34;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&#34;Actual&#34;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&#34;Confusion Matrix for LinearSVC </span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
+</code></pre></div><center>
+<p><img src="heatmap.png" alt="Heatmap"></p>
+</center>
+<p>On the diagonal are the number of rows that the model correctly predicted for each category. The horizontals and verticals represent the number of incorrect guesses, with the vertical representing incorrect guesses for that specific category. For example, the model correctly classified 1,484 complaints as “Electrical,” incorrectly classified 2 as “Electrical” when they should of been classified as “COVID-19,” and classified 10 as “Solid Waste” when they should of been classified as “Electrical.”</p>
+
+
+
+
+<h3 id="modifications-a-idmodificationsa">Modifications <a id="modifications"></a>
+  <a class="anchor-link" href="#modifications-a-idmodificationsa">#</a>
+</h3>
+<p>Looking at the chart, the top three categories dominate the total number of occurrences, comprising 2,969 rows out of 3,750 in our test data. Note that most of the incorrect predictions appear in the vertical of each of these three columns, meaning the model was incorrectly classifying complaints as them. Even though we chose an algorithm to specifically downsample those categories, our model still has a tendency to over-predict them.</p>
+<p>A few categories have 12 or fewer observations: those being Markets, Estate, OFC, Welfare Schemes, Advertisement, Education, Town Planning, Lakes, and Parks and Playgrounds. Converting these will likely improve accuracy considering how poorly our model did at predicting them, but there isn’t clear category to merge them with. Many of these categories seem to have been falsely labeled as “Road Maintenance.” While converting these columns over to this might lead to higher accuracy, it doesn’t really make any sense in this case, and likely would hurt performance in the future.</p>
+<p>We could reassign these variables to “Others,” but that category performed <em>abysmally</em>, only correctly predicting 3 out of 43 complaints. On one hand, moving them in there probably won’t hurt, but it likely won’t improve it either.</p>
+<p>Lakes and Advertisements, which the model was able to predict quite a few correctly, will be left untouched. For the remaining categories under 12 test observations, they will be merged in with Others.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Read in Data | Copy and Paste from Above</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&#34;bengaluru-grievances.csv&#34;</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">category</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span><span class="o">.</span><span class="n">values</span> 
+<span class="n">character_limit</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&#34;description&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">len</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">12</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">character_limit</span><span class="p">]</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">15000</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="c1"># Select New Rows </span>
+
+<span class="c1"># Convert Columns </span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&#34;category&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&#34;category&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="s1">&#39;Markets&#39;</span><span class="p">:</span> <span class="s1">&#39;Others&#39;</span><span class="p">})</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&#34;category&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&#34;category&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="s1">&#39;Estate&#39;</span><span class="p">:</span> <span class="s1">&#39;Others&#39;</span><span class="p">})</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&#34;category&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&#34;category&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="s1">&#39;Welfare Schemes&#39;</span><span class="p">:</span> <span class="s1">&#39;Others&#39;</span><span class="p">})</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&#34;category&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&#34;category&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="s1">&#39;Education&#39;</span><span class="p">:</span> <span class="s1">&#39;Others&#39;</span><span class="p">})</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&#34;category&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&#34;category&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="s1">&#39;Town Planning&#39;</span><span class="p">:</span> <span class="s1">&#39;Others&#39;</span><span class="p">})</span>
+</code></pre></div><p>“Optical Fiber Cables” and “Storm Water Drains,” though, are directly related to “Road Maintenance,” and if we look at the chart, that’s what the model ended up guessing for them. For these categories, it makes more sense to convert them over to “Road Maintenance” as opposed to “Others.”</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="p">[</span><span class="s2">&#34;category&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&#34;category&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="s1">&#39;Optical Fiber Cables (OFC)&#39;</span><span class="p">:</span> <span class="s1">&#39;Road Maintenance(Engg)&#39;</span><span class="p">})</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&#34;category&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&#34;category&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="s1">&#39;Storm  Water Drain(SWD)&#39;</span><span class="p">:</span> <span class="s1">&#39;Road Maintenance(Engg)&#39;</span><span class="p">})</span>
+</code></pre></div><p>While we’ve converted the total number of categories down from 20 to 13, we’ve only changed a total of 45 test rows. Even if the improved model were able to now correctly predict all these observations, we would only see an improvement of 1.2%, certainly not insignificant, but hardly substantial.</p>
+<p>Improving our stop word list, on the other hand, will hypothetically improve the accuracy of the model overall.</p>
+<p>Recall earlier when we found the most common unigrams and bigrams for each category. Several terms that appeared most often had little or nothing to do with their respective grievances, and should be able to be removed while maintaining original accuracy.</p>
+<p>The original stop word list comes from another function in <code>sklearn</code>, and already contains over 300 words. We want to keep those words while adding to it, so we will union them together in a new list and use it in <code>TfidfVectorizer</code>.</p>
+<p>Before doing that, the last choice to decide is whether to adjust the downsampling of the model or not. This doesn’t appear to be needed, as there is a good amount of variance for both “Solid Waste (Garbage) Related” and “Road Maintenance(Engg).” Increasing downsampling will likely cause these categories to perform worse, so for this iteration, we leave it untouched.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Import Function </span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction</span> <span class="kn">import</span> <span class="n">text</span>
+
+<span class="c1"># Add Stop Words </span>
+<span class="n">stop_words</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">ENGLISH_STOP_WORDS</span><span class="o">.</span><span class="n">union</span><span class="p">([</span><span class="s2">&#34;please&#34;</span><span class="p">,</span> <span class="s2">&#34;plz&#34;</span><span class="p">,</span> <span class="s2">&#34;look&#34;</span><span class="p">,</span> <span class="s2">&#34;help&#34;</span><span class="p">,</span> <span class="s2">&#34;causing&#34;</span><span class="p">,</span> <span class="s2">&#34;walk&#34;</span><span class="p">,</span> <span class="s2">&#34;pedestrians&#34;</span><span class="p">,</span> <span class="s2">&#34;kindly&#34;</span><span class="p">,</span> <span class="s2">&#34;refused&#34;</span><span class="p">,</span> <span class="s2">&#34;senior&#34;</span><span class="p">,</span> <span class="s2">&#34;help&#34;</span><span class="p">,</span> <span class="s2">&#34;one&#34;</span><span class="p">,</span> <span class="s2">&#34;two&#34;</span><span class="p">,</span> <span class="s2">&#34;three&#34;</span><span class="p">,</span> <span class="s2">&#34;77&#34;</span><span class="p">,</span> <span class="s2">&#34;1&#34;</span><span class="p">,</span> <span class="s2">&#34;2&#34;</span><span class="p">,</span> <span class="s2">&#34;3&#34;</span><span class="p">])</span>
+
+<span class="c1"># TfidfVectorizer </span>
+<span class="n">tfidf</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">(</span>
+  <span class="n">sublinear_tf</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="c1"># Set term frequency to logarithmic scale</span>
+  <span class="n">min_df</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="c1"># Remove terms that appear less than &#39;min_df&#39; times</span>
+  <span class="n">ngram_range</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="c1"># Keep unigrams and bigrams</span>
+  <span class="n">stop_words</span> <span class="o">=</span> <span class="n">stop_words</span> <span class="c1"># Use custom stop words </span>
+<span class="p">)</span>
+</code></pre></div>
+
+
+
+<h3 id="redo-text-preprocessing-a-idredo-text-preprocessinga">Redo Text Preprocessing <a id="redo-text-preprocessing"></a>
+  <a class="anchor-link" href="#redo-text-preprocessing-a-idredo-text-preprocessinga">#</a>
+</h3>
+<p>We have to redo the text preprocessing from earlier, so this is all copy-and-paste from above.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Copy and Paste</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;category_id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&#34;category&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">factorize</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">category_id_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s2">&#34;category&#34;</span><span class="p">,</span> <span class="s2">&#34;category_id&#34;</span><span class="p">]]</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
+<span class="n">category_to_id</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">category_id_df</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">id_to_category</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">category_id_df</span><span class="p">[[</span><span class="s2">&#34;category_id&#34;</span><span class="p">,</span> <span class="s2">&#34;category&#34;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+
+<span class="n">features</span> <span class="o">=</span> <span class="n">tfidf</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">description</span><span class="p">)</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">category_id</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&#34;description&#34;</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&#34;category&#34;</span><span class="p">]</span>
+
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span><span class="n">indices_train</span><span class="p">,</span><span class="n">indices_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
+  <span class="n">features</span><span class="p">,</span> 
+  <span class="n">labels</span><span class="p">,</span> 
+  <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">,</span> 
+  <span class="n">random_state</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">LinearSVC</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+</code></pre></div>
+
+
+
+<h3 id="new-results-a-idnew-resultsa">New Results <a id="new-results"></a>
+  <a class="anchor-link" href="#new-results-a-idnew-resultsa">#</a>
+</h3>
+<p>We don’t need the complicated <code>for</code> loop from before because we only have one model this time. Therefore, we simply use <code>cross_val_score</code> as we did before and print the results to console.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">accuracy_svc</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s1">&#39;accuracy&#39;</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">CV</span><span class="p">)</span>
+
+<span class="n">cv_mean_accuracy_svc</span> <span class="o">=</span> <span class="n">accuracy_svc</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">cv_mean_std_svc</span> <span class="o">=</span> <span class="n">accuracy_svc</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">cv_mean_accuracy_svc</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cv_mean_std_svc</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span>
+</code></pre></div><center>
+<p><img src="results.png" alt="Results"></p>
+</center>
+<p>Our new Linear SVC model was able to achieve <strong>91.987%</strong> accuracy with an average standard deviation of <em>0.282%</em> across five iterations. That’s an improvement of <strong>3.214%</strong> while also reducing variance within model performance by <em>0.086%</em>.</p>
+<p>Another way to look at these refinements; out of a possible <strong>3,750</strong> complaints, our model was able to correctly predict an additional <em>120</em> complaints, going from <strong>3,328</strong> correct predictions to <strong>3,449</strong>.</p>
+<center>
+<p><img src="heatmap-2.png" alt="Heatmap 2"></p>
+</center>
+
+
+
+
+<h2 id="conclusions-a-idconclusionsa">Conclusions <a id="conclusions"></a>
+  <a class="anchor-link" href="#conclusions-a-idconclusionsa">#</a>
+</h2>
+<p>Once again, the top three categories performed similarly as well as before. Road Maintenance was able to correctly predict an additional <em>63</em> complaints on this iteration. These three categories also continue to make up most of the incorrect predictions.</p>
+<p>The “Others” categories once again performed dreadfully, only recording an additional two correct predictions despite even more chances.</p>
+<p>Minor categories saw little or no improvement. The “Health Dept” was the only category that performed worse, dropping from 69.7% to 54.6% accuracy. The model incorrectly chose “Solid Waste” and “Road Maintenance” more often for “Health Dept” complaints than the previous model did, though it’s unclear as to why this is.</p>
+<p>Increasing the stop word list seems to have improved accuracy among all categories.</p>
+<p>You can check out the Python source code for the MLE model 
+<a href="https://github.com/Nathan-States/Bengaluru-Text-Mining" target="_blank" rel="noopener">here</a>.</p>
+
+      </section>
+      <footer class="post-footer">
+        <div class="post-pagination dt w-100 mt4 mb2">
+  
+  
+    <a class="prev dtc pr2 tl v-top fw6"
+    href="https://www.nathanstates.com/blog/pcaob-inspections-part-1/">&larr; PCAOB Inspections (Part 1)</a>
+  
+  
+  
+</div>
+
+      </footer>
+    </article>
+    
+      
+<div class="post-comments pa0 pa4-l mt4">
+  
+  <script src="https://utteranc.es/client.js"
+          repo="Nathan-States/site"
+          issue-term="pathname"
+          theme="boxy-light"
+          label="comments :crystal_ball:"
+          crossorigin="anonymous"
+          async
+          type="text/javascript">
+  </script>
+  
+</div>
+
+    
+  </section>
+</main>
+<footer class="site-footer pv4 bt b--transparent ph5" role="contentinfo">
+  <nav class="db dt-l w-100">
+    <p class="site-copyright f7 db dtc-l v-mid w-100 w-33-l tc tl-l pv2 pv0-l mv0 lh-copy">
+      &copy; 2022 RStudio, Anywhere
+    </p>
+    
+    <div class="site-social-links db dtc-l v-mid w-100 w-33-l tc pv2 pv0-l mv0">
+      <div class="social-icon-links" aria-hidden="true">
+  
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://github.com/Nathan-States" title="github" target="_blank" rel="noopener">
+      <i class="fab fa-github fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://twitter.com/nathanstates_" title="twitter" target="_blank" rel="noopener">
+      <i class="fab fa-twitter fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="/blog/index.xml" title="rss" >
+      <i class="fas fa-rss fa-lg fa-fw"></i>
+    </a>
+  
+</div>
+
+    </div>
+    
+    <div class="site-links f6 db dtc-l v-mid w-100 w-67-l tc tr-l pv2 pv0-l mv0">
+      
+      <a class="dib pv1 ph2 link" href="/license/" title="License">License</a>
+      
+    </div>
+  </nav>
+  
+    <script>
+
+    var i, text, code, codes = document.getElementsByTagName('code');
+    for (let i = 0; i < codes.length;) {
+      code = codes[i];
+      if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+        text = code.textContent;
+        if (/^\$[^$]/.test(text) && /[^$]\$$/.test(text)) {
+          text = text.replace(/^\$/, '\\(').replace(/\$$/, '\\)');
+          code.textContent = text;
+        }
+        if (/^\\\((.|\s)+\\\)$/.test(text) ||
+            /^\\\[(.|\s)+\\\]$/.test(text) ||
+            /^\$(.|\s)+\$$/.test(text) ||
+            /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+          code.outerHTML = code.innerHTML;  
+          continue;
+        }
+      }
+      i++;
+    }
+</script>
+
+  
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css" integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js" integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+
+
+    
+  
+  
+</footer>
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+      </div>
+    </body>
+</html>

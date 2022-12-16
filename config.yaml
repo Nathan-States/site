@@ -1,4 +1,4 @@
-baseURL:
+baseURL: 'https://www.nathanstates.com/'
 theme: hugo-apero
 languageCode: en
 title: NS 

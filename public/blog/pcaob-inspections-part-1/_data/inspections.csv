@@ -1,0 +1,647 @@
+year,firm,country,audits_inspected,audits_failed
+2004,BDO,United States,NA,11
+2005,BDO,United States,NA,7
+2006,BDO,United States,NA,11
+2007,BDO,United States,NA,5
+2008,BDO,United States,NA,6
+2009,BDO,United States,33,8
+2010,BDO,United States,31,8
+2011,BDO,United States,23,9
+2012,BDO,United States,20,11
+2013,BDO,United States,23,15
+2014,BDO,United States,22,17
+2015,BDO,United States,23,12
+2016,BDO,United States,24,16
+2017,BDO,United States,23,9
+2018,BDO,United States,23,11
+2019,BDO,United States,26,11
+2020,BDO,United States,24,13
+2004,Crowe,United States,NA,11
+2005,Crowe,United States,NA,8
+2006,Crowe,United States,NA,3
+2007,Crowe,United States,NA,2
+2008,Crowe,United States,NA,1
+2009,Crowe,United States,13,2
+2010,Crowe,United States,13,8
+2011,Crowe,United States,13,8
+2012,Crowe,United States,12,6
+2013,Crowe,United States,13,5
+2014,Crowe,United States,14,5
+2015,Crowe,United States,14,3
+2016,Crowe,United States,15,5
+2017,Crowe,United States,16,3
+2018,Crowe,United States,14,1
+2019,Crowe,United States,14,7
+2020,Crowe,United States,15,4
+2003,Deloitte,United States,16,NA
+2004,Deloitte,United States,NA,8
+2005,Deloitte,United States,NA,17
+2006,Deloitte,United States,NA,8
+2007,Deloitte,United States,61,9
+2008,Deloitte,United States,64,7
+2009,Deloitte,United States,73,15
+2010,Deloitte,United States,58,26
+2011,Deloitte,United States,53,22
+2012,Deloitte,United States,52,13
+2013,Deloitte,United States,53,15
+2014,Deloitte,United States,53,11
+2015,Deloitte,United States,55,13
+2016,Deloitte,United States,55,13
+2017,Deloitte,United States,55,11
+2018,Deloitte,United States,46,6
+2019,Deloitte,United States,52,6
+2020,Deloitte,United States,51,2
+2003,Ernst & Young,United States,16,NA
+2004,Ernst & Young,United States,NA,8
+2005,Ernst & Young,United States,NA,10
+2006,Ernst & Young,United States,NA,8
+2007,Ernst & Young,United States,NA,4
+2008,Ernst & Young,United States,NA,8
+2009,Ernst & Young,United States,58,5
+2010,Ernst & Young,United States,63,13
+2011,Ernst & Young,United States,56,20
+2012,Ernst & Young,United States,52,25
+2013,Ernst & Young,United States,57,28
+2014,Ernst & Young,United States,56,20
+2015,Ernst & Young,United States,55,16
+2016,Ernst & Young,United States,55,15
+2017,Ernst & Young,United States,55,17
+2018,Ernst & Young,United States,54,14
+2019,Ernst & Young,United States,60,11
+2020,Ernst & Young,United States,52,8
+2004,Grant Thornton,United States,NA,15
+2005,Grant Thornton,United States,NA,12
+2006,Grant Thornton,United States,NA,8
+2007,Grant Thornton,United States,NA,5
+2008,Grant Thornton,United States,NA,9
+2009,Grant Thornton,United States,39,5
+2010,Grant Thornton,United States,41,12
+2011,Grant Thornton,United States,35,13
+2012,Grant Thornton,United States,34,22
+2013,Grant Thornton,United States,36,20
+2014,Grant Thornton,United States,34,11
+2015,Grant Thornton,United States,34,14
+2016,Grant Thornton,United States,34,8
+2017,Grant Thornton,United States,34,6
+2018,Grant Thornton,United States,32,8
+2019,Grant Thornton,United States,31,7
+2020,Grant Thornton,United States,29,5
+2003,KPMG,United States,16,NA
+2004,KPMG,United States,NA,19
+2005,KPMG,United States,NA,11
+2006,KPMG,United States,NA,7
+2007,KPMG,United States,NA,10
+2008,KPMG,United States,NA,9
+2009,KPMG,United States,60,8
+2010,KPMG,United States,54,12
+2011,KPMG,United States,53,12
+2012,KPMG,United States,50,17
+2013,KPMG,United States,50,23
+2014,KPMG,United States,52,27
+2015,KPMG,United States,52,20
+2016,KPMG,United States,51,25
+2017,KPMG,United States,52,26
+2018,KPMG,United States,52,19
+2019,KPMG,United States,58,17
+2020,KPMG,United States,53,14
+2011,Marcum,United States,9,2
+2012,Marcum,United States,11,0
+2015,Marcum,United States,8,0
+2016,Marcum,United States,9,3
+2017,Marcum,United States,10,3
+2018,Marcum,United States,10,3
+2019,Marcum,United States,12,6
+2020,Marcum,United States,14,9
+2003,PricewaterhouseCoopers,United States,16,NA
+2004,PricewaterhouseCoopers,United States,NA,30
+2005,PricewaterhouseCoopers,United States,NA,9
+2006,PricewaterhouseCoopers,United States,NA,6
+2007,PricewaterhouseCoopers,United States,NA,6
+2008,PricewaterhouseCoopers,United States,50,6
+2009,PricewaterhouseCoopers,United States,76,9
+2010,PricewaterhouseCoopers,United States,75,28
+2011,PricewaterhouseCoopers,United States,63,26
+2012,PricewaterhouseCoopers,United States,54,21
+2013,PricewaterhouseCoopers,United States,59,19
+2014,PricewaterhouseCoopers,United States,58,17
+2015,PricewaterhouseCoopers,United States,55,12
+2016,PricewaterhouseCoopers,United States,56,11
+2017,PricewaterhouseCoopers,United States,55,13
+2018,PricewaterhouseCoopers,United States,55,14
+2019,PricewaterhouseCoopers,United States,60,18
+2020,PricewaterhouseCoopers,United States,52,1
+2015,RSM,United States,15,5
+2016,RSM,United States,15,7
+2017,RSM,United States,15,11
+2018,RSM,United States,17,5
+2019,RSM,United States,15,3
+2020,RSM,United States,15,7
+2021,Deloitte,Cayman Islands,1,0
+2021,Deloitte,Australia,2,2
+2021,Deloitte,Colombia,2,1
+2020,Deloitte,Argentina,3,0
+2017,Deloitte,Argentina,3,2
+2020,Deloitte,Bermuda,2,0
+2017,Deloitte,Bermuda,2,0
+2019,Deloitte,Panama,1,0
+2017,Deloitte,Panama,1,1
+2019,Deloitte,Russia,3,0
+2016,Deloitte,Russia,3,1
+2019,Deloitte,South Africa,3,2
+2016,Deloitte,South Africa,3,2
+2019,Deloitte,Canada,5,1
+2017,Deloitte,Canada,5,1
+2019,Deloitte,Netherlands,3,1
+2016,Deloitte,Netherlands,3,0
+2019,Deloitte,Greece,3,0
+2016,Deloitte,Greece,3,1
+2019,Deloitte,India,3,0
+2016,Deloitte,India,3,1
+2019,Deloitte,United Kingdom,3,1
+2016,Deloitte,United Kingdom,3,1
+2019,Deloitte,Denmark,3,2
+2016,Deloitte,Denmark,3,2
+2018,Deloitte,France,2,1
+2018,Deloitte,Peru,2,2
+2018,Deloitte,Norway,1,0
+2018,Deloitte,Switzerland,3,1
+2018,Deloitte,South Korea,3,1
+2018,Deloitte,Chile,3,0
+2018,Deloitte,Brazil,3,0
+2018,Deloitte,Spain,3,0
+2017,Deloitte,Malaysia,3,2
+2017,Deloitte,Japan,3,0
+2017,Deloitte,Luxembourg,2,0
+2016,Deloitte,Germany,3,2
+2016,Deloitte,Canada,6,2
+2015,Deloitte,Spain,3,2
+2015,Deloitte,France,3,3
+2016,Deloitte,South Korea,3,1
+2015,Deloitte,Canada,8,7
+2015,Deloitte,Brazil,3,1
+2015,Deloitte,Chile,3,1
+2015,Deloitte,Norway,3,2
+2014,Deloitte,Canada,7,7
+2014,Deloitte,Japan,3,1
+2014,Deloitte,Argentina,3,1
+2013,Deloitte,Canada,9,6
+2014,Deloitte,South Korea,3,2
+2014,Deloitte,Panama,1,0
+2013,Deloitte,Netherlands,3,3
+2013,Deloitte,United Kingdom,3,2
+2014,Deloitte,Bermuda,3,2
+2012,Deloitte,Switzerland,3,3
+2012,Deloitte,Spain,3,2
+2013,Deloitte,South Africa,3,1
+2013,Deloitte,Germany,3,3
+2013,Deloitte,Mexico,3,2
+2013,Deloitte,Russia,3,2
+2012,Deloitte,Norway,3,2
+2012,Deloitte,Brazil,3,3
+2012,Deloitte,Israel,3,3
+2012,Deloitte,Canada,7,5
+2012,Deloitte,Chile,3,2
+2013,Deloitte,India,3,1
+2012,Deloitte,Mexico,3,3
+2012,Deloitte,Argentina,3,1
+2012,Deloitte,South Korea,3,2
+2011,Deloitte,Australia,2,1
+2012,Deloitte,Panama,1,0
+2011,Deloitte,Canada,9,6
+2011,Deloitte,Japan,3,0
+2011,Deloitte,Taiwan,3,0
+2009,Deloitte,Israel,4,3
+2010,Deloitte,South Africa,3,1
+2009,Deloitte,Chile,2,1
+2010,Deloitte,India,4,1
+2009,Deloitte,Brazil,5,0
+2009,Deloitte,Cayman Islands,1,0
+2010,Deloitte,Canada,8,6
+2010,Deloitte,Russia,2,0
+2008,Deloitte,Taiwan,4,0
+2009,Deloitte,Bermuda,3,0
+2009,Deloitte,Colombia,2,0
+2008,Deloitte,South Korea,1,0
+2008,Deloitte,India,2,1
+2010,Deloitte,United Arab Emirates,1,0
+2009,Deloitte,Kazakhstan,1,0
+2009,Deloitte,Panama,2,0
+2009,Deloitte,Argentina,5,0
+2008,Deloitte,Norway,2,0
+2008,Deloitte,Australia,1,0
+2008,Deloitte,Japan,2,2
+2008,Deloitte,Greece,2,0
+2009,Deloitte,Ukraine,2,1
+2007,Deloitte,United Kingdom,3,1
+2007,Deloitte,Canada,7,4
+2008,Deloitte,Russia,1,0
+2007,Deloitte,Brazil,2,2
+2008,Deloitte,South Africa,1,0
+2007,Deloitte,Colombia,1,0
+2005,Deloitte,Chile,2,2
+2005,Deloitte,Israel,4,1
+2007,Deloitte,Argentina,2,0
+2007,Deloitte,Bermuda,1,0
+2021,PricewaterhouseCoopers,Thailand,3,0
+2018,PricewaterhouseCoopers,Thailand,3,0
+2021,PricewaterhouseCoopers,Bermuda,3,0
+2018,PricewaterhouseCoopers,Bermuda,3,1
+2021,PricewaterhouseCoopers,Cayman Islands,2,0
+2020,PricewaterhouseCoopers,Canada,7,0
+2018,PricewaterhouseCoopers,Canada,7,2
+2020,PricewaterhouseCoopers,Brazil,3,2
+2017,PricewaterhouseCoopers,Brazil,3,3
+2020,PricewaterhouseCoopers,Singapore,3,0
+2017,PricewaterhouseCoopers,Singapore,3,0
+2020,PricewaterhouseCoopers,United Kingdom,3,0
+2017,PricewaterhouseCoopers,United Kingdom,3,0
+2020,PricewaterhouseCoopers,South Africa,3,0
+2017,PricewaterhouseCoopers,South Africa,3,1
+2020,PricewaterhouseCoopers,Mexico,3,1
+2017,PricewaterhouseCoopers,Mexico,3,2
+2019,PricewaterhouseCoopers,Colombia,3,1
+2016,PricewaterhouseCoopers,Colombia,3,1
+2019,PricewaterhouseCoopers,Australia,3,1
+2016,PricewaterhouseCoopers,Australia,3,1
+2019,PricewaterhouseCoopers,Ireland,3,3
+2019,PricewaterhouseCoopers,Finland,2,0
+2016,PricewaterhouseCoopers,Finland,3,0
+2019,PricewaterhouseCoopers,Taiwan,3,0
+2016,PricewaterhouseCoopers,Taiwan,3,1
+2019,PricewaterhouseCoopers,Japan,3,1
+2016,PricewaterhouseCoopers,Japan,3,1
+2019,PricewaterhouseCoopers,Luxembourg,3,0
+2016,PricewaterhouseCoopers,Luxembourg,3,2
+2019,PricewaterhouseCoopers,Norway,3,1
+2016,PricewaterhouseCoopers,Norway,3,2
+2018,PricewaterhouseCoopers,Greece,3,1
+2017,PricewaterhouseCoopers,Spain,3,2
+2018,PricewaterhouseCoopers,Chile,3,1
+2018,PricewaterhouseCoopers,Austria,3,1
+2018,PricewaterhouseCoopers,Netherlands,3,0
+2018,PricewaterhouseCoopers,Denmark,3,0
+2018,PricewaterhouseCoopers,France,3,1
+2018,PricewaterhouseCoopers,Germany,3,2
+2018,PricewaterhouseCoopers,South Korea,3,0
+2018,PricewaterhouseCoopers,Thailand,3,0
+2017,PricewaterhouseCoopers,Switzerland,3,0
+2017,PricewaterhouseCoopers,Canada,8,3
+2017,PricewaterhouseCoopers,Mexico,3,2
+2017,PricewaterhouseCoopers,Italy,3,0
+2016,PricewaterhouseCoopers,Canada,8,4
+2017,PricewaterhouseCoopers,Sweden,2,1
+2017,PricewaterhouseCoopers,Singapore,3,0
+2016,PricewaterhouseCoopers,Australia,3,1
+2016,PricewaterhouseCoopers,Taiwan,3,1
+2015,PricewaterhouseCoopers,France,3,2
+2015,PricewaterhouseCoopers,Canada,6,2
+2015,PricewaterhouseCoopers,South Korea,3,2
+2015,PricewaterhouseCoopers,Greece,3,1
+2014,PricewaterhouseCoopers,Brazil,3,2
+2015,PricewaterhouseCoopers,Chile,3,0
+2015,PricewaterhouseCoopers,Jamaica,1,0
+2015,PricewaterhouseCoopers,Netherlands,3,0
+2014,PricewaterhouseCoopers,Mexico,3,1
+2014,PricewaterhouseCoopers,Switzerland,3,2
+2014,PricewaterhouseCoopers,Canada,6,0
+2014,PricewaterhouseCoopers,Sweden,2,1
+2015,PricewaterhouseCoopers,Thailand,3,0
+2015,PricewaterhouseCoopers,Bermuda,3,0
+2015,PricewaterhouseCoopers,Denmark,3,0
+2014,PricewaterhouseCoopers,United Kingdom,3,0
+2014,PricewaterhouseCoopers,Norway,3,0
+2014,PricewaterhouseCoopers,Singapore,3,0
+2014,PricewaterhouseCoopers,South Africa,3,0
+2013,PricewaterhouseCoopers,Finland,2,1
+2013,PricewaterhouseCoopers,Australia,3,1
+2013,PricewaterhouseCoopers,Canada,8,2
+2013,PricewaterhouseCoopers,South Korea,3,2
+2013,PricewaterhouseCoopers,Japan,3,2
+2011,PricewaterhouseCoopers,Switzerland,3,3
+2012,PricewaterhouseCoopers,Brazil,3,1
+2013,PricewaterhouseCoopers,Colombia,2,2
+2012,PricewaterhouseCoopers,Chile,3,3
+2013,PricewaterhouseCoopers,Japan,2,2
+2013,PricewaterhouseCoopers,Taiwan,2,0
+2011,PricewaterhouseCoopers,United Kingdom,4,1
+2012,PricewaterhouseCoopers,Canada,8,1
+2012,PricewaterhouseCoopers,Papua New Guinea,2,1
+2012,PricewaterhouseCoopers,Germany,4,1
+2012,PricewaterhouseCoopers,Netherlands,3,0
+2012,PricewaterhouseCoopers,Mexico,3,2
+2012,PricewaterhouseCoopers,Bermuda,3,0
+2012,PricewaterhouseCoopers,Thailand,2,0
+2011,PricewaterhouseCoopers,Canada,7,5
+2011,PricewaterhouseCoopers,Norway,3,3
+2006,PricewaterhouseCoopers,Canada,11,0
+2009,PricewaterhouseCoopers,Canada,11,3
+2010,PricewaterhouseCoopers,Canada,10,7
+2009,PricewaterhouseCoopers,New Zealand,2,1
+2010,PricewaterhouseCoopers,Japan,3,1
+2011,PricewaterhouseCoopers,South Korea,3,1
+2009,PricewaterhouseCoopers,Brazil,5,0
+2011,PricewaterhouseCoopers,South Africa,3,0
+2011,PricewaterhouseCoopers,Singapore,2,0
+2011,PricewaterhouseCoopers,Cayman Islands,1,0
+2010,PricewaterhouseCoopers,Australia,3,1
+2010,PricewaterhouseCoopers,Thailand,2,0
+2010,PricewaterhouseCoopers,Colombia,3,1
+2010,PricewaterhouseCoopers,Mexico,3,1
+2009,PricewaterhouseCoopers,United Arab Emirates,2,0
+2008,PricewaterhouseCoopers,Singapore,2,0
+2009,PricewaterhouseCoopers,Papua New Guinea,2,0
+2010,PricewaterhouseCoopers,Malaysia,3,0
+2009,PricewaterhouseCoopers,Chile,4,0
+2010,PricewaterhouseCoopers,Taiwan,2,0
+2008,PricewaterhouseCoopers,Ireland,2,0
+2008,PricewaterhouseCoopers,Australia,2,0
+2007,PricewaterhouseCoopers,South Korea,2,0
+2009,PricewaterhouseCoopers,Bolivia,2,0
+2009,PricewaterhouseCoopers,Bermuda,3,1
+2009,PricewaterhouseCoopers,Russia,4,2
+2007,PricewaterhouseCoopers,Brazil,2,1
+2008,PricewaterhouseCoopers,South Africa,1,0
+2006,PricewaterhouseCoopers,Chile,2,2
+2006,PricewaterhouseCoopers,Mexico,3,2
+2008,PricewaterhouseCoopers,United Kingdom,3,0
+2007,PricewaterhouseCoopers,Taiwan,1,0
+2007,PricewaterhouseCoopers,Bermuda,1,0
+2020,Ernst & Young,Canada,4,2
+2018,Ernst & Young,Canada,4,1
+2020,Ernst & Young,Cayman Islands,3,0
+2017,Ernst & Young,Cayman Islands,3,0
+2019,Ernst & Young,Spain,3,1
+2016,Ernst & Young,Spain,3,0
+2019,Ernst & Young,Taiwan,3,0
+2016,Ernst & Young,Taiwan,3,1
+2019,Ernst & Young,Panama,3,2
+2016,Ernst & Young,Panama,2,0
+2019,Ernst & Young,Australia,3,1
+2016,Ernst & Young,Australia,3,1
+2019,Ernst & Young,South Africa,3,0
+2016,Ernst & Young,South Africa,3,0
+2019,Ernst & Young,Bermuda,3,0
+2017,Ernst & Young,Bermuda,3,1
+2019,Ernst & Young,Colombia,3,0
+2016,Ernst & Young,Colombia,3,0
+2019,Ernst & Young,Ireland,3,2
+2019,Ernst & Young,South Korea,3,0
+2019,Ernst & Young,Netherlands,3,0
+2016,Ernst & Young,Netherlands,3,3
+2019,Ernst & Young,Sweden,3,1
+2016,Ernst & Young,Sweden,3,0
+2018,Ernst & Young,Italy,3,0
+2018,Ernst & Young,Canada,4,1
+2018,Ernst & Young,Germany,3,0
+2018,Ernst & Young,India,2,0
+2018,Ernst & Young,Russia,3,0
+2018,Ernst & Young,Chile,3,1
+2018,Ernst & Young,Denmark,3,0
+2017,Ernst & Young,Switzerland,3,1
+2017,Ernst & Young,United Kingdom,3,2
+2018,Ernst & Young,Brazil,3,1
+2017,Ernst & Young,Canada,4,3
+2017,Ernst & Young,Bermuda,3,1
+2017,Ernst & Young,France,4,0
+2017,Ernst & Young,Cayman Islands,3,0
+2017,Ernst & Young,Norway,3,0
+2017,Ernst & Young,Japan,3,0
+2017,Ernst & Young,Greece,2,0
+2016,Ernst & Young,Canada,4,2
+2016,Ernst & Young,Spain,3,0
+2016,Ernst & Young,Bahamas,1,0
+2015,Ernst & Young,Canada,6,4
+2015,Ernst & Young,Chile,3,1
+2014,Ernst & Young,Switzerland,3,2
+2015,Ernst & Young,Russia,3,2
+2015,Ernst & Young,Brazil,3,2
+2015,Ernst & Young,Germany,3,0
+2014,Ernst & Young,United Kingdom,3,2
+2015,Ernst & Young,India,1,0
+2014,Ernst & Young,Canada,7,5
+2014,Ernst & Young,Japan,3,1
+2014,Ernst & Young,Norway,3,0
+2013,Ernst & Young,Canada,7,6
+2014,Ernst & Young,Bermuda,3,0
+2013,Ernst & Young,Spain,3,2
+2013,Ernst & Young,France,7,4
+2011,Ernst & Young,Switzerland,3,2
+2013,Ernst & Young,Australia,2,0
+2014,Ernst & Young,Cayman Islands,2,0
+2013,Ernst & Young,Netherlands,3,1
+2013,Ernst & Young,Taiwan,3,2
+2012,Ernst & Young,Chile,3,1
+2013,Ernst & Young,Panama,2,1
+2012,Ernst & Young,Germany,3,1
+2012,Ernst & Young,India,2,1
+2012,Ernst & Young,Canada,8,4
+2012,Ernst & Young,Brazil,3,2
+2013,Ernst & Young,South Africa,2,0
+2006,Ernst & Young,United Kingdom,4,0
+2011,Ernst & Young,United Kingdom,5,2
+2012,Ernst & Young,Mexico,3,2
+2011,Ernst & Young,Norway,3,1
+2008,Ernst & Young,Japan,2,0
+2011,Ernst & Young,Japan,3,2
+2011,Ernst & Young,Canada,7,3
+2012,Ernst & Young,Bermuda,3,0
+2012,Ernst & Young,Russia,3,0
+2010,Ernst & Young,India,3,3
+2009,Ernst & Young,Canada,8,4
+2010,Ernst & Young,Canada,7,3
+2010,Ernst & Young,South Africa,2,0
+2010,Ernst & Young,Panama,2,0
+2010,Ernst & Young,Australia,3,2
+2010,Ernst & Young,Colombia,2,1
+2009,Ernst & Young,Israel,5,0
+2010,Ernst & Young,Chile,3,0
+2010,Ernst & Young,Taiwan,2,0
+2008,Ernst & Young,Greece,2,0
+2009,Ernst & Young,South Korea,2,0
+2009,Ernst & Young,Bermuda,4,0
+2009,Ernst & Young,Brazil,3,0
+2009,Ernst & Young,Argentina,4,0
+2008,Ernst & Young,Panama,1,0
+2008,Ernst & Young,Singapore,3,0
+2009,Ernst & Young,Mexico,4,0
+2009,Ernst & Young,Russia,2,1
+2006,Ernst & Young,Brazil,3,2
+2007,Ernst & Young,Australia,3,2
+2006,Ernst & Young,Canada,12,5
+2008,Ernst & Young,South Africa,1,0
+2008,Ernst & Young,India,1,0
+2007,Ernst & Young,Chile,2,0
+2007,Ernst & Young,Argentina,2,0
+2007,Ernst & Young,Taiwan,1,0
+2007,Ernst & Young,Bermuda,2,0
+2020,KPMG,Australia,3,1
+2017,KPMG,Australia,3,0
+2020,KPMG,India,3,2
+2017,KPMG,India,3,2
+2020,KPMG,Chile,3,0
+2020,KPMG,Taiwan,3,2
+2017,KPMG,Taiwan,3,0
+2020,KPMG,Panama,3,2
+2018,KPMG,Panama,2,2
+2020,KPMG,South Africa,3,3
+2017,KPMG,South Africa,3,3
+2020,KPMG,Bermuda,3,0
+2017,KPMG,Bermuda,3,0
+2019,KPMG,Italy,3,0
+2019,KPMG,Brazil,3,2
+2016,KPMG,Brazil,3,0
+2019,KPMG,Canada,8,5
+2017,KPMG,Canada,7,3
+2019,KPMG,France,3,3
+2017,KPMG,France,3,1
+2019,KPMG,Switzerland,3,0
+2016,KPMG,Switzerland,3,1
+2019,KPMG,Singapore,3,1
+2019,KPMG,Colombia,3,0
+2016,KPMG,Colombia,3,0
+2019,KPMG,Germany,3,2
+2016,KPMG,Germany,3,2
+2018,KPMG,Spain,3,2
+2018,KPMG,South Korea,3,3
+2018,KPMG,Ireland,3,1
+2018,KPMG,Mexico,3,3
+2018,KPMG,Norway,3,1
+2018,KPMG,New Zealand,2,0
+2018,KPMG,United Kingdom,3,3
+2018,KPMG,Netherlands,3,3
+2018,KPMG,Japan,3,2
+2016,KPMG,Canada,9,4
+2016,KPMG,Chile,3,2
+2016,KPMG,South Korea,3,0
+2015,KPMG,Canada,8,4
+2016,KPMG,Japan,3,0
+2015,KPMG,Netherlands,3,1
+2015,KPMG,United Kingdom,5,4
+2015,KPMG,Mexico,3,1
+2015,KPMG,Norway,3,1
+2015,KPMG,Spain,3,1
+2014,KPMG,Canada,9,4
+2014,KPMG,Sweden,3,2
+2014,KPMG,France,3,2
+2014,KPMG,South Korea,3,3
+2014,KPMG,South Africa,3,1
+2015,KPMG,India,3,0
+2015,KPMG,New Zealand,3,0
+2015,KPMG,Bermuda,3,0
+2014,KPMG,Argentina,3,2
+2013,KPMG,Switzerland,3,2
+2014,KPMG,Taiwan,3,0
+2012,KPMG,United Kingdom,4,2
+2013,KPMG,Chile,3,3
+2012,KPMG,Canada,10,6
+2013,KPMG,Canada,11,3
+2014,KPMG,Australia,3,0
+2013,KPMG,Brazil,3,1
+2013,KPMG,Japan,3,1
+2013,KPMG,Germany,2,1
+2012,KPMG,Norway,4,3
+2013,KPMG,Colombia,3,1
+2013,KPMG,Israel,3,0
+2011,KPMG,Canada,10,8
+2012,KPMG,India,3,1
+2012,KPMG,Netherlands,3,2
+2012,KPMG,Mexico,3,3
+2012,KPMG,South Korea,3,0
+2012,KPMG,Bermuda,3,2
+2012,KPMG,New Zealand,2,0
+2012,KPMG,Singapore,2,0
+2012,KPMG,Argentina,3,0
+2011,KPMG,Brazil,4,3
+2011,KPMG,Australia,2,0
+2008,KPMG,India,2,0
+2010,KPMG,India,4,2
+2011,KPMG,Taiwan,3,1
+2011,KPMG,South Africa,3,0
+2008,KPMG,South Africa,1,0
+2010,KPMG,Japan,4,1
+2009,KPMG,Russia,1,0
+2010,KPMG,Israel,4,2
+2009,KPMG,Mexico,4,2
+2009,KPMG,Canada,18,2
+2010,KPMG,Canada,12,2
+2010,KPMG,Chile,3,0
+2008,KPMG,Australia,1,0
+2010,KPMG,New Zealand,2,0
+2008,KPMG,Ireland,2,0
+2010,KPMG,Panama,2,0
+2009,KPMG,Singapore,3,0
+2008,KPMG,South Korea,1,0
+2009,KPMG,Argentina,4,1
+2009,KPMG,Bermuda,3,2
+2009,KPMG,Cayman Islands,1,0
+2008,KPMG,Chile,1,1
+2008,KPMG,Taiwan,2,1
+2008,KPMG,Brazil,4,3
+2007,KPMG,Japan,2,2
+2006,KPMG,Mexico,2,2
+2006,KPMG,United Kingdom,4,2
+2008,KPMG,Canada,NA,3
+2007,KPMG,Bermuda,1,0
+2007,KPMG,Canada,NA,4
+2007,KPMG,New Zealand,1,0
+2007,KPMG,Panama,1,0
+2006,KPMG,Canada,NA,3
+2005,KPMG,Canada,NA,5
+2020,BDO,Canada,3,2
+2017,BDO,Canada,4,3
+2018,BDO,Switzerland,3,1
+2018,BDO,United Kingdom,3,1
+2018,BDO,Australia,3,3
+2018,BDO,Singapore,2,0
+2017,BDO,Mexico,3,1
+2017,BDO,Cayman Islands,1,0
+2015,BDO,Netherlands,3,3
+2015,BDO,Canada,3,3
+2015,BDO,United Kingdom,3,0
+2015,BDO,Hungary,2,0
+2014,BDO,Spain,2,1
+2015,BDO,Switzerland,3,0
+2013,BDO,Australia,1,1
+2012,BDO,Switzerland,3,1
+2014,BDO,Cayman Islands,1,0
+2014,BDO,Japan,3,0
+2011,BDO,Australia,3,2
+2012,BDO,Canada,5,1
+2012,BDO,United Kingdom,2,0
+2011,BDO,Japan,2,1
+2012,BDO,Mexico,2,0
+2010,BDO,Russia,1,1
+2018,RSM,Canada,1,0
+2012,RSM,Canada,2,1
+2011,RSM,South Africa,1,0
+2009,RSM,Canada,1,1
+2009,RSM,Russia,1,0
+2020,Grant Thornton,Australia,3,0
+2017,Grant Thornton,Australia,3,1
+2020,Grant Thornton,Mexico,3,2
+2017,Grant Thornton,Mexico,3,2
+2019,Grant Thornton,United Arab Emirates,2,0
+2019,Grant Thornton,Brazil,3,3
+2016,Grant Thornton,Brazil,2,2
+2019,Grant Thornton,India,2,0
+2016,Grant Thornton,India,3,0
+2018,Grant Thornton,Canada,6,3
+2017,Grant Thornton,Ireland,2,1
+2017,Grant Thornton,Malaysia,2,0
+2017,Grant Thornton,Taiwan,2,0
+2015,Grant Thornton,Colombia,2,0
+2015,Grant Thornton,Canada,6,1
+2015,Grant Thornton,Australia,3,1
+2016,Grant Thornton,Japan,1,0
+2015,Grant Thornton,United Kingdom,3,0
+2014,Grant Thornton,New Zealand,1,0
+2014,Grant Thornton,Mexico,4,0
+2013,Grant Thornton,Israel,2,1
+2012,Grant Thornton,Canada,3,3
+2019,Crowe,Canada,1,0
+2017,Crowe,Canada,2,2
+2019,Crowe,Australia,1,0
+2018,Crowe,Singapore,1,0
+2014,Crowe,Canada,2,0
+2013,Crowe,United Kingdom,1,0
+2010,Crowe,Malaysia,1,0

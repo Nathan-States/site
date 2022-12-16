@@ -28,24 +28,24 @@ here::set_here()
 
 This web application allows users to view military spending across the world using several different metrics, including:
 
-+ Converted USD 
-+ Inflation-Adjusted USD 
-+ Military Spending in GDP Percentage 
-+ Military Spending in Government Percentage
-+ Military Spending in Capita Spending 
++ **Converted USD** 
++ **Inflation-Adjusted USD** 
++ **Military Spending in GDP Percentage** 
++ **Military Spending in Government Percentage**
++ **Military Spending in Capita Spending** 
 
 View the dashboard by clicking [here](https://nathan-states.shinyapps.io/sipri-dashboard/). 
 
 ## Data Source 
 
-The data comes from the Stockholm International Peace Research Institute ([SIPRI](https://sipri.org/)), a think tank that researches conflict, armaments, arms control, and disarmament. SIPRI was created by the [Swedish Parliament](https://sipri.org/about/history) in July 1966, who gives them an annual grant to fund their operations. They also receive funding from a variety of governments and NGOs, including the EU, Australian Government, the University of Notre Dame, the Norwegian Ministry, [and many more](https://sipri.org/about/funding-2021). 
+The data comes from the Stockholm International Peace Research Institute ([SIPRI](https://sipri.org/)), a think tank that researches conflict, armaments, arms control, and disarmament around the world. SIPRI was created by the [Swedish Parliament](https://sipri.org/about/history) in July 1966, who gives them an annual grant to fund their operations. They also receive funding from a variety of other governments and NGOs, including the EU, Australian Government, the University of Notre Dame, the Norwegian Ministry, [and many more](https://sipri.org/about/funding-2021). 
 
 You can download the database used for this project [here](https://milex.sipri.org/sipri).
 
-## Photo Credit 
+### Photo Credit 
 
 Photo by [Juli Kosolapova](https://unsplash.com/@yuli_superson). 
 
 ### Note 
 
-This application is currently being hosted on [shinyapps.io](https://www.shinyapps.io/) on a free plan. Performance can sometimes be slow, and applications are limited to 25 active hours a month. It's possible to download the source code and launch the app locally to avoid those issues. 
+This application is currently being hosted on [shinyapps.io](https://www.shinyapps.io/) on a free plan. Performance can sometimes be slow, and applications are limited to 25 active hours a month. It's possible to download the source code and launch the app locally to avoid those issues (assuming you have `[R](https://www.google.com/search?client=firefox-b-1-d&q=r+)` and `[RStudio](https://posit.co/)` installed). 

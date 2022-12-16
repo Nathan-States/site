@@ -1,7 +1,7 @@
 ---
 title: Series
 description: |
-  Collection of content.
+  Collection of content. 
 layout: list
 show_author_byline: false 
 show_button_links: true 

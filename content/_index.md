@@ -2,7 +2,7 @@
 action_label: About &rarr;
 action_link: /about
 action_type: text 
-description: I'm a *data scientist* & *programmer* interested in economic and international relations topics. This website hosts all my **data visualizations**, **web applications**, and **posts** on subjects of personal interest.
+description: I'm a *data scientist* & *programmer* interested in economic and international relations topics. This site hosts all my **data visualizations**, **web applications**, and **posts** on subjects of personal interest.
 image_left: false
 number_categories: 5
 number_featured: 3 

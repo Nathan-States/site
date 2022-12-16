@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dashboards on NS</title>
+    <link>https://www.nathanstates.com/dashboards/</link>
+    <description>Recent content in Dashboards on NS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 13 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.nathanstates.com/dashboards/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>🪖 Global Military Expenditure Dashboard</title>
+      <link>https://www.nathanstates.com/dashboards/global-military-expenditure-dashboard/</link>
+      <pubDate>Thu, 13 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.nathanstates.com/dashboards/global-military-expenditure-dashboard/</guid>
+      <description>SIPRI Dashboard #  This web application allows users to view military spending across the world using several different metrics, including:
+ Converted USD Inflation-Adjusted USD Military Spending in GDP Percentage Military Spending in Government Percentage Military Spending in Capita Spending  View the dashboard by clicking here.
+Data Source #  The data comes from the Stockholm International Peace Research Institute ( SIPRI), a think tank that researches conflict, armaments, arms control, and disarmament.</description>
+    </item>
+    
+  </channel>
+</rss>

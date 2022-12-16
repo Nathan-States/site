@@ -26,11 +26,11 @@ links:
 
 This web application allows users to view military spending across the world using several different metrics, including:
 
-+ Converted USD 
-+ Inflation-Adjusted USD 
-+ Military Spending in GDP Percentage 
-+ Military Spending in Government Percentage
-+ Military Spending in Capita Spending 
++ **Converted USD** 
++ **Inflation-Adjusted USD** 
++ **Military Spending in GDP Percentage** 
++ **Military Spending in Government Percentage**
++ **Military Spending in Capita Spending** 
 
 View the dashboard by clicking [here](https://nathan-states.shinyapps.io/sipri-dashboard/). 
 

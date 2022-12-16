@@ -1,6 +1,6 @@
 ---
 title: 'PCAOB Series'
-excerpt: 'All my posts and visualizations about the Board'
+excerpt: 'All my posts and visualizations about the audit regulator.'
 author: 'Nathan States'
 date: '2022-11-16'
 hide_details: true
@@ -8,19 +8,19 @@ categories:
   - Series
 ---
 
+<script src="{{< blogdown/postref >}}index_files/htmlwidgets/htmlwidgets.js"></script>
+<script src="{{< blogdown/postref >}}index_files/echarts4r/echarts-en.min.js"></script>
+<script src="{{< blogdown/postref >}}index_files/echarts4r/ecStat.min.js"></script>
+<script src="{{< blogdown/postref >}}index_files/echarts4r/dataTool.min.js"></script>
+<script src="{{< blogdown/postref >}}index_files/echarts4r-binding/echarts4r.js"></script>
 <style type="text/css">
 .figcaption {
   font-size: 0.8em;
 }
 
-.body {
-  background-color: #fcfcfc;
-}
-
 .img {
   height: auto;
   max-width: 100%;
-  background-color: #fcfcfc;
 }
 
 .html {
@@ -57,88 +57,145 @@ categories:
   right: 50%;
   width: 70vw;
 }
+
+.small-width {
+  left: 50%;
+  margin-left: -5vw;
+  margin-right: -5vw;
+  max-width: 10vw;
+  position: relative;
+  right: 50%;
+  width: 10vw;
+}
 </style>
 
+<div class="lead">
 
+This is a collection of all posts and data visualizations I’ve made on the PCAOB, including information on inspection reports, enforcement actions, and the board’s history. You can view those posts from the links below.
 
-This is a collection of all posts and data visualizations I've made on the PCAOB, including information on inspection reports, enforcement actions, and the board's overall history. You can view those posts below, including a more in-depth description of the PCAOB. 
+</div>
 
 <h3>
 <center>
-PCAOB Inspections (Part 1)
+<a href="https://www.nathanstates.com/blog/pcaob-inspections-part-1/">PCAOB Inspections (Part 1)</a>
 <br><br>
-PCAOB Enforcement Actions (Part 2)
+<a href="https://www.nathanstates.com/blog/pcaob-sanctions-part-2/">PCAOB Enforcement Actions (Part 2)</a>
 </h3>
 </center>
 
 <br>
 
-Other links on this page;
+Other links on this page…
 
-+ [Data Visualizations](#data-visualizations)
-  + [Inspections](#visual-inspections) 
-  + [Enforcement Actions](#visual-enforcement) 
-+ [Data Gathering](#data-gathering)
-  + [Inspections](#data-inspections)
-  + [Enforcement Actions](#data-enforcement)
-+ [What is the PCAOB?](#pcaob-description) 
+- [Data Visualizations](#data-visualizations)
+- [Data Gathering](#data-gathering)
+  - [Inspections](#data-inspections)
+  - [Enforcement Actions](#data-enforcement)
+- [**What is the PCAOB?**](#pcaob-description)
 
 ## Data Visualizations <a id="data-visualizations"></a>
 
-### Inspections <a id="visual-inspections"></a>
+<br>
 
-:::{.box-width}
+<div class="box-width">
+
 ![](_images/table_overview.png)
-:::
 
----
+</div>
+
+------------------------------------------------------------------------
+
+<div class="box-width">
 
 ![](_images/chart_category.png)
 
----
+</div>
+
+------------------------------------------------------------------------
+
+<div class="box-width">
 
 ![](_images/chart_float.png)
 
-### Enforcement Actions <a id="visual-enforcement"></a>
- 
-:::{.most-width}
+</div>
+
+<div class="box-width">
+
+![](_images/table_enforcement_firm.png)
+
+</div>
+
+------------------------------------------------------------------------
+
+<div class="box-width">
+
+![](_images/table_enforcement_auditors.png)
+
+</div>
+
+------------------------------------------------------------------------
+
+<div class="box-width">
+
 ![](_images/chart_amount.png)
-:::
 
----
+</div>
 
-:::{.most-width}
+------------------------------------------------------------------------
+
+<div class="box-width">
+
 ![](_images/chart_country.png)
-:::
+
+</div>
+
+------------------------------------------------------------------------
+
+<div class="box-width">
+
+![](_images/chart_proprietors.png)
+
+</div>
+
+------------------------------------------------------------------------
 
 ## Data Gathering <a id="data-gathering"></a>
 
-If you go to [pcaobus.org](https://pcaobus.org/), you'll find two separate databases: [*inspections*](https://pcaobus.org/oversight/inspections/firm-inspection-reports) and [e*nforcement actions*](https://pcaobus.org/oversight/enforcement/enforcement-actions?enforcementordertypes=Settled%20Disciplinary%20Order). Both databases provide reports in PDF format, so I manually gathered the relevant details from each file and stored them in two separate spreadsheets. 
+If you go to [pcaobus.org](https://pcaobus.org/), you’ll find two separate databases: [*inspections*](https://pcaobus.org/oversight/inspections/firm-inspection-reports) and [e*nforcement actions*](https://pcaobus.org/oversight/enforcement/enforcement-actions?enforcementordertypes=Settled%20Disciplinary%20Order). Both databases provide reports in PDF format, so I manually gathered the relevant details from each file and stored them in two separate spreadsheets.
 
 ### Inspections <a id="data-inspections"></a>
 
-The PCAOB has performed over 3,500 inspection reports since its creation in 2002, with about 2,800 being on domestic firms. The relevant data of firm, year, number of audits inspected, and number of audits deficient has been collected from each report. Due to time constraints, only inspection data from the largest domestic firms are present in the dataset. However, all data from international affiliates among the four largest firms has been collected. 
+The PCAOB has performed over 3,500 inspection reports since its creation in 2002, with about 2,800 being on domestic firms. The relevant data of firm, year, number of audits inspected, and number of audits deficient has been collected from each report. Due to time constraints, only inspection data from the largest domestic firms are present in the dataset. However, all data from international affiliates among the four largest firms has been collected.
 
-Additional data regarding industry and revenue range has been collected from the four largest firms. 
+Additional data regarding industry and revenue range has been collected from the four largest firms.
 
 ### Enforcement Actions <a id="data-enforcement"></a>
 
-According to the enforcement database, the PCAOB has given out a total of 351 *enforcement actions* as of November 22, 2022, all of which are included in the dataset. It should be noted that the way sanctions have been given has changed over time. Generally, each sanction is provided with its own individual report, but other times, one report will contain multiple sanctions (an example can be found [here](https://pcaob-assets.azureedge.net/pcaob-dev/docs/default-source/enforcement/decisions/documents/105-2020-019-gt.pdf?sfvrsn=67d2d9e4_2)). This means that the number of PCAOB enforcement actions listed on their site doesn't correspond with the total number of sanctions they've given, which is why this spreadsheet contains **512** rows instead of *351*. 
+According to the enforcement database, the PCAOB has given out a total of 358 *enforcement actions* as of December 6, 2022, all of which are included in the dataset. It should be noted that the way sanctions have been given has changed over time. Generally, each sanction is provided with its own individual report, but other times, one report will contain multiple sanctions (an example can be found [here](https://pcaob-assets.azureedge.net/pcaob-dev/docs/default-source/enforcement/decisions/documents/105-2020-019-gt.pdf?sfvrsn=67d2d9e4_2)). This means that the number of PCAOB enforcement actions listed on their site doesn’t correspond with the total number of sanctions they’ve given, which is why the spreadsheet doesn’t match their number.
 
 ## What is the PCAOB? <a id="pcaob-description"></a>
 
-At the end of 2000, the energy corporation *Enron* would finish the year as the seventh largest company in the United States. Less than a year later, though, the company would file for bankruptcy, [causing](https://pcaobus.org/news-events/speeches/speech-detail/background-on-the-pcaob_465) tens of thousands to lose employment, and wiping out over \$2.1 billion in 401(k) contributions. A later investigation by the [Department of Justice](https://www.justice.gov/osg/brief/arthur-anderson-llp-v-united-states-opposition) (**DOJ**) found that Enron had been engaged in massive accounting fraud and were consistently lying about how profitable the company was. Then CEO Jeffrey Skilling would earn a 24 year prison sentence for his role in the scandal. 
+Currently working on a longer article to explain the PCAOB’s founding, but for a quick rundown:
 
-Auditors, in simple terms, are supposed to stop such things from happening. After the Great Depression, when it was discovered numerous companies had fraudulently over-inflated their profit margins, exacerbating the effects of the economic depression, all publicly traded companies were required to audit themselves upon the creation of the SEC in 1934. Auditors are expected to act impartially, ensure the revenue corporations report to investors is accurate, and to notify the appropriate authorities when fraud is detected. However, the audit industry remained self-regulated, and misconduct was rarely, if ever disciplined. 
+At the end of 2000, the energy corporation *Enron* would finish the year as the seventh largest company in the United States. Less than a year later, though, the company would file for bankruptcy, [causing](https://pcaobus.org/news-events/speeches/speech-detail/background-on-the-pcaob_465) tens of thousands to lose employment, and wiping out over \$2.1 billion in 401(k) contributions. A later investigation by the [Department of Justice](https://www.justice.gov/osg/brief/arthur-anderson-llp-v-united-states-opposition) (**DOJ**) found that Enron had been engaged in massive accounting fraud and were consistently lying about how profitable the company was. Then CEO Jeffrey Skilling would earn a 24 year prison sentence for his role in the scandal.
 
-The auditors who worked at Enron were **Arthur Andersen**, then the fifth largest audit firm in the United States. In 2002, they were indicted by the DOJ for [shredding documents](https://www.latimes.com/archives/la-xpm-2002-may-14-fi-andersen14-story.html) related to Enron, though they were ultimately never charged due to a [technicality regarding jury instructions](https://www.law.cornell.edu/supct/html/04-368.ZO.html). One might wonder what would compel Andersen to (*allegedly*) commit a serious felony by destroying potential evidence for one of its clients.  
+Auditors, in simple terms, are supposed to stop such things from happening. After the Great Depression, when it was discovered numerous companies had fraudulently over-inflated their profit margins, exacerbating the effects of the economic depression, all publicly traded companies were required to audit themselves upon the creation of the SEC in 1934. Auditors are expected to act impartially, ensure the revenue corporations report to investors is accurate, and to notify the appropriate authorities when fraud is detected. However, the audit industry remained self-regulated, and misconduct was rarely, if ever disciplined.
 
-Not only was Andersen being paid \$25 million by Enron to essentially not do their jobs, but they were [also receiving](https://news.bloomberglaw.com/us-law-week/enrons-collapse-20-years-later-lessons-not-learned) \$27 million in *non-auditing* fees, which almost entirely consisted of consulting services. It should be noted that auditors doubling as consultants is a somewhat [recent phenomenon](https://pcaobus.org/news-events/speeches/speech-detail/the-rise-of-advisory-services-in-audit-firms_544). During the late 1990s and early 2000s, the **Big Four** audit firms (those being *Deloitte*, *PricewaterhouseCoopers*, *KPMG*, and *Ernst & Young*) began expanding their consulting services substantially, which turned out to be much more profitable than only auditing. This transition saw a noticeable drop in overall audit quality, however. Data from the Government Accountability Office gathered from a [*Cornell Law* study](https://scholarship.law.cornell.edu/facpub/968/) found that the total number of financial restatements, or instances in which a company had to readjust their financial reports, increased from *0.5%* in 1997 to **3.9%** in 2001 among the then Big Five. 
+The auditors who worked at Enron were **Arthur Andersen**, then the fifth largest audit firm in the United States. In 2002, they were indicted by the DOJ for [shredding documents](https://www.latimes.com/archives/la-xpm-2002-may-14-fi-andersen14-story.html) related to Enron, though they were ultimately never charged due to a [technicality regarding jury instructions](https://www.law.cornell.edu/supct/html/04-368.ZO.html). One might wonder what would compel Andersen to (*allegedly*) commit a serious felony by destroying potential evidence for one of its clients.
 
-To put this in perspective, among the five largest audit firms, the number of financial restatements increased from just *5* companies in 1997 to **40** in 2001. Another study by the [University of Michigan Business Board](http://d1c25a6gwz7q5e.cloudfront.net/papers/1072.pdf) found that on average, the share price of a stock fell **25%** following the announcement of a financial restatement from 1997 - 2001, meaning that (unsurprisingly) nearly all financial restatements were the results of corporations *exaggerating* their revenue.  
+Not only was Andersen being paid \$25 million by Enron to essentially not do their jobs, but they were [also receiving](https://news.bloomberglaw.com/us-law-week/enrons-collapse-20-years-later-lessons-not-learned) \$27 million in *non-auditing* fees, which almost entirely consisted of consulting services. It should be noted that auditors doubling as consultants is a somewhat [recent phenomenon](https://pcaobus.org/news-events/speeches/speech-detail/the-rise-of-advisory-services-in-audit-firms_544). During the late 1990s and early 2000s, the **Big Four** audit firms (those being *Deloitte*, *PricewaterhouseCoopers*, *KPMG*, and *Ernst & Young*) began expanding their consulting services substantially, which turned out to be much more profitable than only auditing. This transition saw a noticeable drop in overall audit quality, however. Data from the Government Accountability Office gathered from a [*Cornell Law* study](https://scholarship.law.cornell.edu/facpub/968/) found that the total number of financial restatements, or instances in which a company had to readjust their financial reports, increased from *0.5%* in 1997 to **3.9%** in 2001 among the then Big Five.
 
-While Enron was the catalyst that showed self-regulation was problematic, the overall wave of accounting scandals (namely led by Worldcom, Waste Management, and Tyco) would destroy investor confidence in the market, providing motivation for the government to act. In 2002, Congress would pass the **Sarbanes-Oxley Act**, which received unanimous approval in the Senate, and set stricter guidelines and provisions for the audit industry. 
+To put this in perspective, among the five largest audit firms, the number of financial restatements increased from just *5* companies in 1997 to **40** in 2001. Another study by the [University of Michigan Business Board](http://d1c25a6gwz7q5e.cloudfront.net/papers/1072.pdf) found that on average, the share price of a stock fell **25%** following the announcement of a financial restatement from 1997 - 2001, meaning that (unsurprisingly) nearly all financial restatements were the results of corporations *exaggerating* their revenue.
+
+While Enron was the catalyst that showed self-regulation was problematic, the overall wave of accounting scandals (namely led by Worldcom, Waste Management, and Tyco) would destroy investor confidence in the market, providing motivation for the government to act. In 2002, Congress would pass the **Sarbanes-Oxley Act**, which received unanimous approval in the Senate, and set stricter guidelines and provisions for the audit industry.
 
 This Act also created the Public Company Accounting Oversight Board (**PCAOB**), which every audit firm is required to register with. The PCAOB is responsible for monitoring audit firms, conducting investigations, and disciplining misconduct when it occurs. Essentially, their job is to ensure that auditors are doing their jobs properly, and to make sure nothing like Enron happens again.
 
-However, if the audit industry could be undermined, could the PCAOB as well? Many government agencies - most recently the [EPA](https://www.brookings.edu/blog/up-front/2020/12/15/the-trump-administrations-major-environmental-deregulations/) - have been thoroughly weakened to serve certain interests. **Is the PCAOB protecting ordinary investors, or are they serving special interests?** This series attempts to answer these question by looking at PCAOB inspection reports and enforcement actions over the last twenty years. 
+However, if the audit industry could be undermined, could the PCAOB as well? Many government agencies - most recently the [EPA](https://www.brookings.edu/blog/up-front/2020/12/15/the-trump-administrations-major-environmental-deregulations/) - have been thoroughly weakened to serve certain interests. **Is the PCAOB protecting ordinary investors, or are they serving special interests?** This series attempts to answer these question by looking at PCAOB inspection reports and enforcement actions over the last twenty years.
+
+<br><br><br><br><br><br><br><br><br><br><br>
+
+<div id="htmlwidget-1" style="width:100%;height:500px;" class="echarts4r html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"theme":"","tl":false,"draw":true,"renderer":"canvas","events":[],"buttons":[],"opts":{"yAxis":[{"show":true}],"xAxis":[{"type":"value"}],"legend":{"data":["hp"]},"series":[{"data":[{"value":[10.4,205]},{"value":[10.4,215]},{"value":[13.3,245]},{"value":[14.3,245]},{"value":[14.7,230]},{"value":[15,335]},{"value":[15.2,180]},{"value":[15.2,150]},{"value":[15.5,150]},{"value":[15.8,264]},{"value":[16.4,180]},{"value":[17.3,180]},{"value":[17.8,123]},{"value":[18.1,105]},{"value":[18.7,175]},{"value":[19.2,123]},{"value":[19.2,175]},{"value":[19.7,175]},{"value":[21,110]},{"value":[21,110]},{"value":[21.4,110]},{"value":[21.4,109]},{"value":[21.5,97]},{"value":[22.8,93]},{"value":[22.8,95]},{"value":[24.4,62]},{"value":[26,91]},{"value":[27.3,66]},{"value":[30.4,52]},{"value":[30.4,113]},{"value":[32.4,66]},{"value":[33.9,65]}],"yAxisIndex":0,"xAxisIndex":0,"name":"hp","type":"line","coordinateSystem":"cartesian2d"}],"tooltip":{"trigger":"axis"}},"dispose":true},"evals":[],"jsHooks":[]}</script>
+
+(This page doesn’t render properly if I don’t include an interactive HTML element. No idea why, but just ignore this graph)
